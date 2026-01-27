@@ -37,7 +37,7 @@ get_header();
 		<?php elseif (is_day()): ?>
 			<header class="mb-8">
 				<h1 class="text-3xl font-semibold">
-					<?php printf(__('Daily Archives: %s', 'tailpress'), get_the_date()); ?>
+					<?php printf(__('Daily Archives: %s', 'tailpress'), get_the_date()); ?>	
 				</h1>
 			</header>
 		<?php elseif (is_month()): ?>
