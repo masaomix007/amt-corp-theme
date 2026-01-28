@@ -35,3 +35,13 @@ function tailpress(): TailPress\Framework\Theme
 }
 
 tailpress();
+
+add_action('wp_enqueue_scripts', function () {
+  // Noto Sans JP (Regular=400)
+  wp_enqueue_style(
+    'amt-font-noto-sans-jp',
+    'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
+    [],
+    null
+  );
+}, 20);

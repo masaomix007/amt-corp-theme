@@ -1,6 +1,6 @@
 <header class="absolute top-0 left-0 z-50 w-full">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6">
-    <!-- Logo -->
+    <!-- Logo (TOPはテキストでOK) -->
     <a href="<?php echo esc_url(home_url('/')); ?>" class="text-lg font-bold tracking-widest text-white">
       AMT
     </a>
@@ -17,11 +17,10 @@
       ?>
     </nav>
 
-    <!-- Mobile button (あとで動かす) -->
+    <!-- Mobile button -->
     <button class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white"
       type="button" aria-label="Open menu">
       ☰
     </button>
   </div>
 </header>
-  
