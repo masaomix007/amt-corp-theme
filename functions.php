@@ -45,3 +45,44 @@ add_action('wp_enqueue_scripts', function () {
     null
   );
 }, 20);
+
+// ---------------------------------------------------------
+// Bootstrapping: required categories (news / blog)
+// ---------------------------------------------------------
+add_action('after_setup_theme', function () {
+  foreach (['news', 'blog'] as $slug) {
+    if (!term_exists($slug, 'category')) {
+      wp_insert_term(ucfirst($slug), 'category', ['slug' => $slug]);
+    }
+  }
+});
+
+// ---------------------------------------------------------
+// Admin menu shortcuts: News / Blog filtered post lists
+// ---------------------------------------------------------
+add_action('admin_menu', function () {
+
+  // News（newsカテゴリのみ）
+  add_menu_page(
+    'News',
+    'ニュース',
+    'edit_posts',
+    'edit.php?post_type=post&category_name=news',
+    '',
+    'dashicons-megaphone',
+    5
+  );
+
+  // Blog（newsカテゴリ以外）
+  $news_cat_id = get_cat_ID('news');
+
+  add_menu_page(
+    'Blog',
+    'ブログ',
+    'edit_posts',
+    'edit.php?post_type=post&cat=-' . $news_cat_id,
+    '',
+    'dashicons-welcome-write-blog',
+    6
+  );
+});
