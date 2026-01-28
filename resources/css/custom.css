@@ -86,14 +86,64 @@
    Fonts
    ---------------------------------------------------------
    Google Fonts:
-   - Outfit : 英字見出し / セクションタイトル用
-   - Lato   : 本文 / UI / 日本語テキスト用
+   - Outfit        : 英字見出し / セクションタイトル用
+   - Lato          : 英字本文 / UI 用
+   - Noto Sans JP  : 日本語本文 / UI / 基本文字
    ========================================================= */
 
-.font-outfit {
-  font-family: "Outfit", system-ui, sans-serif;
+/* 日本語・基本テキスト */
+.font-noto {
+  font-family: "Noto Sans JP",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+  font-optical-sizing: auto;
 }
 
+/* 英字本文・UI */
 .font-lato {
-  font-family: "Lato", system-ui, sans-serif;
+  font-family: "Lato",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+}
+
+/* 英字見出し */
+.font-outfit {
+  font-family: "Outfit",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+}
+
+/* =========================================================
+   Default font
+   ========================================================= */
+
+html,
+body {
+  font-family: "Noto Sans JP",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
 }
