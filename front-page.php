@@ -371,7 +371,7 @@ $news_query = new WP_Query([
 
                     <!-- テキスト -->
                     <div class="p-6">
-                        <time class="block text-l font-noto font-bold tracking-widest text-gray-900" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
+                        <time class="block text-xl font-zen font-bold tracking-widest text-gray-900" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
                         <?php echo esc_html(get_the_date('Y.m.d')); ?>
                         </time>
 

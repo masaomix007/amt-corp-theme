@@ -86,9 +86,10 @@
    Fonts
    ---------------------------------------------------------
    Google Fonts:
-   - Outfit        : 英字見出し / セクションタイトル用
-   - Lato          : 英字本文 / UI 用
-   - Noto Sans JP  : 日本語本文 / UI / 基本文字
+   - Outfit           : 英字見出し / セクションタイトル用
+   - Lato             : 英字見出し（太字など）
+   - Noto Sans JP     : 本文 / UI / 日本語テキスト用
+   - Zen Kaku Gothic New : 日付表示用
    ========================================================= */
 
 /* 日本語・基本テキスト */
@@ -129,6 +130,11 @@
     Arial,
     "Noto Sans",
     sans-serif;
+}
+
+/* 使い方：class="font-zen" */
+.font-zen {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 /* =========================================================
