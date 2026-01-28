@@ -81,3 +81,19 @@
     margin-bottom: 0 !important;
   }
 }
+
+/* =========================================================
+   Fonts
+   ---------------------------------------------------------
+   Google Fonts:
+   - Outfit : 英字見出し / セクションタイトル用
+   - Lato   : 本文 / UI / 日本語テキスト用
+   ========================================================= */
+
+.font-outfit {
+  font-family: "Outfit", system-ui, sans-serif;
+}
+
+.font-lato {
+  font-family: "Lato", system-ui, sans-serif;
+}

@@ -78,24 +78,27 @@ $news_query = new WP_Query([
 ]);
 ?>
 
-<section id="news" class="w-full bg-gray-200 py-14">
-  <!-- 見出し -->
-  <div class="mx-auto max-w-6xl px-4">
-    <div class="text-center">
-      <h2 class="text-5xl font-extrabold tracking-[0.25em] text-gray-700">NEWS</h2>
+<!-- NEWS -->
+<section id="news" class="w-full">
+
+  <!-- 見出し帯（WORKS等と同じ構造） -->
+  <div class="bg-gray-300">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-center">
+      <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">NEWS</h2>
       <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">新着情報</p>
     </div>
   </div>
 
-  <!-- 薄いグレーのブロック（この中に日付＋件名＋VIEW MORE を入れる） -->
-  <div class="mt-10 w-full bg-gray-100">
+  <!-- コンテンツ帯（薄いグレー） -->
+  <div class="bg-gray-100">
     <div class="mx-auto max-w-6xl px-4 py-10">
       <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+
         <!-- 左：日付＋件名 -->
-        <div>
+        <div class="space-y-4">
           <?php if ($news_query->have_posts()): ?>
             <?php while ($news_query->have_posts()): $news_query->the_post(); ?>
-              <div class="flex items-center gap-10 text-xl">
+              <div class="flex items-center gap-10 text-l">
                 <time class="shrink-0 tracking-widest text-gray-700" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
                   <?php echo esc_html(get_the_date('Y.m.d')); ?>
                 </time>
@@ -110,15 +113,213 @@ $news_query = new WP_Query([
           <?php endif; ?>
         </div>
 
-        <!-- 右下：VIEW MORE（薄いグレーの箱の中） -->
+        <!-- 右下：VIEW MORE（同じ薄いグレー帯の中） -->
         <div class="md:text-right">
-            <a
-            class="inline-flex items-center justify-center border border-gray-600 px-10 py-2 text-m tracking-widest text-gray-700 hover:bg-white/50 !no-underline"
-            href="<?php echo esc_url(home_url('/news/')); ?>"
->
-            VIEW MORE
+          <a href="#"
+             class="mt-6 inline-flex items-center justify-center gap-2 border border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+            VIEW MORE <span aria-hidden="true">〉</span>
           </a>
         </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- WORKS -->
+<section class="w-full">
+
+  <!-- 見出し帯（NEWSと同構造） -->
+  <div class="bg-gray-300">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-center">
+      <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">WORKS</p>
+      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">業務内容</p>
+    </div>
+  </div>
+
+  <!-- 説明文（上にマージン追加） -->
+  <p class="mx-auto mt-8 md:mb-20 md:mt-15 max-w-3xl text-center text-xl leading-8 text-gray-700">
+    エー・エム・ティーではWEB・印刷物・動画など<br class="hidden sm:block">
+    幅広い制作をワンストップでサポートします
+  </p>
+
+  <!-- コンテンツ帯 -->
+  <div class="">
+    <div class="mx-auto max-w-6xl px-4 py-10">
+
+      <!-- WORKS 一覧 -->
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <!-- WORKS ITEM -->
+        <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
+        <!-- アイコン：枠線に乗せて、背面の白で枠線を途切れさせる -->
+        <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
+            <img
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-web.png"
+            alt=""
+            class="mx-auto h-32 w-32 object-contain"
+            loading="lazy"
+            decoding="async"
+            >
+        </div>
+
+        <p class="font-outfit text-2xl font-semibold tracking-[0.3em] text-gray-700">
+            WEBSITE
+        </p>
+        <p class="mt-2 text-l text-gray-700">
+            ホームページ制作・運用支援
+        </p>
+
+        <!-- 横線 -->
+        <hr class="mx-auto mt-5 w-60 border-t border-gray-900 border-2" />
+
+        <p class="mt-4 text-m leading-7 text-gray-700">
+            各種WEBサイト<br>LPページ<br>
+            サイトリニューアル　...
+        </p>
+
+        <a href="#"
+            class="mt-6 inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+            VIEW MORE <span aria-hidden="true">〉</span>
+        </a>
+        </div>
+
+        <!-- WORKS ITEM : GRAPHIC -->
+        <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
+
+        <!-- アイコン（枠線に乗せる） -->
+        <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
+            <img
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-graphic.png"
+            alt=""
+            class="mx-auto h-32 w-32 object-contain"
+            loading="lazy"
+            decoding="async"
+            >
+        </div>
+
+        <p class="font-outfit text-2xl font-semibold tracking-[0.3em] text-gray-700">
+            GRAPHIC
+        </p>
+
+        <p class="mt-2 text-l text-gray-700">
+            印刷・グラフィック制作
+        </p>
+
+        <!-- 横線 -->
+        <hr class="mx-auto mt-5 w-60 border-t border-gray-900 border-2" />
+
+        <p class="mt-4 text-sm leading-7 text-gray-700">
+            チラシ／ポスター<br>
+            パンフレット／会社案内<br>
+            ロゴデザイン　...
+        </p>
+
+        <a href="#"
+            class="mt-6 inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+            VIEW MORE <span aria-hidden="true">〉</span>
+        </a>
+        </div>
+
+        <!-- WORKS ITEM : MOVIE -->
+        <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
+
+        <!-- アイコン（枠線に乗せる） -->
+        <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
+            <img
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-movie.png"
+            alt=""
+            class="mx-auto h-32 w-32 object-contain"
+            loading="lazy"
+            decoding="async"
+            >
+        </div>
+
+        <p class="font-outfit text-2xl font-semibold tracking-[0.3em] text-gray-700">
+            MOVIE
+        </p>
+
+        <p class="mt-2 text-l text-gray-700">
+            映像・動画制作
+        </p>
+
+        <!-- 横線 -->
+        <hr class="mx-auto mt-5 w-60 border-t border-gray-900" />
+
+        <p class="mt-4 text-sm leading-7 text-gray-700">
+            企業プロモーション<br>
+            商品・サービス紹介<br>
+            WEB広告動画　...
+        </p>
+
+        <a href="#"
+            class="mt-6 inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+            VIEW MORE <span aria-hidden="true">〉</span>
+        </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="w-full">
+
+  <!-- 見出し帯（NEWSと同一設計） -->
+  <div class="bg-gray-300">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-center">
+      <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">
+        SERVICE
+      </p>
+      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">
+        サービス
+      </p>
+    </div>
+  </div>
+
+  <!-- コンテンツ帯 -->
+  <div class="bg-gray-100">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+
+      <div class="grid gap-10 md:grid-cols-2 items-center">
+
+        <!-- 画像（仮） -->
+        <div>
+          <img
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/service-placeholder.png"
+            alt=""
+            class="w-full rounded-xl object-cover"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+        <!-- テキスト -->
+        <div>
+          <p class="font-outfit text-3xl font-semibold tracking-[0.2em] text-gray-700">
+            デザインサブスク
+          </p>
+
+          <p class="mt-6 text-base leading-8 text-gray-700">
+            WEBサイトの更新、バナー制作、印刷物のデザインなど、<br>
+            日々発生するクリエイティブ業務を<br>
+            月額定額制で柔軟にサポートします。
+          </p>
+
+          <p class="mt-4 text-base leading-8 text-gray-700">
+            社内にデザイナーを抱えることなく、<br>
+            必要なときに、必要な分だけ。<br>
+            エー・エム・ティーがパートナーとして伴走します。
+          </p>
+
+          <a href="#"
+             class="mt-8 inline-flex items-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+            VIEW MORE <span aria-hidden="true">〉</span>
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
