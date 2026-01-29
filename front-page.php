@@ -20,9 +20,9 @@ get_header();
     <div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/20 to-transparent"></div>
 
     <!-- コンテンツ -->
-    <div class="relative mx-auto max-w-6xl px-4 pt-28 md:pt-36 pb-16">
+      <div class="relative mx-auto max-w-6xl px-4 pt-28 md:pt-36 pb-16">
         <!-- Hero内：ロゴ＆キャッチを画像に -->
-        <div class="mb-6">
+        <div class="mb-6 flex justify-center">
         <img
             src="<?php echo esc_url(get_template_directory_uri() . '/images/logo-white.png'); ?>"
             alt="AMT | ART MIND TRUST WEB. DTP. MOVIE DESIGN COMPANY"
@@ -32,6 +32,15 @@ get_header();
         >
         </div>
 
+        <div class="mb-6 flex justify-center py-30">
+        <img
+            src="<?php echo esc_url(get_template_directory_uri() . '/images/top-switch.png'); ?>"
+            alt="scroll"
+            class="w-[38px] max-w-full"
+            loading="eager"
+            decoding="async"
+        >
+        </div>
       <!-- 指定：Noto Sans JP Regular / 18px / 行間29 / 文字間10% -->
       <div class="mt-6 max-w-[720px] font-noto text-[18px] leading-[29px] tracking-[0.1em] font-normal text-white/90">
         <p>デザインで、価値を伝える。</p>
@@ -57,14 +66,15 @@ get_header();
       <!-- ボタン（見た目だけ先に） -->
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-           class="inline-flex items-center rounded-full bg-white px-6 py-3 text-[14px] font-medium tracking-[0.08em] text-zinc-900">
+           class="inline-flex items-center rounded-full bg-white px-6 py-3 text-[14px] font-medium tracking-[0.08em] text-zinc-900 !no-underline">
           お問い合わせ
         </a>
-
+        <!--
         <a href="<?php echo esc_url(home_url('/company/')); ?>"
            class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-6 py-3 text-[14px] font-medium tracking-[0.08em] text-white">
           会社情報
         </a>
+        -->
       </div>
     </div>
   </section>
@@ -339,17 +349,16 @@ $news_query = new WP_Query([
     ]);
     ?>
 
-  <section id="blog" class="w-full bg-gray-300">
+  <section id="blog" class="w-full">
   <!-- 見出し帯（NEWSと同構造） -->
-  <div class="bg-gray-300 py-14">
+  <div class="bg-gray-300 py-10">
     <div class="mx-auto max-w-6xl text-center">
-      <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">BLOG</p>
+      <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">BLOG</h2>
       <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">ブログ</p>
     </div>
   </div>
-
     <!-- 薄いグレーのブロック -->
-    <div class="mt-10 w-full bg-gray-100">
+    <div class="w-full bg-gray-100">
         <div class="mx-auto px-10 py-20">
 
             <div class="grid gap-8 md:grid-cols-4">
@@ -535,6 +544,76 @@ $news_query = new WP_Query([
         </div>
       </div>
     </section>
+
+<!-- CONTACT -->
+<section id="contact" class="w-full bg-gray-300">
+  <!-- 見出し（NEWSと同一） -->
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="text-center">
+      <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">CONTACT</h2>
+      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">お問い合わせ</p>
+    </div>
+  </div>
+
+  <!-- 薄いグレーのブロック -->
+  <div class="mt-10 w-full bg-gray-100">
+    <div class="mx-auto max-w-6xl px-4 py-20">
+
+      <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
+
+        <!-- お問い合わせボタン -->
+        <div class="mx-auto w-full max-w-xl text-center">
+          <a
+            href="/contact/"
+            class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
+          >
+            <!-- icon (mail) -->
+             <!--
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
+              <img
+                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-email.png"
+                alt=""
+                class="block w-[38px] object-contain"
+                loading="lazy"
+                decoding="async"
+              >
+            </span>
+                -->
+            <span class="font-noto text-xl font-bold tracking-widest">お問い合わせ</span>
+          </a>
+        </div>
+
+        <!-- 電話ボタン + 補足 -->
+        <div class="mx-auto w-full max-w-xl text-center">
+          <a
+            href="tel:0542864085"
+            class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
+            aria-label="電話をかける 054-286-4085"
+          >
+            <!-- icon (phone) -->
+             <!--
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
+              <img
+                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-tel.png"
+                alt=""
+                class="block w-[18px] object-contain"
+                loading="lazy"
+                decoding="async"
+              >
+            </span>
+                -->
+            <span class="font-noto text-xl font-bold tracking-widest">054-286-4085</span>
+          </a>
+
+          <p class="mt-6 font-noto text-sm font-bold tracking-widest text-gray-800">
+            受付9：00〜18：00（土日祝除く）
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
