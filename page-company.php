@@ -66,9 +66,9 @@ get_header();
             <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">選ばれる理由</p>
         </div>
         
-        <div class="w-full bg-gray-100 md:bg-[linear-gradient(90deg,#f3f4f6_50%,#ffffff_50%)]">
+        <div class="w-full flex flex-col md:block bg-gray-100 md:bg-[linear-gradient(90deg,#f3f4f6_50%,#ffffff_50%)]">
             <div class="container mx-auto max-w-5xl">
-                <div class="grid md:grid-cols-2">
+                <div class="grid grid-cols-1 md:grid-cols-2">
                     
                     <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-6 md:pr-12 lg:pr-16">
                         <div class="text-sm leading-7 md:leading-8 text-gray-700 font-noto">
@@ -84,7 +84,7 @@ get_header();
                     </div>
                     
                     <div class="bg-white md:bg-transparent py-16 md:py-24 px-6 md:pl-12 lg:pl-16 text-center">
-                        <h4 class="inline-block border border-black px-25  py-1 mb-12 font-bold tracking-widest text-lg">企 業 理 念</h4>
+                        <h4 class="inline-block border border-black px-20 py-3 mb-12 font-bold tracking-widest text-lg">企 業 理 念</h4>
                         
                         <div class="space-y-10 font-noto">
                             <div>
@@ -142,20 +142,33 @@ get_header();
         </div>
         <div class="bg-gray-100 py-16 md:py-24">
             <div class="container mx-auto max-w-5xl px-6">
-                <h4 class="text-xl md:text-2xl font-bold mb-10 border-b-2 border-black pb-4 inline-block tracking-widest">情報を、価値に変える。</h4>
+                <h4 class="text-xl md:text-2xl font-bold mb-10 border-b-2 border-black pb-6 block w-full tracking-widest">
+                    情報を、価値に変える。
+                </h4>
+
                 <div class="grid md:grid-cols-[1fr_300px] gap-12 items-start">
                     <div class="text-sm leading-8 text-gray-700 font-noto space-y-6">
                         <p>情報過多の時代。本当に届けたいメッセージが埋もれてしまう。<br>そんな課題を、私たちはデザインの力で解決します。静岡を拠点としながら、<br> オンラインを活用して全国のお客様とお取引させていただいています。</p>
                         <p>紙・WEB・動画。それぞれのメディア特性を活かし、最適な組み合わせで、<br>想いを「伝わるカタチ」にすることが私たちの使命です。</p>
                         <p>AI時代だからこそ、人の心に響くデザインを。データでは測れない共感と<br>信頼を、私たちは大切にしています。<br>技術と感性を融合させ、お客様一人ひとりと真摯に向き合いながら、<br>最適なソリューションをご提案します。</p>
                         <p>ビジネスパートナーとして、新しい価値創造をご一緒させてください。</p>
-                        <p class="pt-4 font-bold">代表取締役社長　皆川 智教</p>
                     </div>
+                    
                     <div class="w-full">
                         <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-ceo.webp" alt="CEO" class="w-full h-auto object-cover shadow-md grayscale-[20%]">
-                        <div class="mt-4 flex justify-between items-end text-sm">
-                             <div><p class="font-bold">代表取締役</p><p class="text-xs text-gray-500">CEO</p></div>
-                             <div class="text-right"><p class="font-bold text-lg">皆川 智教</p><p class="text-xs text-gray-500 font-outfit">Tomonori Minagawa</p></div>
+                        
+                        <div class="mt-6 font-noto text-gray-800">
+                             <p class="text-xs font-bold mb-4">株式会社エー・エム・ティー</p>
+                             
+                             <div class="flex items-end justify-between">
+                                 <div>
+                                     <p class="text-xs font-bold mb-1">代表取締役社長</p>
+                                     <p class="text-xl font-bold tracking-[0.2em]">皆川　智教</p>
+                                 </div>
+                                 <a href="https://www.instagram.com/37kawa/" target="_blank" class="hover:opacity-70 mb-1">
+                                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-instagram-white.png" alt="IG" class="w-8 h-8 object-contain invert">
+                                 </a>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -163,22 +176,55 @@ get_header();
         </div>
     </section>
 
+
     <section id="access" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
             <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">ACCESS</h3>
             <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">交通アクセス</p>
         </div>
         <div class="bg-white py-16 md:py-24">
-             <div class="container mx-auto max-w-5xl px-6 grid md:grid-cols-2 gap-12">
-                <div>
-                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-building.webp" alt="Building" class="w-full h-64 object-cover mb-6 grayscale-[20%]">
-                     <h5 class="font-bold text-lg mb-2">〒422-8046</h5>
-                     <p class="font-bold text-lg mb-4">静岡県静岡市駿河区中島153-2</p>
-                     <p class="text-xs text-gray-500 leading-6 font-outfit">153-2 NAKAZIMA, SURUGA-KU, SHIZUOKA-SHI,<br>SHIZUOKA, 422-8046 ,JAPAN</p>
+             <div class="container mx-auto max-w-5xl px-6">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    
+                    <div class="w-full h-[300px] md:h-[400px] order-1 md:order-1">
+                         <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-building.webp" alt="Building" class="w-full h-full object-cover grayscale-[20%]">
+                    </div>
+
+                    <div class="w-full h-[300px] md:h-[400px] bg-gray-100 border border-gray-300 order-3 md:order-2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.366978432321!2d138.3895690757538!3d34.94754797283287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a49f5087c9789%3A0xc39113612e457597!2z77yI5qCq77yJ44Ko44O844O744Ko44Og44O744OG44Kj44O8!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0; filter: grayscale(1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="order-2 md:order-3 md:col-span-2 font-noto">
+                        
+                         <div class="mb-8">
+                             <p class="font-bold text-l mb-1">〒422-8046</p>
+                             <p class="font-bold text-l mb-2">静岡県静岡市駿河区中島153-2</p>
+                             <p class="text-xs text-gray-500 font-outfit uppercase tracking-wider">
+                                 153-2 NAKAZIMA, SURUGA-KU, SHIZUOKA-SHI, SHIZUOKA  AMT inc.
+                             </p>
+                         </div>
+
+                         <div class="border-t-2 border-black pt-6">
+                          <dl class="grid grid-cols-1 gap-y-4 text-sm font-noto leading-relaxed">
+                              
+                              <div class="block md:grid md:grid-cols-[200px_1fr] md:items-baseline">
+                                  <dt class="font-bold mb-1 md:mb-0">車でのアクセス</dt>
+                                  <dd class="font-bold pl-4 md:pl-0 text-gray-700">&gt; 静岡ICから車で3分</dd>
+                              </div>
+
+                              <div class="block md:grid md:grid-cols-[200px_1fr] md:items-baseline">
+                                  <dt class="font-bold mb-1 md:mb-0">バスでのアクセス</dt>
+                                  <dd class="font-bold pl-4 md:pl-0 text-gray-700">&gt; しずてつジャストライン 静岡IC入口から徒歩3分</dd>
+                              </div>
+
+                          </dl>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="h-[300px] md:h-full bg-gray-100 border border-gray-300">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.366978432321!2d138.3895690757538!3d34.94754797283287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a49f5087c9789%3A0xc39113612e457597!2z77yI5qCq77yJ44Ko44O844O744Ko44Og44O744OG44Kj44O8!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0; filter: grayscale(1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+
              </div>
         </div>
     </section>
