@@ -1,6 +1,4 @@
-<?php
-get_header();
-?>
+<?php get_header('home'); ?>
 
 <main id="main" class="min-h-screen">
 
@@ -568,17 +566,15 @@ $news_query = new WP_Query([
             class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
           >
             <!-- icon (mail) -->
-             <!--
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
                 src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-email.png"
                 alt=""
-                class="block w-[38px] object-contain"
+                class="block h-12 w-12 object-contain"
                 loading="lazy"
                 decoding="async"
               >
             </span>
-                -->
             <span class="font-noto text-xl font-bold tracking-widest">お問い合わせ</span>
           </a>
         </div>
@@ -591,17 +587,15 @@ $news_query = new WP_Query([
             aria-label="電話をかける 054-286-4085"
           >
             <!-- icon (phone) -->
-             <!--
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
                 src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-tel.png"
                 alt=""
-                class="block w-[18px] object-contain"
+                class="block h-10 w-10 object-contain"
                 loading="lazy"
                 decoding="async"
               >
             </span>
-                -->
             <span class="font-noto text-xl font-bold tracking-widest">054-286-4085</span>
           </a>
 

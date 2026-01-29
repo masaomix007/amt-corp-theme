@@ -1,18 +1,12 @@
 /* =========================================================
-   Tailwind CSS
-   ========================================================= */
-@import 'tailwindcss';
-
-
-/* =========================================================
-   Google Fonts (loaded here)
-   - Outfit : 英字見出し / セクションタイトル用
-   - Lato   : 英字見出し（太字など）
-   - Noto Sans JP : 本文 / UI / 日本語テキスト用
-   - Zen Kaku Gothic New : 日付表示用
+   修正点1：Google Fonts を必ず「1行目」に書く
    ========================================================= */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Noto+Sans+JP:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
 
+/* =========================================================
+   Tailwind CSS
+   ========================================================= */
+@import 'tailwindcss';
 
 /* =========================================================
    Theme & Utilities
@@ -20,12 +14,10 @@
 @import './theme.css';
 @import './utilities.css';
 
-
 /* =========================================================
-   Custom styles (fonts / overrides / utilities)
+   Custom styles
    ========================================================= */
 @import './custom.css' layer(utilities);
-
 
 /* =========================================================
    TailPress source scan
@@ -33,6 +25,12 @@
 @source '../../vendor/tailpress/framework/**/*.php';
 @source '../../vendor/tailpress/framework/**/**/*.php';
 
+/* 修正点2：テーマファイル（header.phpなど）を監視対象に追加
+   ★これを書かないと、あなたが書いたPHPのクラスが無視されてしまいます
+*/
+@source '../**/*.php';
+@source '../template-parts/**/*.php';
+@source '../functions.php';
 
 /* =========================================================
    Custom utilities
@@ -42,9 +40,8 @@
   padding-inline: 2rem;
 }
 
-
 /* =========================================================
-   Tailwind v4 compatibility (border color)
+   Tailwind v4 compatibility
    ========================================================= */
 @layer base {
   *,
