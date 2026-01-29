@@ -508,7 +508,7 @@ $news_query = new WP_Query([
                 </p>
                 -->
 
-                <dl class="grid grid-cols-2 gap-x-8 gap-y-5 text-sm leading-7">
+                <dl class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-x-8 gap-y-5 text-sm leading-7">
                   <dt class="font-bold tracking-widest">会社名</dt>
                   <dd>株式会社AMT（エー・エム・ティー）</dd>
 
