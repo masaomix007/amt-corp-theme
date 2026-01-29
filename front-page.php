@@ -165,7 +165,7 @@ $news_query = new WP_Query([
         <!-- アイコン：枠線に乗せて、背面の白で枠線を途切れさせる -->
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-web.png"
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-web.svg"
             alt=""
             class="mx-auto h-32 w-32 object-contain"
             loading="lazy"
@@ -200,7 +200,7 @@ $news_query = new WP_Query([
         <!-- アイコン（枠線に乗せる） -->
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-graphic.png"
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-graphic.svg"
             alt=""
             class="mx-auto h-32 w-32 object-contain"
             loading="lazy"
@@ -237,7 +237,7 @@ $news_query = new WP_Query([
         <!-- アイコン（枠線に乗せる） -->
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-movie.png"
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-movie.svg"
             alt=""
             class="mx-auto h-32 w-32 object-contain"
             loading="lazy"

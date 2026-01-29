@@ -6,12 +6,12 @@ get_header();
 ?>
 
 <main class="w-full pt-20">
-    
+
     <div class="relative h-[250px] md:h-[300px] w-full overflow-hidden bg-gray-200">
         <div class="absolute inset-0">
-             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-hero.webp" alt="Company Hero" class="w-full h-full object-cover">
+          <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-hero.webp" alt="Company Hero" class="w-full h-full object-cover">
         </div>
-        
+
         <div class="bg-black/60 absolute inset-0 flex flex-col items-center justify-center text-white">
             <div class="border-2 border-white px-20 py-2 backdrop-blur-[2px]">
                 <h1 class="font-lato text-3xl md:text-4xl font-bold tracking-[0.2em]">COMPANY</h1>
@@ -22,13 +22,13 @@ get_header();
 
     <section class="py-16 md:py-20 bg-white">
         <div class="container mx-auto max-w-4xl px-4 text-center">
-            
+
             <div class="mb-16">
-                <div class="w-20 mx-auto mb-4">
+                <div class="w-30 mx-auto mb-4">
                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company.svg" alt="" class="w-full h-auto object-contain">
                 </div>
-                <h2 class="font-outfit text-2xl font-bold tracking-[0.2em] text-gray-800 mb-1">ABOUT US</h2>
-                <p class="font-noto text-sm tracking-widest text-gray-800">私たちについて</p>
+                <h2 class="font-outfit text-3xl font-bold tracking-[0.2em] text-gray-800 mb-1">ABOUT US</h2>
+                <p class="font-noto text-base tracking-widest text-gray-800">私たちについて</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
@@ -65,27 +65,27 @@ get_header();
             <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">VALUE</h3>
             <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">選ばれる理由</p>
         </div>
-        
+
         <div class="w-full flex flex-col md:block bg-gray-100 md:bg-[linear-gradient(90deg,#f3f4f6_50%,#ffffff_50%)]">
             <div class="container mx-auto max-w-5xl">
                 <div class="grid grid-cols-1 md:grid-cols-2">
-                    
+
                     <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-6 md:pr-12 lg:pr-16">
                         <div class="text-sm leading-7 md:leading-8 text-gray-700 font-noto">
                             <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">40年以上の経験と豊富な実績</h4>
                             <p class="mb-6">経験豊富なデザイナーから感度の高い若手まで、多様な視点で年齢・性別・ジャンルにとらわれずデザイン制作に取り組みます。</p>
-                            
+
                             <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">コミュニケーションを大切にした制作体制</h4>
                             <p class="mb-6">より良いデザインを実現するには、イメージや方向性の共有が不可欠です。私たちは、スピード感を持ったコミュニケーションと柔軟なフットワークを重視しています。</p>
-                            
+
                             <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">信頼のネットワークで多様なニーズに対応</h4>
                             <p>掲載内容以外のご要望でも、デザインに関わる事なら柔軟に対応いたします。豊富な実績と幅広い取引先とのつながりを活かし、最適なご提案をお届けします。</p>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white md:bg-transparent py-16 md:py-24 px-6 md:pl-12 lg:pl-16 text-center">
                         <h4 class="inline-block border border-black px-20 py-3 mb-12 font-bold tracking-widest text-lg">企 業 理 念</h4>
-                        
+
                         <div class="space-y-10 font-noto">
                             <div>
                                 <p class="font-outfit font-bold text-2xl tracking-[0.2em] mb-3 text-gray-800">A<span class="text-gray-400">RT</span></p>
