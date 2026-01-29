@@ -458,7 +458,7 @@ $news_query = new WP_Query([
             <!-- アイコン（枠線に乗せる） -->
             <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-6">
               <img
-                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company.png"
+                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company.svg"
                 alt=""
                 class="h-32 w-32 object-contain"
                 loading="lazy"
