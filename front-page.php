@@ -83,7 +83,7 @@ $news_query = new WP_Query([
 <section id="news" class="w-full">
 
   <!-- 見出し帯（WORKS等と同じ構造） -->
-  <div class="bg-gray-300 ">
+  <div class="bg-gray-300">
     <div class="mx-auto max-w-6xl px-4 py-8 text-center">
       <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">NEWS</h2>
       <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">新着情報</p>
@@ -339,14 +339,14 @@ $news_query = new WP_Query([
     ]);
     ?>
 
-    <section id="blog" class="w-full bg-gray-300 py-14">
-    <!-- 見出し（NEWSと同一） -->
-    <div class="mx-auto max-w-6xl px-4">
-        <div class="text-center">
-        <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">BLOG</h2>
-        <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">ブログ</p>
-        </div>
+  <section id="blog" class="w-full bg-gray-300">
+  <!-- 見出し帯（NEWSと同構造） -->
+  <div class="bg-gray-300 py-14">
+    <div class="mx-auto max-w-6xl text-center">
+      <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">BLOG</p>
+      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">ブログ</p>
     </div>
+  </div>
 
     <!-- 薄いグレーのブロック -->
     <div class="mt-10 w-full bg-gray-100">
@@ -432,6 +432,109 @@ $news_query = new WP_Query([
     </div>
     </section>
 
+    <section id="company" class="w-full bg-gray-300 py-14">
+      <!-- 見出し（NEWSと同一） -->
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">COMPANY</h2>
+          <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">会社案内</p>
+        </div>
+      </div>
+
+      <!-- 薄いグレーのブロック（この中にカードを入れる） -->
+      <div class="mt-10 w-full bg-white">
+        <div class="mx-auto max-w-6xl px-4 py-20">
+
+          <!-- COMPANY CARD（WORKSの枠線・アイコン構造を流用） -->
+          <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-10 pt-20">
+
+            <!-- アイコン（枠線に乗せる） -->
+            <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-6">
+              <img
+                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company.png"
+                alt=""
+                class="h-32 w-32 object-contain"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <p class="text-center font-outfit text-2xl font-semibold tracking-[0.3em] text-gray-700">
+              ABOUT&nbsp;US
+            </p>
+            <p class="mt-2 text-center text-l text-gray-700">
+              私たちについて
+            </p>
+
+            <!-- 中身：左MAP / 右テキスト -->
+            <div class="grid gap-10 md:grid-cols-2 md:items-start py-20">
+
+              <!-- 左：MAP -->
+              <div>
+                <div class="overflow-hidden border-2 border-gray-300 bg-white">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.3512271917957!2d138.3884953!3d34.9478046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a49cfe3fd7c77%3A0x110ca5013982658f!2z44Ko44O844O744Ko44Og44O744OG44Kj44O8!5e0!3m2!1sja!2sjp!4v1769586596088!5m2!1sja!2sjp"
+                    width="100%"
+                    height="420"
+                    style="border:0; filter: grayscale(1);"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+
+                <!-- ボタン（中央寄せ） -->
+                <div class="mt-6 flex justify-center">
+                  <a
+                    href="/company/"
+                    class="inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-10 py-3 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline"
+                  >
+                    VIEW MORE <span aria-hidden="true">〉</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- 右：会社情報 -->
+              <div class="text-gray-700">
+                <!--
+                <p class="font-noto text-xl font-bold tracking-widest text-gray-900">
+                  株式会社エー・エム・ティー
+                </p>
+                -->
+
+                <dl class="grid grid-cols-2 gap-x-8 gap-y-5 text-sm leading-7">
+                  <dt class="font-bold tracking-widest">会社名</dt>
+                  <dd>株式会社AMT（エー・エム・ティー）</dd>
+
+                  <dt class="font-bold tracking-widest">住　所</dt>
+                  <dd>〒422-8046 静岡県静岡市駿河区中島153-2</dd>
+
+                  <dt class="font-bold tracking-widest">ＴＥＬ</dt>
+                  <dd>054-286-4085</dd>
+
+                  <dt class="font-bold tracking-widest">ＦＡＸ</dt>
+                  <dd>054-286-7992</dd>
+
+                  <dt class="font-bold tracking-widest">設　立</dt>
+                  <dd>1985年12月2日</dd>
+
+                  <dt class="font-bold tracking-widest">資本金</dt>
+                  <dd>10,000,000円</dd>
+
+                  <dt class="font-bold tracking-widest">従業員数</dt>
+                  <dd>13名</dd>
+
+                  <dt class="font-bold tracking-widest">業務内容</dt>
+                  <dd>
+                    ホームページ制作／Web運営支援／広告・印刷物／グラフィックデザイン／パッケージデザイン／ロゴデザイン／販促ツール制作／ノベルティ制作／映像・動画制作
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
 </main>
 
