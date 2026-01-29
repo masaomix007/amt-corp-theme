@@ -17,25 +17,25 @@
                     <p class="mb-4 text-sm font-normal">業務内容</p>
                     <ul class="flex flex-col border-t border-gray-800">
                         <li>
-                            <a href="#" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
+                            <a href="<?php echo esc_url(home_url('/works/website/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm">ホームページ制作・運用支援</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
+                            <a href="<?php echo esc_url(home_url('/works/graphic/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm">印刷・グラフィック制作</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
+                            <a href="<?php echo esc_url(home_url('/works/movie/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm">映像・動画制作</span>
                             </a>
                         </li>
                          <li>
-                            <a href="#" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
+                            <a href="<?php echo esc_url(home_url('/service/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm">サービス（デザインサブスク）</span>
                             </a>
@@ -46,19 +46,19 @@
                 <div class="w-full lg:w-1/2 lg:pt-9">
                      <ul class="flex flex-col border-t lg:border-t-0 border-gray-800">
                         <li>
-                            <a href="#" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors lg:border-t">
+                            <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors lg:border-t">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm font-outfit tracking-widest">BLOG</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
+                            <a href="<?php echo esc_url(home_url('/company/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm">会社案内</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
+                            <a href="https://en-gage.net/amt_design/" target="_blank" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm">採用情報</span>
                             </a>
@@ -88,10 +88,10 @@
             <div class="w-full lg:w-1/2">
                 
                 <div class="lg:hidden flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-xs mb-8">
-                     <a href="#" class="!no-underline hover:text-gray-300">お問い合わせ</a>
+                     <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline hover:text-gray-300">お問い合わせ</a>
                      <span class="h-3 w-px bg-white"></span>
                      <a href="tel:0542864085" class="!no-underline hover:text-gray-300 font-outfit">054-286-4085</a>
-                     <span class="hidden xs:inline h-3 w-px bg-white"></span> <a href="#" class="!no-underline hover:text-gray-300 w-full xs:w-auto text-center mt-1 xs:mt-0">プライバシーポリシー</a>
+                     <span class="hidden xs:inline h-3 w-px bg-white"></span> <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="!no-underline hover:text-gray-300 w-full xs:w-auto text-center mt-1 xs:mt-0">プライバシーポリシー</a>
                 </div>
 
                 <div class="text-center lg:text-left text-sm leading-7 mb-10 lg:mb-0">
@@ -124,11 +124,11 @@
                 </div>
 
                 <div class="hidden lg:flex justify-end items-center gap-6 text-sm mb-1">
-                     <a href="#" class="!no-underline hover:text-gray-300 transition-colors">お問い合わせ</a>
+                     <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline hover:text-gray-300 transition-colors">お問い合わせ</a>
                      <span class="h-3 w-px bg-white"></span>
                      <span class="font-outfit tracking-widest">054-286-4085</span>
                      <span class="h-3 w-px bg-white"></span>
-                     <a href="#" class="!no-underline hover:text-gray-300 transition-colors">プライバシーポリシー</a>
+                     <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="!no-underline hover:text-gray-300 transition-colors">プライバシーポリシー</a>
                 </div>
 
             </div>

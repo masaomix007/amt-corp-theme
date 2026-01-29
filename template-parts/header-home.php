@@ -145,7 +145,7 @@
       </div>
 
       <div class="border-b border-gray-700 pb-4">
-        <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="!no-underline block w-full text-sm hover:text-gray-300 flex items-center gap-2">
+        <a href="https://en-gage.net/amt_design/" target="_blank" class="!no-underline block w-full text-sm hover:text-gray-300 flex items-center gap-2">
           <span class="text-xs">&gt;</span> 採用情報
         </a>
       </div>
