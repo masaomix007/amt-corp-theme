@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ホームページ制作
+ * Template Name: 印刷・グラフィック制作
  */
 get_header(); 
 ?>
@@ -9,14 +9,14 @@ get_header();
 
     <div class="relative h-[250px] md:h-[300px] w-full overflow-hidden bg-gray-200">
         <div class="absolute inset-0">
-             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/website-hero.webp" alt="Website Hero" class="w-full h-full object-cover">
+             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/graphic-hero.webp" alt="Graphic Hero" class="w-full h-full object-cover">
         </div>
         
         <div class="bg-black/60 absolute inset-0 flex flex-col items-center justify-center text-white">
             <div class="border-2 border-white px-20 py-2 backdrop-blur-[2px]">
-                <h1 class="font-lato text-3xl md:text-4xl font-bold tracking-[0.2em]">WEBSITE</h1>
+                <h1 class="font-lato text-3xl md:text-4xl font-bold tracking-[0.2em]">GRAPHIC</h1>
             </div>
-            <p class="font-noto text-sm md:text-base tracking-[0.2em] mt-4">ホームページ制作・運用支援</p>
+            <p class="font-noto text-sm md:text-base tracking-[0.2em] mt-4">印刷・グラフィック制作</p>
         </div>
     </div>
 
@@ -25,7 +25,7 @@ get_header();
             
             <div class="text-center mb-16">
                 <div class="w-30 mx-auto mb-4">
-                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-web.svg" alt="" class="w-full h-auto object-contain">
+                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-graphic.svg" alt="" class="w-full h-auto object-contain">
                 </div>
                 <h2 class="font-outfit text-3xl font-bold tracking-[0.2em] text-gray-800 mb-1">SERVICE</h2>
                 <p class="font-noto text-base tracking-widest text-gray-800">提供サービス</p>
@@ -38,9 +38,9 @@ get_header();
                         <div class="w-12 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
-                        <h3 class="font-bold text-lg md:text-xl text-gray-800">企業向けサイト</h3>
+                        <h3 class="font-bold text-lg md:text-xl text-gray-800">ポスター</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">コーポレートサイトや採用サイト等、企業価値の向上に繋がるサイトを構築</p>
+                    <p class="text-base text-gray-600 leading-7">イベント告知や商品PRなど、視覚的インパクトで注目を集めるデザインを制作します</p>
                 </div>
 
                 <div>
@@ -48,9 +48,9 @@ get_header();
                         <div class="w-12 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
-                        <h3 class="font-bold text-lg md:text-xl text-gray-800">EC（通販）サイト</h3>
+                        <h3 class="font-bold text-lg md:text-xl text-gray-800">チラシ・フライヤー</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">人気のネットショップサービスに対応した通販サイトを構築します</p>
+                    <p class="text-base text-gray-600 leading-7">サービスや商品情報を分かりやすく伝え、集客や認知拡大につなげるデザインを作成します </p>
                 </div>
 
                 <div>
@@ -58,9 +58,9 @@ get_header();
                         <div class="w-12 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
-                        <h3 class="font-bold text-lg md:text-xl text-gray-800">LP(ランディングページ)</h3>
+                        <h3 class="font-bold text-lg md:text-xl text-gray-800">流通業チラシ</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">広告や検索で集客したお客様を成果につなげるページとして構築</p>
+                    <p class="text-base text-gray-600 leading-7">スーパーや小売向けの販促チラシを、売り場で目を引く構成とデザインで制作します</p>
                 </div>
 
                 <div>
@@ -68,9 +68,9 @@ get_header();
                         <div class="w-12 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
-                        <h3 class="font-bold text-lg md:text-xl text-gray-800">サイト運用支援</h3>
+                        <h3 class="font-bold text-lg md:text-xl text-gray-800">会社案内・カタログ</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">社内にWeb担当がいなくても安心、専任が更新・解析・改善を一括代行</p>
+                    <p class="text-base text-gray-600 leading-7">企業や商品の魅力を整理し、読み手に伝わる形で表現する印刷物を制作します</p>
                 </div>
 
                 <div>
@@ -78,9 +78,9 @@ get_header();
                         <div class="w-12 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
-                        <h3 class="font-bold text-lg md:text-xl text-gray-800">SNS運用サポート</h3>
+                        <h3 class="font-bold text-lg md:text-xl text-gray-800">ロゴデザイン</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">戦略と手間が必要なSNS運用は、専任が企画からコンテンツ制作までサポート</p>
+                    <p class="text-base text-gray-600 leading-7">企業やブランドの個性・理念を反映した、覚えやすく印象に残るロゴを制作します</p>
                 </div>
 
                 <div>
@@ -88,9 +88,9 @@ get_header();
                         <div class="w-12 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
-                        <h3 class="font-bold text-lg md:text-xl text-gray-800">サイトリニューアル</h3>
+                        <h3 class="font-bold text-lg md:text-xl text-gray-800">販促用ツール</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">スマホ対応を含め、サイトを使いやすく、成果につながる形にリニューアルします</p>
+                    <p class="text-base text-gray-600 leading-7">POPやノベルティなど、販売促進やブランディングに活用できる各種ツールを制作します</p>
                 </div>
 
             </div>
@@ -126,7 +126,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">ヒアリング</h4>
-                             <p class="text-sm text-gray-600 leading-7">課題を整理し、目的・ターゲット・競合・ブランドイメージ等を伺い、サイトの方向性を明確にします。</p>
+                             <p class="text-sm text-gray-600 leading-7">課題や目的を共有し、ターゲットや配布シーン、媒体の仕様などを伺い、伝えたい内容と方向性を明確にします。</p>
                          </div>
                     </div>
 
@@ -135,8 +135,8 @@ get_header();
                              <span class="text-sm font-outfit font-bold whitespace-nowrap tracking-wider">STEP 03</span>
                          </div>
                          <div class="pt-2">
-                             <h4 class="font-bold text-lg mb-3">目標設定</h4>
-                             <p class="text-sm text-gray-600 leading-7">ヒアリング結果をもとにゴール（KPI）やデザイン方針を策定し、Webサイト全体の構成や戦略を設計します。</p>
+                             <h4 class="font-bold text-lg mb-3">企画・構成</h4>
+                             <p class="text-sm text-gray-600 leading-7">ヒアリング結果をもとに紙面構成とコンセプトを設計し、目的に沿ったレイアウトやビジュアルの方向性を検討します。</p>
                          </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">デザイン提案</h4>
-                             <p class="text-sm text-gray-600 leading-7">戦略とコンセプトをもとに、サイト構成とビジュアル案をご提案。ご了承後、デザイン制作へ進みます。</p>
+                             <p class="text-sm text-gray-600 leading-7">構成案に基づき、レイアウト・コピー・ビジュアルなどを制作します。媒体の特性を活かした効果的なデザインに仕上げます。</p>
                          </div>
                     </div>
 
@@ -161,8 +161,8 @@ get_header();
                              <span class="text-sm font-outfit font-bold whitespace-nowrap tracking-wider">STEP 05</span>
                          </div>
                          <div class="pt-2">
-                             <h4 class="font-bold text-lg mb-3">制作・構築</h4>
-                             <p class="text-sm text-gray-600 leading-7">ご提案内容をもとに、キービジュアルや各ページのデザインを制作します。その後、動作確認と管理機能の設定を行います。</p>
+                             <h4 class="font-bold text-lg mb-3">確認・修正  </h4>
+                             <p class="text-sm text-gray-600 leading-7">デザイン案をご確認いただき、内容やデザインの修正を行います。ご要望に応じて調整し、仕上がりを整えていきます。</p>
                          </div>
                     </div>
 
@@ -172,7 +172,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">納品・運用</h4>
-                             <p class="text-sm text-gray-600 leading-7">公開前に最終確認を行い、問題がなければサイトを公開します。納品後も安心して運用できるよう、管理環境を整えます。</p>
+                             <p class="text-sm text-gray-600 leading-7">色校正や検品を経て、責任をもって印刷・加工し、ご指定の場所に納品いたします。データ納品にも対応可能です。</p>
                          </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@ get_header();
             </div>
 
             <div class="w-full">
-                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/website-workflow.webp" alt="Work Flow" class="w-full h-[250px] md:h-[400px] object-cover shadow-lg">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/graphic-workflow.webp" alt="Graphic Work Flow" class="w-full h-[250px] md:h-[400px] object-cover shadow-lg">
             </div>
 
         </div>
@@ -199,7 +199,7 @@ get_header();
             <div class="flex flex-col-reverse md:flex-row items-center gap-12">
                 
                 <div class="w-full md:w-1/2 flex justify-center">
-                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/website-solution.webp" alt="Solution" class="w-3/4 md:w-full h-auto object-contain">
+                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/graphic-solution.webp" alt="Solution" class="w-3/4 md:w-full h-auto object-contain">
                 </div>
 
                 <div class="w-full md:w-1/2">
@@ -211,7 +211,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <span class="text-sm md:text-base font-bold text-gray-800">スマホに最適化されていない為、文字が小さく見づらい</span>
+                            <span class="text-sm md:text-base font-bold text-gray-800">新しい商品・サービスの魅力を効果的に伝えたい</span>
                         </li>
 
                         <li class="flex items-center gap-4">
@@ -220,7 +220,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <span class="text-sm md:text-base font-bold text-gray-800">限られた予算で効果的なサイトを作りたい</span>
+                            <span class="text-sm md:text-base font-bold text-gray-800">ブランディングが出来ていない</span>
                         </li>
 
                         <li class="flex items-center gap-4">
@@ -229,7 +229,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <span class="text-sm md:text-base font-bold text-gray-800">訪問者が少なく、問い合わせにつながらない</span>
+                            <span class="text-sm md:text-base font-bold text-gray-800">既存のパンフレットやカタログを刷新したい</span>
                         </li>
 
                         <li class="flex items-center gap-4">
@@ -238,7 +238,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <span class="text-sm md:text-base font-bold text-gray-800">更新や管理に手間がかかる</span>
+                            <span class="text-sm md:text-base font-bold text-gray-800">折り込みチラシの効果を実感できない</span>
                         </li>
 
                         <li class="flex items-center gap-4">
@@ -247,7 +247,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <span class="text-sm md:text-base font-bold text-gray-800">SEO や SNS との連携が不十分</span>
+                            <span class="text-sm md:text-base font-bold text-gray-800">手間のかかるデザイン・印刷作業に悩んでいる</span>
                         </li>
 
                         <li class="flex items-center gap-4">
@@ -256,7 +256,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <span class="text-sm md:text-base font-bold text-gray-800">社内にWebの専門知識を持つ専任担当がいない</span>
+                            <span class="text-sm md:text-base font-bold text-gray-800">複数媒体で統一感のあるデザインにしたい</span>
                         </li>
 
                     </ul>
@@ -280,14 +280,14 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>ホームページの制作費はどのくらいですか？</span>
+                            <span>費用を教えてください</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
                         <p class="text-sm text-gray-700 leading-7">
-                            ページ数やワードプレスを使用するかなどにもよりますが、平均すると30万〜70万程度の受注をいただいております。ランディングページ（LP）1ページからお受けいたしますので、その場合の費用はよりお安くなります。まずはお気軽にお問い合わせください。
+                            ツールの種類（パンフレット、ポスター、カタログなど）やボリュームによって幅があります。デザインの内容、ボリューム、納期などがわかりましたら概算を提示することもできます。お気軽にお問い合わせください。
                         </p>
                     </div>
                 </div>
@@ -296,14 +296,14 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>納期はどれくらいですか？</span>
+                            <span>デザインのことは素人ですが大丈夫ですか？</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
                         <p class="text-sm text-gray-700 leading-7">
-                            サイト規模にもよりますが、ワードプレスなどを使わない静的なページでしたら2週間〜、ワードプレスを使用の場合は1カ月〜となります。お急ぎの場合も状況次第でお受けすることができますので、お気軽にお問い合わせください。
+                            お客様に納得していただけるよう、可能な限り言語化してお伝えしております。印刷物であれば使用・展示されるシーンを考慮し、市場調査をした上でデザイン案を組み立てていきます。お客様のご要望に耳を傾け、その過程を共有しながら進行いたします。
                         </p>
                     </div>
                 </div>
@@ -312,14 +312,14 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>月額やランニング費用はかかりますか？</span>
+                            <span>どんなクライアントが多いですか?</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
                         <p class="text-sm text-gray-700 leading-7">
-                            通常のページ制作依頼でしたら追加の費用は一切かかりません。一方で、SEOやセキュリティの観点からホームページは更新し、アップデートし続けることが重要です。制作と更新・運用は別物と考え、両方ともにサービスを提供しております。
+                            企業、個人事業主（士業など含む）や個人のお客様などさまざまなお客様がいらっしゃいます。ロゴの作成から、印刷物、ホームページ、動画までデザインに関するものに幅広く対応いたします。
                         </p>
                     </div>
                 </div>
@@ -328,14 +328,14 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>ホームページを作りたいが画像や文章が用意できない</span>
+                            <span>撮影やイラストもお願いできますか？</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
                         <p class="text-sm text-gray-700 leading-7">
-                            このようなお客様は多くいらっしゃいます。打ち合わせの中で聞き取りさせていただき、コピーや原稿を作成いたします。画像についても既存の写真素材や新規で撮影するなどいかようにでも対応可能です。費用も含めてお気軽にお問い合わせください。
+                            はい、対応いたします。撮影はスタッフが行うか、ジャンルによっては専門のフォトグラファーを手配いたします。イラストはテイストを教えていただければ、それにあわせて描き起こします。
                         </p>
                     </div>
                 </div>
@@ -344,14 +344,14 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>すでに契約済みのドメインやサーバは利用できますか？</span>
+                            <span>デザイン案を複数見せてもらうと費用がかかりますか？</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
                         <p class="text-sm text-gray-700 leading-7">
-                            はい、そのまま使用可能です。契約情報を教えていただく必要がございますので、契約書を締結の上で継続使用を前提にご対応いたします。10年以上前のサーバなどの場合、借り換えることでサーバの性能が上がり月額費用が安くなる場合もございます。適宜、最適なものをご提案させていただきます。
+                            最初から1案でデザインが決定するということはまずありません。数案をご提案させていただき、その中から良い要素を集めて最終のデザインを制作していきます。これらは全て通常費用に含まれています。（カタログのデータ流し込みや定型の決まったチラシなどはこの限りではありません）
                         </p>
                     </div>
                 </div>
@@ -360,14 +360,14 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>納品の方法を教えて欲しい</span>
+                            <span>印刷も含めて依頼できますか？</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
                         <p class="text-sm text-gray-700 leading-7">
-                            お客様により様々です。html/css/jsなどのファイル一式の納品はもちろん、お客様が契約済みのサーバへのアップロード、記録メディアでの納品などどのような形式でも極力対応いたします。
+                            はい、大丈夫です。印刷会社と提携し、品質を管理し印刷物で納品いたします。紙・印刷方法などもご予算、ご要望に応じて最適な形をご提案します。
                         </p>
                     </div>
                 </div>
@@ -376,7 +376,7 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>個人からの制作依頼も可能ですか？</span>
+                            <span>個人からの制作依頼も可能ですか?</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
@@ -392,7 +392,7 @@ get_header();
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
-                            <span>遠方からの依頼はできますか？</span>
+                            <span>遠方からの依頼はできますか?</span>
                         </p>
                         <div class="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-5 h-5 bg-white border-b border-r border-gray-400 rotate-45"></div>
                     </div>
