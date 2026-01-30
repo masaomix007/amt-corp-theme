@@ -63,10 +63,12 @@
             </div>
         </div>
 
+        <?php /*
         <a href="<?php echo esc_url(home_url('/service/')); ?>" class="<?php echo $nav_base_class; ?>">
             SERVICE
             <?php echo $underline_span; ?>
         </a>
+        */ ?>
         <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="<?php echo $nav_base_class; ?>">
             BLOG
             <?php echo $underline_span; ?>
@@ -125,13 +127,13 @@
           </li>
         </ul>
       </div>
-
+  <?php /*
       <div class="border-b border-gray-700 pb-4">
         <a href="<?php echo esc_url(home_url('/service/')); ?>" class="!no-underline block w-full text-sm hover:text-gray-300 flex items-center gap-2">
           <span class="text-xs">&gt;</span> サービス（デザインサブスク）
         </a>
       </div>
-
+  */ ?>
       <div class="border-b border-gray-700 pb-4">
         <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="!no-underline block w-full font-outfit font-bold tracking-widest hover:text-gray-300 flex items-center gap-2">
           <span class="text-xs font-noto font-normal">&gt;</span> BLOG

@@ -390,7 +390,7 @@ $news_query = new WP_Query([
             </div>
 
             <div class="mt-10 text-center md:text-center">
-              <a href="#" class="btn-view-more mt-6">
+              <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="btn-view-more mt-6">
                   VIEW MORE <span aria-hidden="true">〉</span>
               </a>
             </div>
@@ -444,7 +444,7 @@ $news_query = new WP_Query([
                 </div>
 
                 <div class="mt-6 flex justify-center">
-                  <a href="https://www.google.com/maps/place/%E3%82%A8%E3%83%BC%E3%83%BB%E3%82%A8%E3%83%A0%E3%83%BB%E3%83%86%E3%82%A3%E3%83%BC/@34.9477532,138.3859711,17z/data=!3m1!4b1!4m6!3m5!1s0x601a49cfe3fd7c77:0x110ca5013982658f!8m2!3d34.9477532!4d138.388546!16s%2Fg%2F1tfv0lt1?entry=tts&g_ep=EgoyMDI2MDEyNi4wIPu8ASoASAFQAw%3D%3D&skid=be5a934d-fab6-4c57-998a-0a4253c6ecc0" target="_blank" class="btn-view-more mt-6">
+                  <a href="<?php echo esc_url(home_url('/company/')); ?>" class="btn-view-more mt-6">
                       VIEW MORE <span aria-hidden="true">〉</span>
                   </a>
                 </div>

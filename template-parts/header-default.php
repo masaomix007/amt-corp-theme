@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <a href="<?php echo esc_url(home_url('/service/')); ?>" class="<?php echo $nav_base_class; ?>">SERVICE<?php echo $underline_span; ?></a>
+        <?php /*<a href="<?php echo esc_url(home_url('/service/')); ?>" class="<?php echo $nav_base_class; ?>">SERVICE<?php echo $underline_span; ?></a>*/ ?>
         <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="<?php echo $nav_base_class; ?>">BLOG<?php echo $underline_span; ?></a>
         <a href="<?php echo esc_url(home_url('/company/')); ?>" class="<?php echo $nav_base_class; ?>">COMPANY<?php echo $underline_span; ?></a>
         <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="<?php echo $nav_base_class; ?>">CONTACT<?php echo $underline_span; ?></a>
@@ -92,9 +92,11 @@
                     <li><a href="<?php echo esc_url(home_url('/works/movie/')); ?>" class="!no-underline flex items-center gap-2 hover:text-gray-300"><span class="text-xs">&gt;</span> 映像・動画制作</a></li>
                 </ul>
             </div>
+            <?php /*
             <div class="border-b border-gray-700 pb-4">
                 <a href="<?php echo esc_url(home_url('/service/')); ?>" class="!no-underline block w-full text-sm hover:text-gray-300 flex items-center gap-2"><span class="text-xs">&gt;</span> サービス（デザインサブスク）</a>
             </div>
+            */ ?>
             <div class="border-b border-gray-700 pb-4">
                 <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="!no-underline block w-full font-outfit font-bold tracking-widest hover:text-gray-300 flex items-center gap-2"><span class="text-xs font-noto font-normal">&gt;</span> BLOG</a>
             </div>

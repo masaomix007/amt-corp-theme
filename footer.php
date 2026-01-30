@@ -34,12 +34,14 @@
                                 <span class="text-sm">映像・動画制作</span>
                             </a>
                         </li>
+                        <?php /*
                          <li>
                             <a href="<?php echo esc_url(home_url('/service/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
                                 <span class="text-sm">サービス（デザインサブスク）</span>
                             </a>
                         </li>
+                        */ ?>
                     </ul>
                 </div>
 
