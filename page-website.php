@@ -196,7 +196,8 @@ get_header();
             
             <p class="text-center text-base md:text-lg font-bold mb-12">このようなお悩みを解決します</p>
 
-            <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+                
                 <div class="w-full md:w-1/2 flex justify-center">
                      <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/website-solution.webp" alt="Solution" class="w-3/4 md:w-full h-auto object-contain">
                 </div>
@@ -272,9 +273,9 @@ get_header();
         </div>
 
         <div class="container mx-auto max-w-5xl px-6 py-16 md:py-24">
-
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-
+                
                 <div>
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
@@ -307,7 +308,7 @@ get_header();
                     </div>
                 </div>
 
-                <div>
+                <div class="qa-hidden-item hidden md:block">
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
@@ -323,7 +324,7 @@ get_header();
                     </div>
                 </div>
 
-                <div>
+                <div class="qa-hidden-item hidden md:block">
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
@@ -339,7 +340,7 @@ get_header();
                     </div>
                 </div>
 
-                <div>
+                <div class="qa-hidden-item hidden md:block">
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
@@ -355,7 +356,7 @@ get_header();
                     </div>
                 </div>
 
-                <div>
+                <div class="qa-hidden-item hidden md:block">
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
@@ -371,7 +372,7 @@ get_header();
                     </div>
                 </div>
 
-                <div>
+                <div class="qa-hidden-item hidden md:block">
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
@@ -387,7 +388,7 @@ get_header();
                     </div>
                 </div>
 
-                <div>
+                <div class="qa-hidden-item hidden md:block">
                     <div class="relative bg-white border border-gray-400 rounded-full py-6 px-8 mb-6 shadow-sm">
                         <p class="font-bold text-gray-800 text-sm md:text-base flex items-start gap-3">
                             <span class="font-outfit text-xl font-bold leading-none mt-[2px]">Q.</span>
@@ -404,9 +405,31 @@ get_header();
                 </div>
 
             </div>
+
+            <div class="mt-12 text-center md:hidden" id="qa-view-more-area">
+                <button onclick="toggleQa()" class="border-2 border-gray-800 bg-white text-gray-800 px-12 py-3 font-outfit font-bold tracking-widest hover:bg-gray-800 hover:text-white transition-colors w-full max-w-xs mx-auto block">
+                    VIEW MORE
+                </button>
+            </div>
+
         </div>
     </section>
 
+    <script>
+    function toggleQa() {
+        // 隠れている要素を取得
+        const hiddenItems = document.querySelectorAll('.qa-hidden-item');
+        // hiddenクラスを削除して表示
+        hiddenItems.forEach(function(item) {
+            item.classList.remove('hidden');
+        });
+        // ボタン自体を非表示にする
+        const btnArea = document.getElementById('qa-view-more-area');
+        if(btnArea) {
+            btnArea.style.display = 'none';
+        }
+    }
+    </script>
 </main>
 
 <?php get_footer(); ?>
