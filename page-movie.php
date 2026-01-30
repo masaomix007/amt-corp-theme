@@ -199,7 +199,7 @@ get_header();
             <div class="flex flex-col-reverse md:flex-row items-center gap-12">
                 
                 <div class="w-full md:w-1/2 flex justify-center">
-                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/movie-solution.webp" alt="Solution" class="w-3/4 md:w-full h-auto object-contain">
+                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/movie-solution.svg" alt="Solution" class="w-3/4 md:w-full h-auto object-contain">
                 </div>
 
                 <div class="w-full md:w-1/2">

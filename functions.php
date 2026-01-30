@@ -86,3 +86,19 @@ add_action('admin_menu', function () {
     6
   );
 });
+
+/**
+ * 検索結果から特定のカテゴリー(news)を除外する
+ */
+function amt_exclude_category_from_search($query) {
+    if (!$query->is_admin && $query->is_search && $query->is_main_query()) {
+        // 'news'カテゴリーのIDを取得
+        $news_cat = get_category_by_slug('news');
+        if ($news_cat) {
+            // カテゴリーIDの前にマイナスを付けることで除外設定になります
+            $query->set('cat', '-' . $news_cat->term_id);
+        }
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'amt_exclude_category_from_search');
