@@ -11,15 +11,11 @@
     class="relative min-h-[85vh] md:min-h-[720px] overflow-hidden text-white"
     style="background-image: url('<?php echo esc_url($hero_bg); ?>'); background-size: cover; background-position: center;"
   >
-    <!-- 背景の暗幕（読みやすさ） -->
     <div class="absolute inset-0 bg-black/0"></div>
 
-    <!-- 右上の薄い色味を足したい場合（お好み） -->
     <div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/20 to-transparent"></div>
 
-    <!-- コンテンツ -->
-      <div class="relative mx-auto max-w-6xl px-4 pt-28 md:pt-36 pb-16">
-        <!-- Hero内：ロゴ＆キャッチを画像に -->
+    <div class="relative mx-auto max-w-6xl px-4 pt-28 md:pt-36 pb-16">
         <div class="mb-6 flex justify-center">
         <img
             src="<?php echo esc_url(get_template_directory_uri() . '/images/logo-white.png'); ?>"
@@ -39,7 +35,6 @@
             decoding="async"
         >
         </div>
-      <!-- 指定：Noto Sans JP Regular / 18px / 行間29 / 文字間10% -->
       <div class="mt-6 max-w-[720px] font-noto text-[18px] leading-[29px] tracking-[0.1em] font-normal text-white/90">
         <p>デザインで、価値を伝える。</p>
 
@@ -61,19 +56,12 @@
         </p>
       </div>
 
-      <!-- ボタン（見た目だけ先に） -->
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>"
            class="inline-flex items-center rounded-full bg-white px-6 py-3 text-[14px] font-medium tracking-[0.08em] text-zinc-900 !no-underline">
           お問い合わせ
         </a>
-        <!--
-        <a href="<?php echo esc_url(home_url('/company/')); ?>"
-           class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-6 py-3 text-[14px] font-medium tracking-[0.08em] text-white">
-          会社情報
-        </a>
-        -->
-      </div>
+        </div>
     </div>
   </section>
 
@@ -87,10 +75,8 @@ $news_query = new WP_Query([
 ]);
 ?>
 
-<!-- NEWS -->
 <section id="news" class="w-full">
 
-  <!-- 見出し帯（WORKS等と同じ構造） -->
   <div class="bg-gray-300">
     <div class="mx-auto max-w-6xl px-4 py-8 text-center">
       <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">NEWS</h2>
@@ -98,12 +84,10 @@ $news_query = new WP_Query([
     </div>
   </div>
 
-  <!-- コンテンツ帯（薄いグレー） -->
   <div class="bg-gray-100 pb-15">
     <div class="mx-auto max-w-6xl px-4 py-10">
       <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
 
-        <!-- 左：日付＋件名 -->
         <div class="space-y-4">
           <?php if ($news_query->have_posts()): ?>
             <?php while ($news_query->have_posts()): $news_query->the_post(); ?>
@@ -122,11 +106,9 @@ $news_query = new WP_Query([
           <?php endif; ?>
         </div>
 
-        <!-- 右下：VIEW MORE（同じ薄いグレー帯の中） -->
-        <div class="md:text-right">
-          <a href="#"
-             class="mt-6 inline-flex items-center justify-center gap-2 border border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
-            VIEW MORE <span aria-hidden="true">〉</span>
+        <div class="text-center md:text-right">
+          <a href="<?php echo esc_url(home_url('/news/')); ?>" class="btn-view-more mt-6">
+              VIEW MORE <span aria-hidden="true">〉</span>
           </a>
         </div>
 
@@ -136,10 +118,8 @@ $news_query = new WP_Query([
 
 </section>
 
-<!-- WORKS -->
 <section class="w-full pb-15">
 
-  <!-- 見出し帯（NEWSと同構造） -->
   <div class="bg-gray-300">
     <div class="mx-auto max-w-6xl px-4 py-8 text-center">
       <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">WORKS</p>
@@ -147,22 +127,17 @@ $news_query = new WP_Query([
     </div>
   </div>
 
-  <!-- 説明文（上にマージン追加） -->
   <p class="mx-auto mt-8 md:mb-20 md:mt-15 max-w-3xl text-center text-xl leading-8 text-gray-700">
-    エー・エム・ティーではWEB・印刷物・動画など<br class="hidden sm:block">
-    幅広い制作をワンストップでサポートします
+    <span class="md:hidden">エー・エム・ティーでは<br>WEB・印刷物・動画など幅広い分野を<br>ワンストップでサポートします</span>
+    <span class="hidden md:inline">エー・エム・ティーではWEB・印刷物・動画など<br>幅広い分野をワンストップでサポートします</span>
   </p>
 
-  <!-- コンテンツ帯 -->
   <div class="">
     <div class="mx-auto max-w-6xl px-4 py-20">
 
-      <!-- WORKS 一覧 -->
-      <div class="grid gap-8 md:grid-cols-3">
+      <div class="grid gap-y-30 md:gap-8 md:grid-cols-3">
 
-        <!-- WORKS ITEM -->
         <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
-        <!-- アイコン：枠線に乗せて、背面の白で枠線を途切れさせる -->
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
             src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-web.svg"
@@ -180,7 +155,6 @@ $news_query = new WP_Query([
             ホームページ制作・運用支援
         </p>
 
-        <!-- 横線 -->
         <hr class="mx-auto mt-5 w-60 border-t border-gray-900 border-2" />
 
         <p class="mt-4 text-m leading-7 text-gray-700">
@@ -188,16 +162,13 @@ $news_query = new WP_Query([
             サイトリニューアル　...
         </p>
 
-        <a href="#"
-            class="mt-6 inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+        <a href="<?php echo esc_url(home_url('/works/website/')); ?>" class="btn-view-more mt-6">
             VIEW MORE <span aria-hidden="true">〉</span>
         </a>
         </div>
 
-        <!-- WORKS ITEM : GRAPHIC -->
         <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
 
-        <!-- アイコン（枠線に乗せる） -->
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
             src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-graphic.svg"
@@ -216,7 +187,6 @@ $news_query = new WP_Query([
             印刷・グラフィック制作
         </p>
 
-        <!-- 横線 -->
         <hr class="mx-auto mt-5 w-60 border-t border-gray-900 border-2" />
 
         <p class="mt-4 text-sm leading-7 text-gray-700">
@@ -225,16 +195,13 @@ $news_query = new WP_Query([
             ロゴデザイン　...
         </p>
 
-        <a href="#"
-            class="mt-6 inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+        <a href="<?php echo esc_url(home_url('/works/graphic/')); ?>" class="btn-view-more mt-6">
             VIEW MORE <span aria-hidden="true">〉</span>
         </a>
         </div>
 
-        <!-- WORKS ITEM : MOVIE -->
         <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
 
-        <!-- アイコン（枠線に乗せる） --> 
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
             src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-movie.svg"
@@ -253,7 +220,6 @@ $news_query = new WP_Query([
             映像・動画制作
         </p>
 
-        <!-- 横線 -->
         <hr class="mx-auto mt-5 w-60 border-t border-gray-900" />
 
         <p class="mt-4 text-sm leading-7 text-gray-700">
@@ -262,8 +228,7 @@ $news_query = new WP_Query([
             WEB広告動画　...
         </p>
 
-        <a href="#"
-            class="mt-6 inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
+        <a href="<?php echo esc_url(home_url('/works/movie/')); ?>" class="btn-view-more mt-6">
             VIEW MORE <span aria-hidden="true">〉</span>
         </a>
         </div>
@@ -273,10 +238,8 @@ $news_query = new WP_Query([
   </div>
 </section>
 
-<!-- SERVICE -->
 <section class="w-full">
 
-  <!-- 見出し帯（NEWSと同一設計） -->
   <div class="bg-gray-300">
     <div class="mx-auto max-w-6xl px-4 py-8 text-center">
       <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">
@@ -288,13 +251,11 @@ $news_query = new WP_Query([
     </div>
   </div>
 
-  <!-- コンテンツ帯 -->
   <div class="bg-gray-100">
     <div class="mx-auto max-w-6xl px-4 py-30">
 
       <div class="grid gap-10 md:grid-cols-2 items-center">
 
-        <!-- 画像（仮） -->
         <div>
           <img
             src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/service-placeholder.png"
@@ -305,8 +266,7 @@ $news_query = new WP_Query([
           >
         </div>
 
-        <!-- テキスト -->
-        <div>
+        <div class="text-center md:text-left">
           <p class="font-outfit text-3xl font-semibold tracking-[0.2em] text-gray-700">
             デザインサブスク
           </p>
@@ -323,9 +283,8 @@ $news_query = new WP_Query([
             エー・エム・ティーがパートナーとして伴走します。
           </p>
 
-          <a href="#"
-             class="mt-8 inline-flex items-center gap-2 border-2 border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
-            VIEW MORE <span aria-hidden="true">〉</span>
+          <a href="<?php echo esc_url(home_url('/service/')); ?>" class="btn-view-more mt-6">
+              VIEW MORE <span aria-hidden="true">〉</span>
           </a>
         </div>
 
@@ -348,14 +307,12 @@ $news_query = new WP_Query([
     ?>
 
   <section id="blog" class="w-full">
-  <!-- 見出し帯（NEWSと同構造） -->
   <div class="bg-gray-300 py-10">
     <div class="mx-auto max-w-6xl text-center">
       <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">BLOG</h2>
       <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">ブログ</p>
     </div>
   </div>
-    <!-- 薄いグレーのブロック -->
     <div class="w-full bg-gray-100">
         <div class="mx-auto px-10 py-20">
 
@@ -363,7 +320,6 @@ $news_query = new WP_Query([
                 <?php if ($blog_query->have_posts()): ?>
                 <?php while ($blog_query->have_posts()): $blog_query->the_post(); ?>
                     <article class="overflow-hidden">
-                    <!-- サムネ -->
                     <a href="<?php the_permalink(); ?>" class="block !no-underline">
                         <?php if (has_post_thumbnail()): ?>
                         <?php the_post_thumbnail('large', [
@@ -376,7 +332,6 @@ $news_query = new WP_Query([
                         <?php endif; ?>
                     </a>
 
-                    <!-- テキスト -->
                     <div class="p-6">
                         <time class="block text-xl font-zen font-bold tracking-widest text-gray-900" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
                         <?php echo esc_html(get_the_date('Y.m.d')); ?>
@@ -427,12 +382,10 @@ $news_query = new WP_Query([
                 <?php endif; ?>
             </div>
 
-            <!-- 右下：VIEW MORE -->
             <div class="mt-10 text-center md:text-center">
-                <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"
-                class="inline-flex items-center justify-center gap-2 border border-gray-700 px-6 py-2 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline">
-                VIEW MORE <span aria-hidden="true">〉</span>
-                </a>
+              <a href="#" class="btn-view-more mt-6">
+                  VIEW MORE <span aria-hidden="true">〉</span>
+              </a>
             </div>
 
         </div>
@@ -440,7 +393,6 @@ $news_query = new WP_Query([
     </section>
 
     <section id="company" class="w-full bg-gray-300 py-14">
-      <!-- 見出し（NEWSと同一） -->
       <div class="mx-auto max-w-6xl px-4">
         <div class="text-center">
           <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">COMPANY</h2>
@@ -448,14 +400,11 @@ $news_query = new WP_Query([
         </div>
       </div>
 
-      <!-- 薄いグレーのブロック（この中にカードを入れる） -->
       <div class="mt-10 w-full bg-white">
         <div class="mx-auto max-w-6xl px-4 py-20">
 
-          <!-- COMPANY CARD（WORKSの枠線・アイコン構造を流用） -->
           <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-10 pt-20">
 
-            <!-- アイコン（枠線に乗せる） -->
             <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-6">
               <img
                 src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company.svg"
@@ -466,16 +415,14 @@ $news_query = new WP_Query([
               >
             </div>
             <p class="text-center font-outfit text-2xl font-semibold tracking-[0.3em] text-gray-700">
-              ABOUT&nbsp;US
+              ABOUT US
             </p>
             <p class="mt-2 text-center text-l text-gray-700">
               私たちについて
             </p>
 
-            <!-- 中身：左MAP / 右テキスト -->
             <div class="grid gap-10 md:grid-cols-2 md:items-start py-20">
 
-              <!-- 左：MAP -->
               <div>
                 <div class="overflow-hidden border-2 border-gray-300 bg-white">
                   <iframe
@@ -489,25 +436,14 @@ $news_query = new WP_Query([
                   ></iframe>
                 </div>
 
-                <!-- ボタン（中央寄せ） -->
                 <div class="mt-6 flex justify-center">
-                  <a
-                    href="/company/"
-                    class="inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-10 py-3 text-m tracking-[0.25em] text-gray-800 hover:bg-gray-200 !no-underline"
-                  >
-                    VIEW MORE <span aria-hidden="true">〉</span>
+                  <a href="https://www.google.com/maps/place/%E3%82%A8%E3%83%BC%E3%83%BB%E3%82%A8%E3%83%A0%E3%83%BB%E3%83%86%E3%82%A3%E3%83%BC/@34.9477532,138.3859711,17z/data=!3m1!4b1!4m6!3m5!1s0x601a49cfe3fd7c77:0x110ca5013982658f!8m2!3d34.9477532!4d138.388546!16s%2Fg%2F1tfv0lt1?entry=tts&g_ep=EgoyMDI2MDEyNi4wIPu8ASoASAFQAw%3D%3D&skid=be5a934d-fab6-4c57-998a-0a4253c6ecc0" target="_blank" class="btn-view-more mt-6">
+                      VIEW MORE <span aria-hidden="true">〉</span>
                   </a>
                 </div>
               </div>
 
-              <!-- 右：会社情報 -->
               <div class="text-gray-700">
-                <!--
-                <p class="font-noto text-xl font-bold tracking-widest text-gray-900">
-                  株式会社エー・エム・ティー
-                </p>
-                -->
-
                 <dl class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-x-8 gap-y-5 text-sm leading-7">
                   <dt class="font-bold tracking-widest">会社名</dt>
                   <dd>株式会社AMT（エー・エム・ティー）</dd>
@@ -543,9 +479,7 @@ $news_query = new WP_Query([
       </div>
     </section>
 
-<!-- CONTACT -->
 <section id="contact" class="w-full bg-gray-300">
-  <!-- 見出し（NEWSと同一） -->
   <div class="mx-auto max-w-6xl px-4">
     <div class="text-center">
       <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">CONTACT</h2>
@@ -553,19 +487,16 @@ $news_query = new WP_Query([
     </div>
   </div>
 
-  <!-- 薄いグレーのブロック -->
   <div class="mt-10 w-full bg-gray-100">
     <div class="mx-auto max-w-6xl px-4 py-20">
 
       <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
 
-        <!-- お問い合わせボタン -->
         <div class="mx-auto w-full max-w-xl text-center">
           <a
-            href="/contact/"
+            href="<?php echo esc_url(home_url('/contact/')); ?>"
             class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
           >
-            <!-- icon (mail) -->
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
                 src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-email.png"
@@ -579,14 +510,12 @@ $news_query = new WP_Query([
           </a>
         </div>
 
-        <!-- 電話ボタン + 補足 -->
         <div class="mx-auto w-full max-w-xl text-center">
           <a
             href="tel:0542864085"
             class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
             aria-label="電話をかける 054-286-4085"
           >
-            <!-- icon (phone) -->
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
                 src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-tel.png"
