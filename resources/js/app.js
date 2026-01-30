@@ -132,21 +132,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================
-   Q&A Accordion (Website, Graphic, Movie共通)
-   - SP表示時のみ初期2件表示、VIEW MOREで全件表示
+   1. Q&A アコーディオン機能
+   (Website, Graphic, Movie共通)
+   - フェードイン＋スライドアップのアニメーション付き
 ============================================ */
 window.toggleQa = function() {
     // 隠れている要素を取得
     const hiddenItems = document.querySelectorAll('.qa-hidden-item');
-    
-    // hiddenクラスを削除して表示
-    hiddenItems.forEach(function(item) {
-        item.classList.remove('hidden');
-    });
-
-    // ボタンエリアを非表示にする
     const btnArea = document.getElementById('qa-view-more-area');
+    
+    // ボタンをフェードアウトさせて消す
     if(btnArea) {
-        btnArea.style.display = 'none';
+        btnArea.style.transition = 'opacity 0.3s';
+        btnArea.style.opacity = '0';
+        setTimeout(() => {
+            btnArea.style.display = 'none';
+        }, 300);
     }
+
+    // 各アイテムをアニメーション表示
+    hiddenItems.forEach(function(item, index) {
+        // 1. hiddenを消す前にアニメーションの初期状態（透明＆少し下）をセット
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        
+        // 2. hiddenを削除（これで空間が確保される）
+        item.classList.remove('hidden');
+
+        // 3. 少しタイミングをずらしてフェードインさせる（順番に出てくるようにindexを使用）
+        setTimeout(function() {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, 50 + (index * 100)); // 50ms後に開始し、次の要素はさらに100ms遅らせる
+    });
 }
