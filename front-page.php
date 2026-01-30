@@ -234,7 +234,7 @@ $news_query = new WP_Query([
         <!-- WORKS ITEM : MOVIE -->
         <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
 
-        <!-- アイコン（枠線に乗せる） -->
+        <!-- アイコン（枠線に乗せる） --> 
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
             src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-movie.svg"

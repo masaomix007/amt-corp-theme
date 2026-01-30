@@ -406,30 +406,14 @@ get_header();
 
             </div>
 
-            <div class="mt-12 text-center md:hidden" id="qa-view-more-area">
-                <button onclick="toggleQa()" class="border-2 border-gray-800 bg-white text-gray-800 px-12 py-3 font-outfit font-bold tracking-widest hover:bg-gray-800 hover:text-white transition-colors w-full max-w-xs mx-auto block">
-                    VIEW MORE
+            <div class="text-center md:hidden" id="qa-view-more-area">
+                <button onclick="toggleQa()" class="btn-view-more mt-6">
+                    VIEW MORE <span aria-hidden="true">〉</span>
                 </button>
             </div>
-
         </div>
     </section>
 
-    <script>
-    function toggleQa() {
-        // 隠れている要素を取得
-        const hiddenItems = document.querySelectorAll('.qa-hidden-item');
-        // hiddenクラスを削除して表示
-        hiddenItems.forEach(function(item) {
-            item.classList.remove('hidden');
-        });
-        // ボタン自体を非表示にする
-        const btnArea = document.getElementById('qa-view-more-area');
-        if(btnArea) {
-            btnArea.style.display = 'none';
-        }
-    }
-    </script>
 </main>
 
 <?php get_footer(); ?>

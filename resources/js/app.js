@@ -1,3 +1,15 @@
+// ▼▼▼ 以下は元のコードそのまま ▼▼▼
+
+window.addEventListener('load', function () {
+    let mainNavigation = document.getElementById('primary-navigation')
+    // ... (中略) ...
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('site-header');
+    // ... (中略: ヘッダーやハンバーガーメニューの処理) ...
+});
+
 window.addEventListener('load', function () {
     let mainNavigation = document.getElementById('primary-navigation')
     let mainNavigationToggle = document.getElementById('primary-menu-toggle')
@@ -118,3 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+/* ============================================
+   Q&A Accordion (Website, Graphic, Movie共通)
+   - SP表示時のみ初期2件表示、VIEW MOREで全件表示
+============================================ */
+window.toggleQa = function() {
+    // 隠れている要素を取得
+    const hiddenItems = document.querySelectorAll('.qa-hidden-item');
+    
+    // hiddenクラスを削除して表示
+    hiddenItems.forEach(function(item) {
+        item.classList.remove('hidden');
+    });
+
+    // ボタンエリアを非表示にする
+    const btnArea = document.getElementById('qa-view-more-area');
+    if(btnArea) {
+        btnArea.style.display = 'none';
+    }
+}
