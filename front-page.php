@@ -79,8 +79,8 @@ $news_query = new WP_Query([
 
   <div class="bg-gray-300">
     <div class="mx-auto max-w-6xl px-4 py-8 text-center">
-      <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">NEWS</h2>
-      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">新着情報</p>
+      <h2 class="font-lato text-4xl font-black tracking-[0.25em] text-gray-700">NEWS</h2>
+      <p class="mt-2 text-xl font-semibold tracking-[0.25em] text-gray-600">新着情報</p>
     </div>
   </div>
 
@@ -122,8 +122,8 @@ $news_query = new WP_Query([
 
   <div class="bg-gray-300">
     <div class="mx-auto max-w-6xl px-4 py-8 text-center">
-      <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">WORKS</p>
-      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">業務内容</p>
+      <p class="font-lato text-4xl font-black tracking-[0.25em] text-gray-700">WORKS</p>
+      <p class="mt-2 text-xl font-semibold tracking-[0.25em] text-gray-600">業務内容</p>
     </div>
   </div>
 
@@ -242,10 +242,10 @@ $news_query = new WP_Query([
 
   <div class="bg-gray-300">
     <div class="mx-auto max-w-6xl px-4 py-8 text-center">
-      <p class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">
+      <p class="font-lato text-4xl font-black tracking-[0.25em] text-gray-700">
         SERVICE
       </p>
-      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">
+      <p class="mt-2 text-xl font-semibold tracking-[0.25em] text-gray-600">
         サービス
       </p>
     </div>
@@ -309,17 +309,24 @@ $news_query = new WP_Query([
   <section id="blog" class="w-full">
   <div class="bg-gray-300 py-10">
     <div class="mx-auto max-w-6xl text-center">
-      <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">BLOG</h2>
-      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">ブログ</p>
+      <h2 class="font-lato text-4xl font-black tracking-[0.25em] text-gray-700">BLOG</h2>
+      <p class="mt-2 text-xl font-semibold tracking-[0.25em] text-gray-600">ブログ</p>
     </div>
   </div>
     <div class="w-full bg-gray-100">
         <div class="mx-auto px-10 py-20">
 
-            <div class="grid gap-8 md:grid-cols-4">
+          <div class="grid gap-8 md:grid-cols-4">
                 <?php if ($blog_query->have_posts()): ?>
                 <?php while ($blog_query->have_posts()): $blog_query->the_post(); ?>
-                    <article class="overflow-hidden">
+
+                  <?php
+                    // ★追加：6件目以降（インデックス5以上）は「スマホで非表示(hidden)、PCで表示(block)」にする
+                    $visibility_class = ($blog_query->current_post >= 5) ? ' hidden md:block' : '';
+                    ?>
+
+                    <article class="overflow-hidden<?php echo $visibility_class; ?>">
+
                     <a href="<?php the_permalink(); ?>" class="block !no-underline">
                         <?php if (has_post_thumbnail()): ?>
                         <?php the_post_thumbnail('large', [
@@ -395,8 +402,8 @@ $news_query = new WP_Query([
     <section id="company" class="w-full bg-gray-300 py-14">
       <div class="mx-auto max-w-6xl px-4">
         <div class="text-center">
-          <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">COMPANY</h2>
-          <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">会社案内</p>
+          <h2 class="font-lato text-4xl font-black tracking-[0.25em] text-gray-700">COMPANY</h2>
+          <p class="mt-2 text-xl font-semibold tracking-[0.25em] text-gray-600">会社案内</p>
         </div>
       </div>
 
@@ -482,8 +489,8 @@ $news_query = new WP_Query([
 <section id="contact" class="w-full bg-gray-300">
   <div class="mx-auto max-w-6xl px-4">
     <div class="text-center">
-      <h2 class="font-lato text-5xl font-black tracking-[0.25em] text-gray-700">CONTACT</h2>
-      <p class="mt-2 text-2xl font-semibold tracking-[0.25em] text-gray-600">お問い合わせ</p>
+      <h2 class="font-lato text-4xl font-black tracking-[0.25em] text-gray-700">CONTACT</h2>
+      <p class="mt-2 text-xl font-semibold tracking-[0.25em] text-gray-600">お問い合わせ</p>
     </div>
   </div>
 

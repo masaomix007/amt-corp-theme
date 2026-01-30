@@ -99,8 +99,8 @@ get_header();
 
     <section class="bg-gray-50 pb-16 md:pb-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center mb-16">
-            <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">WORK FLOW</h3>
-            <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">制作の流れ</p>
+            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">WORK FLOW</h3>
+            <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">制作の流れ</p>
         </div>
 
         <div class="container mx-auto max-w-5xl px-6">
@@ -188,8 +188,8 @@ get_header();
 
     <section class="bg-white">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">SOLUTION</h3>
-            <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">課題解決</p>
+            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">SOLUTION</h3>
+            <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">課題解決</p>
         </div>
 
         <div class="container mx-auto max-w-5xl px-6 py-16 md:py-24">
@@ -268,8 +268,8 @@ get_header();
 
     <section class="bg-gray-200">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">Q & A</h3>
-            <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">よくある質問</p>
+            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">Q & A</h3>
+            <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">よくある質問</p>
         </div>
 
         <div class="container mx-auto max-w-5xl px-6 py-16 md:py-24">

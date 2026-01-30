@@ -62,8 +62,8 @@ get_header();
 
     <section id="value" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">VALUE</h3>
-            <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">選ばれる理由</p>
+            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">VALUE</h3>
+            <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">選ばれる理由</p>
         </div>
 
         <div class="w-full flex flex-col md:block bg-gray-100 md:bg-[linear-gradient(90deg,#f3f4f6_50%,#ffffff_50%)]">
@@ -84,7 +84,7 @@ get_header();
                     </div>
 
                     <div class="bg-white md:bg-transparent py-16 md:py-24 px-6 md:pl-12 lg:pl-16 text-center">
-                        <h4 class="inline-block border border-black px-20 py-3 mb-12 font-bold tracking-widest text-lg">企 業 理 念</h4>
+                        <h4 class="inline-block border-2 border-black px-20 py-3 mb-12 font-bold tracking-widest text-lg">企 業 理 念</h4>
 
                         <div class="space-y-10 font-noto">
                             <div>
@@ -109,15 +109,17 @@ get_header();
 
     <section id="outline" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">OUTLINE</h3>
-            <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">会社概要</p>
+            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">OUTLINE</h3>
+            <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">会社概要</p>
         </div>
         <div class="bg-white py-16 md:py-24">
             <div class="container mx-auto max-w-5xl px-6 grid md:grid-cols-2 gap-12 items-start">
-                <div class="w-full">
+                
+                <div class="w-full order-2 md:order-1">
                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-office.webp" alt="Office" class="w-full h-auto object-cover grayscale">
                 </div>
-                <div class="w-full">
+
+                <div class="w-full order-1 md:order-2">
                      <dl class="grid grid-cols-[100px_1fr] gap-x-6 gap-y-1 text-sm leading-7 text-gray-700 border-gray-200">
                         <dt class="font-bold tracking-widest py-1">会社名</dt><dd class="py-1">株式会社AMT（エー・エム・ティー）</dd>
                         <dt class="font-bold tracking-widest py-1 border-gray-200">住　所</dt><dd class="py-1 border-gray-200">〒422-8046 静岡県静岡市駿河区中島153-2</dd>
@@ -131,14 +133,15 @@ get_header();
                         <dt class="font-bold tracking-widest py-1 border-gray-200">業務内容</dt><dd class="py-1 border-gray-200">ホームページ制作／Web運営支援／広告・印刷物／グラフィックデザイン／パッケージデザイン／ロゴデザイン／販促ツール制作／ノベルティ制作／映像・動画制作</dd>
                     </dl>
                 </div>
+
             </div>
         </div>
     </section>
 
     <section id="message" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">MESSAGE</h3>
-            <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">代表あいさつ</p>
+            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">MESSAGE</h3>
+            <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">代表あいさつ</p>
         </div>
         <div class="bg-gray-100 py-16 md:py-24">
             <div class="container mx-auto max-w-5xl px-6">
@@ -179,8 +182,8 @@ get_header();
 
     <section id="access" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-2xl md:text-3xl font-bold tracking-[0.2em] text-gray-700">ACCESS</h3>
-            <p class="font-noto text-xs md:text-sm font-bold tracking-[0.2em] text-gray-600 mt-1">交通アクセス</p>
+            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">ACCESS</h3>
+            <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">交通アクセス</p>
         </div>
         <div class="bg-white py-16 md:py-24">
              <div class="container mx-auto max-w-5xl px-6">
