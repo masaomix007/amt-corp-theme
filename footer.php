@@ -7,15 +7,15 @@
 ?>
 
 <footer class="bg-black text-white w-full pt-16 pb-8 font-noto">
-    <div class="mx-auto max-w-6xl px-6 lg:px-10">
+    <div class="mx-auto max-w-6xl px-20 lg:px-10">
         
         <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-12 lg:mb-20">
             
             <div class="w-full lg:w-2/3 flex flex-col lg:flex-row gap-0 lg:gap-20">
                 
                 <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
-                    <p class="mb-4 text-sm font-normal">業務内容</p>
-                    <ul class="flex flex-col border-t border-gray-800">
+                    <p class="mb-4 text-lg lg:text-sm font-normal">業務内容</p>
+                    <ul class="flex flex-col border-t border-b border-white">
                         <li>
                             <a href="<?php echo esc_url(home_url('/works/website/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
                                 <span class="text-xs">&gt;</span>
@@ -46,23 +46,23 @@
                 </div>
 
                 <div class="w-full lg:w-1/2 lg:pt-9">
-                     <ul class="flex flex-col border-t lg:border-t-0 border-gray-800">
+                     <ul class="flex flex-col border-t border-b border-white">
                         <li>
-                            <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors lg:border-t">
-                                <span class="text-xs">&gt;</span>
-                                <span class="text-sm font-outfit tracking-widest">BLOG</span>
+                            <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-white hover:text-gray-400 transition-colors lg:border-t">
+                                <!--<span class="text-xs">&gt;</span>-->
+                                <span class="text-lg lg:text-sm font-outfit tracking-widest">BLOG</span>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo esc_url(home_url('/company/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
-                                <span class="text-xs">&gt;</span>
-                                <span class="text-sm">会社案内</span>
+                            <a href="<?php echo esc_url(home_url('/company/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-white hover:text-gray-400 transition-colors">
+                                <!--<span class="text-xs">&gt;</span>-->
+                                <span class="text-lg lg:text-sm">会社案内</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://en-gage.net/amt_design/" target="_blank" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
-                                <span class="text-xs">&gt;</span>
-                                <span class="text-sm">採用情報</span>
+                            <a href="https://en-gage.net/amt_design/" target="_blank" class="!no-underline flex items-center gap-3 py-4 border-b border-white hover:text-gray-400 transition-colors">
+                                <!--<span class="text-xs">&gt;</span>-->
+                                <span class="text-lg lg:text-sm">採用情報</span>
                             </a>
                         </li>
                      </ul>
@@ -71,12 +71,12 @@
 
             <div class="hidden lg:flex gap-6 pt-9">
                     <a href="https://x.com/amt_web" target="_blank" class="text-white hover:text-gray-600 transition-colors">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"/>
                         </svg>
                     </a>
                     <a href="https://www.instagram.com/amt_web/" target="_blank" class="text-white hover:text-gray-600 transition-colors">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
                     </a>
@@ -85,7 +85,7 @@
 
         <div class="mb-10 text-center lg:text-left">
              <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block hover:opacity-80 transition-opacity">
-                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/logo-white.svg" alt="AMT" class="w-40 h-auto">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/logo-white.svg" alt="AMT" class="w-60 h-auto">
              </a>
         </div>
 
@@ -122,10 +122,14 @@
 
                 <div class="lg:hidden flex gap-8 mb-10">
                      <a href="https://x.com/amt_web" target="_blank" class="block hover:opacity-70 transition-opacity">
-                        <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-x.svg" alt="X" class="w-10 h-10 object-contain">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"/>
+                        </svg>
                      </a>
                      <a href="https://www.instagram.com/amt_web/" target="_blank" class="block hover:opacity-70 transition-opacity">
-                        <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-instagram.svg" alt="IG" class="w-10 h-10 object-contain">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
                      </a>
                 </div>
 

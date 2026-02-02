@@ -21,7 +21,7 @@ get_header();
     </div>
 
     <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto max-w-5xl px-6">
+        <div class="container mx-auto max-w-5xl px-16 lg:px-6">
             
             <div class="text-center mb-16">
                 <div class="w-30 mx-auto mb-4">
@@ -103,7 +103,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">制作の流れ</p>
         </div>
 
-        <div class="container mx-auto max-w-5xl px-6">
+        <div class="container mx-auto max-w-5xl px-16 lg:px-6">
             
             <div class="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-x-20 mb-16">
 
@@ -192,14 +192,14 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">課題解決</p>
         </div>
 
-        <div class="container mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <div class="container mx-auto max-w-5xl px-16 lg:px-6 py-16 md:py-24">
             
             <p class="text-center text-base md:text-lg font-bold mb-12 tracking-widest">このようなお悩みを解決します</p>
 
             <div class="flex flex-col-reverse md:flex-row items-center gap-12">
                 
                 <div class="w-full md:w-1/2 flex justify-center">
-                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/website-solution.svg" alt="Solution" class="w-3/4 md:w-full h-auto object-contain">
+                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/website-solution.svg" alt="Solution" class="w-3/4 md:w-3/4 h-auto object-contain">
                 </div>
 
                 <div class="w-full md:w-1/2">
@@ -272,7 +272,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">よくある質問</p>
         </div>
 
-        <div class="container mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <div class="container mx-auto max-w-5xl px-16 lg:px-6 py-16 md:py-24">
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
                 

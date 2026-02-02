@@ -12,14 +12,14 @@
 
             <article class="w-full">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    
+
                     <header class="mb-8 md:mb-12">
                         <div class="flex items-center gap-4 mb-4">
                             <time class="font-outfit text-base text-gray-500 font-bold" datetime="<?php echo get_the_date('c'); ?>">
                                 <?php echo get_the_date('Y.m.d'); ?>
                             </time>
                         </div>
-                        
+
                         <h2 class="text-2xl md:text-3xl font-bold leading-tight md:leading-relaxed text-gray-800 mb-6">
                             <?php the_title(); ?>
                         </h2>

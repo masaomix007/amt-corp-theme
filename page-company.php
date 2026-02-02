@@ -70,8 +70,8 @@ get_header();
             <div class="container mx-auto max-w-5xl">
                 <div class="grid grid-cols-1 md:grid-cols-2">
 
-                    <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-6 md:pr-12 lg:pr-16">
-                        <div class="text-sm leading-7 md:leading-8 text-gray-700 font-noto">
+                    <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-12 lg:px-6 md:pr-12 lg:pr-16">
+                        <div class="text-lg  leading-7 md:leading-8 text-gray-700 font-noto">
                             <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">40年以上の経験と豊富な実績</h4>
                             <p class="mb-6">経験豊富なデザイナーから感度の高い若手まで、多様な視点で年齢・性別・ジャンルにとらわれずデザイン制作に取り組みます。</p>
 
@@ -113,7 +113,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">会社概要</p>
         </div>
         <div class="bg-white py-16 md:py-24">
-            <div class="container mx-auto max-w-5xl px-6 grid md:grid-cols-2 gap-12 items-start">
+            <div class="container mx-auto max-w-5xl px-16 lg:px-6 grid md:grid-cols-2 gap-12 items-start">
                 
                 <div class="w-full order-2 md:order-1">
                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-office.webp" alt="Office" class="w-full h-auto object-cover grayscale">
@@ -144,16 +144,16 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">代表あいさつ</p>
         </div>
         <div class="bg-gray-100 py-16 md:py-24">
-            <div class="container mx-auto max-w-5xl px-6">
+            <div class="container mx-auto max-w-5xl px-16 lg:px-6">
                 <h4 class="text-xl md:text-2xl font-bold mb-10 border-b-2 border-black pb-6 block w-full tracking-widest">
                     情報を、価値に変える。
                 </h4>
 
                 <div class="grid md:grid-cols-[1fr_300px] gap-12 items-start">
                     <div class="text-sm leading-8 text-gray-700 font-noto space-y-6">
-                        <p>情報過多の時代。本当に届けたいメッセージが埋もれてしまう。<br>そんな課題を、私たちはデザインの力で解決します。静岡を拠点としながら、<br> オンラインを活用して全国のお客様とお取引させていただいています。</p>
-                        <p>紙・WEB・動画。それぞれのメディア特性を活かし、最適な組み合わせで、<br>想いを「伝わるカタチ」にすることが私たちの使命です。</p>
-                        <p>AI時代だからこそ、人の心に響くデザインを。データでは測れない共感と<br>信頼を、私たちは大切にしています。<br>技術と感性を融合させ、お客様一人ひとりと真摯に向き合いながら、<br>最適なソリューションをご提案します。</p>
+                        <p>情報過多の時代。本当に届けたいメッセージが埋もれてしまう。<br>そんな課題を、私たちはデザインの力で解決します。静岡を拠点としながら、オンラインを活用して全国のお客様とお取引させていただいています。</p>
+                        <p>紙・WEB・動画。それぞれのメディア特性を活かし、最適な組み合わせで、想いを「伝わるカタチ」にすることが私たちの使命です。</p>
+                        <p>AI時代だからこそ、人の心に響くデザインを。データでは測れない共感と信頼を、私たちは大切にしています。技術と感性を融合させ、お客様一人ひとりと真摯に向き合いながら、最適なソリューションをご提案します。</p>
                         <p>ビジネスパートナーとして、新しい価値創造をご一緒させてください。</p>
                     </div>
                     
@@ -188,7 +188,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">交通アクセス</p>
         </div>
         <div class="bg-white py-16 md:py-24">
-             <div class="container mx-auto max-w-5xl px-6">
+             <div class="container mx-auto max-w-5xl px-16 lg:px-6">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     

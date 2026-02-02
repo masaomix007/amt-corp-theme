@@ -2,67 +2,50 @@
 
 <main id="main" class="min-h-screen">
 
-  <?php
-  // Hero
-  $hero_bg = get_theme_file_uri('images/hero-bg.png'); // ここに背景画像を置く（後で差し替えOK）
-  ?>
+<?php $hero_bg = get_theme_file_uri('images/hero-bg.png'); ?>
 
-  <section
-    class="relative min-h-[85vh] md:min-h-[720px] overflow-hidden text-white"
+  <section class="hero-fullscreen text-white"
     style="background-image: url('<?php echo esc_url($hero_bg); ?>'); background-size: cover; background-position: center;"
   >
-    <div class="absolute inset-0 bg-black/0"></div>
+    <div class="absolute inset-0 bg-black/20 z-0"></div>
 
-    <div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/20 to-transparent"></div>
+    <div class="relative z-10 flex justify-center">
+      <img
+        src="<?php echo esc_url(get_template_directory_uri() . '/images/top-logo.svg'); ?>"
+        alt="AMT | ART MIND TRUST WEB. DTP. MOVIE DESIGN COMPANY"
+        class="w-[520px] max-w-full"
+        loading="eager"
+        decoding="async"
+      >
+    </div>
 
-    <div class="relative mx-auto max-w-6xl px-4 pt-28 md:pt-36 pb-16">
-        <div class="mb-6 flex justify-center">
-        <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/images/top-logo.svg'); ?>"
-            alt="AMT | ART MIND TRUST WEB. DTP. MOVIE DESIGN COMPANY"
-            class="w-[520px] max-w-full"
-            loading="eager"
-            decoding="async"
-        >
+    <div class="scroll-btn-container relative z-10">
+      <a href="#news" class="scroll-btn">
+        <div class="mouse-icon border-white">
+          <div class="mouse-dot bg-white"></div>
         </div>
+        <span class="scroll-text text-white">scroll</span>
+      </a>
+    </div>
 
-        <div class="mb-6 flex justify-center py-30">
-        <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/images/top-switch.png'); ?>"
-            alt="scroll"
-            class="w-[38px] max-w-full"
-            loading="eager"
-            decoding="async"
-        >
-        </div>
-      <div class="mt-6 max-w-[720px] font-noto text-[18px] leading-[29px] tracking-[0.1em] font-normal text-white/90">
+    <div class="relative z-10 mx-auto w-full max-w-[1440px] px-6 lg:px-10">
+      <div class="max-w-[720px] font-noto text-[18px] leading-[29px] tracking-[0.1em] font-normal text-white/90">
         <p>デザインで、価値を伝える。</p>
-
         <p class="mt-5">
           紙・WEB・動画。<br>
           時代に合わせて手法は変わっても、<br>
           想いを正しく、深く、心に届けるという本質は変わりません。
         </p>
-
         <p class="mt-5">
           AIが進化する今だからこそ、<br>
           人の感性と誠実な対話を大切に。
         </p>
-
         <p class="mt-5">
           40年以上にわたり培ってきた経験と信頼をもとに、<br>
           お客様と真摯に向き合い、<br>
-          価値あるコミュニケーションを、ともに創造します。  
+          価値あるコミュニケーションを、ともに創造します。
         </p>
       </div>
-    <!--
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-           class="inline-flex items-center rounded-full bg-white px-6 py-3 text-[14px] font-medium tracking-[0.08em] text-zinc-900 !no-underline">
-          お問い合わせ
-        </a>
-      </div>
-    -->
     </div>
   </section>
 
@@ -86,7 +69,7 @@ $news_query = new WP_Query([
   </div>
 
   <div class="bg-gray-100 pb-15">
-    <div class="mx-auto max-w-6xl px-4 py-10">
+    <div class="mx-auto max-w-6xl px-16 lg:px-4 py-10">
       <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
 
         <div class="space-y-4">
@@ -134,7 +117,7 @@ $news_query = new WP_Query([
   </p>
 
   <div class="">
-    <div class="mx-auto max-w-6xl px-4 py-20">
+    <div class="mx-auto max-w-6xl px-16 ld:px-4 py-20">
 
       <div class="grid gap-y-30 md:gap-8 md:grid-cols-3">
 
@@ -315,7 +298,7 @@ $news_query = new WP_Query([
     </div>
   </div>
     <div class="w-full bg-gray-100">
-        <div class="mx-auto px-10 py-20">
+        <div class="mx-auto px-16 lg:px-10 py-20">
 
           <div class="grid gap-8 md:grid-cols-4">
                 <?php if ($blog_query->have_posts()): ?>
@@ -409,7 +392,7 @@ $news_query = new WP_Query([
       </div>
 
       <div class="mt-10 w-full bg-white">
-        <div class="mx-auto max-w-6xl px-4 py-20">
+        <div class="mx-auto max-w-6xl lg:px-4 px-16 py-20">
 
           <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-10 pt-20">
 
@@ -496,7 +479,7 @@ $news_query = new WP_Query([
   </div>
 
   <div class="mt-10 w-full bg-gray-100">
-    <div class="mx-auto max-w-6xl px-4 py-20">
+    <div class="mx-auto max-w-6xl px-16 lg:px-4 py-20">
 
       <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
 
