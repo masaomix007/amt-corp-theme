@@ -18,7 +18,7 @@
     <div class="relative mx-auto max-w-6xl px-4 pt-28 md:pt-36 pb-16">
         <div class="mb-6 flex justify-center">
         <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/images/logo-white.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/images/top-logo.svg'); ?>"
             alt="AMT | ART MIND TRUST WEB. DTP. MOVIE DESIGN COMPANY"
             class="w-[520px] max-w-full"
             loading="eager"
@@ -55,13 +55,14 @@
           価値あるコミュニケーションを、ともに創造します。  
         </p>
       </div>
-
+    <!--
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>"
            class="inline-flex items-center rounded-full bg-white px-6 py-3 text-[14px] font-medium tracking-[0.08em] text-zinc-900 !no-underline">
           お問い合わせ
         </a>
-        </div>
+      </div>
+    -->
     </div>
   </section>
 
@@ -140,7 +141,7 @@ $news_query = new WP_Query([
         <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-8 pt-20 text-center">
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-web.svg"
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-web.svg"
             alt=""
             class="mx-auto h-32 w-32 object-contain"
             loading="lazy"
@@ -171,7 +172,7 @@ $news_query = new WP_Query([
 
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-graphic.svg"
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-graphic.svg"
             alt=""
             class="mx-auto h-32 w-32 object-contain"
             loading="lazy"
@@ -204,7 +205,7 @@ $news_query = new WP_Query([
 
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/works-movie.svg"
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-movie.svg"
             alt=""
             class="mx-auto h-32 w-32 object-contain"
             loading="lazy"
@@ -258,7 +259,7 @@ $news_query = new WP_Query([
 
         <div>
           <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/service-placeholder.png"
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/service-placeholder.webp"
             alt=""
             class="w-full rounded-xl object-cover"
             loading="lazy"
@@ -414,7 +415,7 @@ $news_query = new WP_Query([
 
             <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-6">
               <img
-                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company.svg"
+                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-company.svg"
                 alt=""
                 class="h-32 w-32 object-contain"
                 loading="lazy"
@@ -506,7 +507,7 @@ $news_query = new WP_Query([
           >
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
-                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-email.png"
+                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-email.svg"
                 alt=""
                 class="block h-12 w-12 object-contain"
                 loading="lazy"
@@ -525,7 +526,7 @@ $news_query = new WP_Query([
           >
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
-                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-tel.png"
+                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-tel.svg"
                 alt=""
                 class="block h-10 w-10 object-contain"
                 loading="lazy"
