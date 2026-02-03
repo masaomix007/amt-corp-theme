@@ -167,3 +167,72 @@ window.toggleQa = function() {
         }, 50 + (index * 100)); // 50ms後に開始し、次の要素はさらに100ms遅らせる
     });
 }
+
+/* ============================================
+   2. スムーススクロール機能
+   (全ページ共通)
+============================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  // すべてのアンカーリンク（href="#"で始まるもの）を取得
+  const anchors = document.querySelectorAll('a[href^="#"]');
+  
+  // ヘッダーの高さ（調整してください）
+  const headerOffset = 100; 
+  // スクロール速度（ミリ秒）
+  const duration = 800;
+
+  anchors.forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      
+      // hrefが "#" だけ、または空の場合は何もしない
+      if (href === '#' || href === '') return;
+
+      const targetElement = document.querySelector(href);
+      
+      if (targetElement) {
+        e.preventDefault(); // デフォルトの急な移動をキャンセル
+
+        // ターゲットの位置を取得
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        // アニメーション実行
+        smoothScrollTo(offsetPosition, duration);
+        
+        // URLのハッシュを更新（履歴に残す場合）
+        // history.pushState(null, null, href);
+      }
+    });
+  });
+
+  // イージング関数を使った自作スクロール関数
+  function smoothScrollTo(targetPosition, duration) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      
+      // イージング（easeOutCubic: 最初は速く、最後はゆっくり）
+      const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
+      
+      window.scrollTo(0, run);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+
+    // イージング計算式 (t: time, b: start, c: change, d: duration)
+    function easeOutCubic(t, b, c, d) {
+      t /= d;
+      t--;
+      return c * (t * t * t + 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+  }
+});
