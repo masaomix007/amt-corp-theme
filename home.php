@@ -7,7 +7,7 @@
         <p class="font-noto text-xl tracking-[0.2em] text-gray-600">ブログ</p>
     </div>
 
-    <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-16 text-center">
+    <div class="container mx-auto max-w-6xl px-16 lg:px-4 pt-12 md:pt-16 text-center">
         <p class="text-sm md:text-base leading-7 text-gray-700 font-noto">
             エー・エム・ティーが運営するお役立ち情報です。<br>
             ホームページ制作や印刷物、デザイン、マーケティングなどの情報を発信しています。
@@ -43,14 +43,14 @@
 
             <div class="w-full">
                 
-                <div class="md:hidden mb-12">
+                <div class="md:hidden mb-12 px-12 lg:4">
                     <h2 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">カテゴリー</h2>
                     <?php if ($display_cats) : ?>
                     <div class="flex flex-wrap gap-2">
-                        <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="block w-[48%] text-center border border-gray-400 bg-gray-700 text-white px-3 py-2 text-xs font-bold tracking-widest !no-underline">すべて</a>
+                        <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="block w-[48%] text-center border border-gray-400 bg-gray-700 text-white px-6 py-4 text-xs font-bold tracking-widest !no-underline">すべて</a>
                         
                         <?php foreach($display_cats as $cat): ?>
-                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="block w-[48%] text-center border border-gray-400 bg-white text-gray-700 px-3 py-2 text-xs font-bold tracking-widest !no-underline">
+                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="block w-[48%] text-center border border-gray-400 bg-white text-gray-700 px-6 py-4 text-xs font-bold tracking-widest !no-underline">
                                 <?php echo esc_html($cat->name); ?>
                             </a>
                         <?php endforeach; ?>
@@ -58,7 +58,7 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="space-y-6 md:space-y-10">
+                <div class="space-y-6 md:space-y-10 px-12 lg:4">
                     
                     <h2 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">最新記事</h2>
 
@@ -90,9 +90,11 @@
                             <article class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-gray-300 pb-6 md:pb-10 last:border-b-0">
                                 <a href="<?php the_permalink(); ?>" class="block w-full md:w-[280px] flex-shrink-0 group overflow-hidden">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('medium_large', ['class' => 'w-full h-[180px] md:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300']); ?>
+                                        <?php the_post_thumbnail('medium_large', [
+                                            'class' => 'w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300'
+                                        ]); ?>
                                     <?php else : ?>
-                                        <div class="w-full h-[180px] bg-gray-200 flex items-center justify-center text-gray-400 text-sm">No Image</div>
+                                        <div class="w-full aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm">No Image</div>
                                     <?php endif; ?>
                                 </a>
 
@@ -149,27 +151,65 @@
 
             </div>
 
-            <aside class="w-full space-y-12 md:space-y-16 mt-10 md:mt-0">
-                
+            <aside class="w-full space-y-12 md:space-y-16 mt-10 md:mt-0 lg:px-4">
+
                 <div>
                     <h3 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">人気記事</h3>
                     <div class="space-y-6">
                         <?php
-                        // 人気記事クエリ
-                        $popular_args = array(
-                            'post_type' => 'post',
-                            'posts_per_page' => 3,
-                            'orderby' => 'date', 
-                            'order' => 'DESC',
-                            'ignore_sticky_posts' => 1,
-                            'category__not_in' => array($news_cat_id)
-                        );
-                        $popular_query = new WP_Query($popular_args);
+                        // ★修正版6：列名を 'content' から 'id' に修正し、type=4 (合計) を取得
+                        global $wpdb;
+
+                        $table_views = $wpdb->prefix . 'post_views';
+                        $table_posts = $wpdb->prefix . 'posts';
+
+                        // Post Views Counterのテーブル仕様（id = 投稿ID, type = 4 が全期間合計）に合わせて結合
+                        // count は予約語なので `` で囲む
+                        $sql = "
+                            SELECT p.ID, pvc.`count` as views
+                            FROM {$table_views} pvc
+                            INNER JOIN {$table_posts} p ON pvc.id = p.ID
+                            WHERE p.post_type = 'post' 
+                            AND p.post_status = 'publish'
+                            AND pvc.type = 4
+                            ORDER BY views DESC
+                            LIMIT 5
+                        ";
+
+                        // クエリ実行
+                        $top_viewed = $wpdb->get_results($sql);
+
+                        // デバッグ用：もしこれでもエラーが出る場合、以下のコメントを外してください
+                        // if(!empty($wpdb->last_error)) { echo '<p class="text-red-500 text-xs">' . esc_html($wpdb->last_error) . '</p>'; }
+
+                        $post_ids = [];
+                        if ($top_viewed) {
+                            foreach ($top_viewed as $row) {
+                                if (is_numeric($row->ID) && $row->ID > 0) {
+                                    $post_ids[] = intval($row->ID);
+                                }
+                            }
+                        }
+
+                        // 取得したIDで記事を表示
+                        if (!empty($post_ids)) {
+                            $popular_args = array(
+                                'post_type'      => 'post',
+                                'post__in'       => $post_ids,
+                                'orderby'        => 'post__in', // ランキング順を維持
+                                'posts_per_page' => 3,
+                                'ignore_sticky_posts' => 1,
+                            );
+                            $popular_query = new WP_Query($popular_args);
+                        } else {
+                            $popular_query = new WP_Query();
+                        }
+
                         $rank = 1;
-                        
+
                         if ($popular_query->have_posts()) :
                             while ($popular_query->have_posts()) : $popular_query->the_post();
-                                $rank_color = '#c49c86';
+                                $rank_color = '#c49c86'; 
                                 if ($rank === 1) $rank_color = '#dcb67d';
                                 elseif ($rank === 2) $rank_color = '#a5a5a5';
                         ?>
@@ -187,12 +227,14 @@
                                     </p>
                                 </div>
                             </a>
-                        <?php 
+                        <?php
                             $rank++;
                             endwhile;
                             wp_reset_postdata();
-                        endif;
+                        else :
                         ?>
+                            <p class="text-sm text-gray-500">集計中...</p>
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -234,7 +276,7 @@
       </div>
 
       <div class="w-full bg-gray-100 pb-20">
-        <div class="mx-auto max-w-6xl px-4 py-20">
+        <div class="mx-auto max-w-6xl px-16 lg:px-4 py-20">
           <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
 
             <div class="mx-auto w-full max-w-xl text-center">
@@ -243,7 +285,7 @@
                 class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
               >
                 <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
-                  <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-email.png" alt="" class="block h-12 w-12 object-contain">
+                  <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-email.svg" alt="" class="block h-12 w-12 object-contain">
                 </span>
                 <span class="font-noto text-xl font-bold tracking-widest">お問い合わせ</span>
               </a>
@@ -255,7 +297,7 @@
                 class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
               >
                 <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
-                  <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/contact-tel.png" alt="" class="block h-10 w-10 object-contain">
+                  <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-tel.svg" alt="" class="block h-10 w-10 object-contain">
                 </span>
                 <span class="font-noto text-xl font-bold tracking-widest">054-286-4085</span>
               </a>

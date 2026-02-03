@@ -19,7 +19,7 @@
         </p>
     </div>
 
-    <div class="container mx-auto max-w-6xl px-4 py-12 md:py-16">
+    <div class="container mx-auto max-w-6xl px-14 lg:px-4 py-12 md:py-16">
         
         <?php
         // カテゴリーデータの取得（サイドバー・SP用：home.phpから流用）
@@ -48,9 +48,11 @@
                             <article class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-gray-300 pb-6 md:pb-10 last:border-b-0">
                                 <a href="<?php the_permalink(); ?>" class="block w-full md:w-[280px] flex-shrink-0 group overflow-hidden">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('medium_large', ['class' => 'w-full h-[180px] md:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300']); ?>
+                                        <?php the_post_thumbnail('medium_large', [
+                                            'class' => 'w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300'
+                                        ]); ?>
                                     <?php else : ?>
-                                        <div class="w-full h-[180px] bg-gray-200 flex items-center justify-center text-gray-400 text-sm">No Image</div>
+                                        <div class="w-full aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm">No Image</div>
                                     <?php endif; ?>
                                 </a>
 
@@ -100,27 +102,67 @@
                 </div>
             </div>
 
-            <aside class="w-full space-y-12 md:space-y-16 mt-10 md:mt-0">
-                
+            <aside class="w-full space-y-12 md:space-y-16 mt-10 md:mt-0 lg:px-4">
+
                 <div>
                     <h3 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">人気記事</h3>
                     <div class="space-y-6">
                         <?php
-                        $news_cat = get_category_by_slug('news');
-                        $news_cat_id = $news_cat ? $news_cat->term_id : 0;
-                        $popular_args = array(
-                            'post_type' => 'post',
-                            'posts_per_page' => 3,
-                            'orderby' => 'date', 
-                            'order' => 'DESC',
-                            'ignore_sticky_posts' => 1,
-                            'category__not_in' => array($news_cat_id)
-                        );
-                        $popular_query = new WP_Query($popular_args);
+                        // ★修正版6：列名を 'content' から 'id' に修正し、type=4 (合計) を取得
+                        global $wpdb;
+
+                        $table_views = $wpdb->prefix . 'post_views';
+                        $table_posts = $wpdb->prefix . 'posts';
+
+                        // Post Views Counterのテーブル仕様（id = 投稿ID, type = 4 が全期間合計）に合わせて結合
+                        // count は予約語なので `` で囲む
+                        $sql = "
+                            SELECT p.ID, pvc.`count` as views
+                            FROM {$table_views} pvc
+                            INNER JOIN {$table_posts} p ON pvc.id = p.ID
+                            WHERE p.post_type = 'post' 
+                            AND p.post_status = 'publish'
+                            AND pvc.type = 4
+                            ORDER BY views DESC
+                            LIMIT 5
+                        ";
+
+                        // クエリ実行
+                        $top_viewed = $wpdb->get_results($sql);
+
+                        // デバッグ用：もしこれでもエラーが出る場合、以下のコメントを外してください
+                        // if(!empty($wpdb->last_error)) { echo '<p class="text-red-500 text-xs">' . esc_html($wpdb->last_error) . '</p>'; }
+
+                        $post_ids = [];
+                        if ($top_viewed) {
+                            foreach ($top_viewed as $row) {
+                                if (is_numeric($row->ID) && $row->ID > 0) {
+                                    $post_ids[] = intval($row->ID);
+                                }
+                            }
+                        }
+
+                        // 取得したIDで記事を表示
+                        if (!empty($post_ids)) {
+                            $popular_args = array(
+                                'post_type'      => 'post',
+                                'post__in'       => $post_ids,
+                                'orderby'        => 'post__in', // ランキング順を維持
+                                'posts_per_page' => 3,
+                                'ignore_sticky_posts' => 1,
+                            );
+                            $popular_query = new WP_Query($popular_args);
+                        } else {
+                            $popular_query = new WP_Query();
+                        }
+
                         $rank = 1;
+
                         if ($popular_query->have_posts()) :
                             while ($popular_query->have_posts()) : $popular_query->the_post();
-                                $rank_color = ($rank === 1) ? '#dcb67d' : (($rank === 2) ? '#a5a5a5' : '#c49c86');
+                                $rank_color = '#c49c86'; 
+                                if ($rank === 1) $rank_color = '#dcb67d';
+                                elseif ($rank === 2) $rank_color = '#a5a5a5';
                         ?>
                             <a href="<?php the_permalink(); ?>" class="flex gap-4 group !no-underline items-start">
                                 <div class="relative w-[34px] flex-shrink-0">
@@ -131,10 +173,19 @@
                                 </div>
                                 <div>
                                     <time class="block text-xs text-gray-500 font-outfit mb-1"><?php echo get_the_date('Y.m.d'); ?></time>
-                                    <p class="text-sm font-bold leading-6 text-gray-800 group-hover:text-gray-600 line-clamp-2"><?php the_title(); ?></p>
+                                    <p class="text-sm font-bold leading-6 text-gray-800 group-hover:text-gray-600 line-clamp-2">
+                                        <?php the_title(); ?>
+                                    </p>
                                 </div>
                             </a>
-                        <?php $rank++; endwhile; wp_reset_postdata(); endif; ?>
+                        <?php
+                            $rank++;
+                            endwhile;
+                            wp_reset_postdata();
+                        else :
+                        ?>
+                            <p class="text-sm text-gray-500">集計中...</p>
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -160,6 +211,7 @@
                 </div>
 
             </aside>
+            
         </div>
     </div>
 </main>

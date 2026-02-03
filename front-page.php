@@ -51,11 +51,11 @@
 
 <?php
 $news_query = new WP_Query([
-  'post_type'      => 'post',
-  'posts_per_page' => 3, // 3件表示
+  'post_type'      => 'news', // ★投稿タイプを 'news' に変更
+  'posts_per_page' => 3,
   'post_status'    => 'publish',
   'no_found_rows'  => true,
-  'category_name' => 'news',
+  // 'category_name' => 'news', // ★カテゴリー絞り込みは削除
 ]);
 ?>
 
@@ -277,16 +277,16 @@ $news_query = new WP_Query([
   </div>
 </section>
 
-    <?php
-    // BLOG（通常投稿）最新3件
+<?php
+    // BLOG（通常投稿）最新8件
     $blog_query = new WP_Query([
-    'post_type'           => 'post',
-    'posts_per_page'      => 8,
-    'post_status'         => 'publish',
-    'orderby'        => 'date',      // 公開日基準
-    'order'          => 'DESC',      // 新しい順
-    'ignore_sticky_posts' => true,
-    'category__not_in' => [ get_cat_ID('news') ],
+      'post_type'           => 'post',      // ★通常投稿のみを取得（これでカスタム投稿newsは除外されます）
+      'posts_per_page'      => 8,
+      'post_status'         => 'publish',
+      'orderby'             => 'date',
+      'order'               => 'DESC',
+      'ignore_sticky_posts' => true,
+      // 'category__not_in' => [ get_cat_ID('news') ], // ★不要なので削除（post_typeで分かれているため）
     ]);
     ?>
 
@@ -305,7 +305,7 @@ $news_query = new WP_Query([
                 <?php while ($blog_query->have_posts()): $blog_query->the_post(); ?>
 
                   <?php
-                    // ★追加：6件目以降（インデックス5以上）は「スマホで非表示(hidden)、PCで表示(block)」にする
+                    // 6件目以降（インデックス5以上）は「スマホで非表示(hidden)、PCで表示(block)」にする
                     $visibility_class = ($blog_query->current_post >= 5) ? ' hidden md:block' : '';
                     ?>
 
@@ -329,13 +329,14 @@ $news_query = new WP_Query([
                         </time>
 
                         <?php
-                        // news 以外のカテゴリを最大2つまで表示（なければ非表示）
+                        // カテゴリ表示（newsカテゴリの除外ロジックは念のため残していますが、付与されていなければ無視されます）
                         $cats = get_the_category();
-                        $news_id = get_cat_ID('news');
+                        $news_id = get_cat_ID('news'); // newsカテゴリID取得
 
                         $badge_cats = [];
                         if (!empty($cats)) {
                             foreach ($cats as $cat) {
+                                // もし誤ってnewsカテゴリが付いていても表示しないように除外
                                 if ((int) $cat->term_id !== (int) $news_id) {
                                     $badge_cats[] = $cat;
                                 }
