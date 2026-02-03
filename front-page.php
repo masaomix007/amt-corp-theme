@@ -4,22 +4,22 @@
 
 <?php $hero_bg = get_theme_file_uri('images/hero-bg.png'); ?>
 
-  <section class="hero-fullscreen text-white"
-    style="background-image: url('<?php echo esc_url($hero_bg); ?>'); background-size: cover; background-position: center;"
-  >
-    <div class="absolute inset-0 bg-black/20 z-0"></div>
+<section class="relative w-full bg-cover bg-center bg-fixed text-white"
+  style="background-image: url('<?php echo esc_url($hero_bg); ?>');"
+>
+  <div class="absolute inset-0 bg-black/20 z-0"></div>
 
-    <div class="relative z-10 flex justify-center">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/images/top-logo.svg'); ?>"
-        alt="AMT | ART MIND TRUST WEB. DTP. MOVIE DESIGN COMPANY"
-        class="w-[520px] max-w-full"
-        loading="eager"
-        decoding="async"
-      >
-    </div>
+  <div class="relative z-10 flex h-screen w-full flex-col items-center justify-center">
+    
+    <img
+      src="<?php echo esc_url(get_template_directory_uri() . '/images/top-logo.svg'); ?>"
+      alt="AMT | ART MIND TRUST WEB. DTP. MOVIE DESIGN COMPANY"
+      class="w-[520px] max-w-full px-4"
+      loading="eager"
+      decoding="async"
+    >
 
-    <div class="scroll-btn-container relative z-10">
+    <div class="absolute bottom-20 left-1/2 -translate-x-1/2">
       <a href="#news" class="scroll-btn">
         <div class="mouse-icon border-white">
           <div class="mouse-dot bg-white"></div>
@@ -27,27 +27,29 @@
         <span class="scroll-text text-white">scroll</span>
       </a>
     </div>
+  </div>
 
-    <div class="relative z-10 mx-auto w-full max-w-[1440px] px-6 lg:px-10">
-      <div class="max-w-[720px] font-noto text-[18px] leading-[29px] tracking-[0.1em] font-normal text-white/90">
-        <p>デザインで、価値を伝える。</p>
-        <p class="mt-5">
-          紙・WEB・動画。<br>
-          時代に合わせて手法は変わっても、<br>
-          想いを正しく、深く、心に届けるという本質は変わりません。
-        </p>
-        <p class="mt-5">
-          AIが進化する今だからこそ、<br>
-          人の感性と誠実な対話を大切に。
-        </p>
-        <p class="mt-5">
-          40年以上にわたり培ってきた経験と信頼をもとに、<br>
-          お客様と真摯に向き合い、<br>
-          価値あるコミュニケーションを、ともに創造します。
-        </p>
-      </div>
+  <div id="message-area" class="relative z-10 mx-auto w-full max-w-[1440px] px-6 pb-40 pt-20 lg:px-10">
+    <div class="mx-auto max-w-[720px] font-noto text-[18px] leading-[29px] tracking-[0.1em] font-normal text-white/90 text-center md:text-left">
+      <p>デザインで、価値を伝える。</p>
+      <p class="mt-10">
+        紙・WEB・動画。<br>
+        時代に合わせて手法は変わっても、<br>
+        想いを正しく、深く、心に届けるという本質は変わりません。
+      </p>
+      <p class="mt-10">
+        AIが進化する今だからこそ、<br>
+        人の感性と誠実な対話を大切に。
+      </p>
+      <p class="mt-10">
+        40年以上にわたり培ってきた経験と信頼をもとに、<br>
+        お客様と真摯に向き合い、<br>
+        価値あるコミュニケーションを、ともに創造します。
+      </p>
     </div>
-  </section>
+  </div>
+
+</section>
 
 <?php
 $news_query = new WP_Query([
