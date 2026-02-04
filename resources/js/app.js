@@ -92,18 +92,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // アイコンを3本線に戻す
         menuToggles.forEach(btn => animateHamburger(btn, false));
 
+        // ★追加：隠していたStickyヘッダーを元に戻す（トップページのみ）
+        if (isHomePage && stickyHeader) stickyHeader.classList.remove('opacity-0', 'pointer-events-none');
+
         // --- デザインの復帰 ---
 
-        // A. 線の色を戻す
+// A. 線の色を戻す
         allBars.forEach(bar => {
-            // トップページ以外の場合のみ、白クラスを削除してグレーに戻す
-            // (トップページは元々白なので、bg-whiteを消すと見えなくなるため維持する)
-            if (!isHomePage) {
+            // その線がスティッキーヘッダーの中にあるかチェック
+            const isStickyBar = stickyHeader && stickyHeader.contains(bar);
+
+            if (isHomePage) {
+                if (isStickyBar) {
+                    // Topページ: Stickyヘッダーの線なら、本来の色(グレー)に戻す
+                    bar.classList.remove('bg-white');
+                    bar.classList.add('bg-gray-600');
+                } else {
+                    // Topページ: Heroヘッダーの線なら、本来の色(白)に戻す
+                    bar.classList.remove('bg-gray-600');
+                    bar.classList.add('bg-white');
+                }
+            } else {
+                // 下層ページ: 必ずグレーに戻す
                 bar.classList.remove('bg-white');
                 bar.classList.add('bg-gray-600');
             }
         });
-
+        
         // B. ヘッダー背景の復帰
         if (mainHeader) {
             if (isHomePage) {
@@ -155,6 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // アイコンをバツ印にする
         menuToggles.forEach(btn => animateHamburger(btn, true));
+
+        // ★追加：Stickyヘッダーを隠して、裏の黒背景（Hero/Main）を見せる（トップページのみ）
+        if (isHomePage && stickyHeader) stickyHeader.classList.add('opacity-0', 'pointer-events-none');
 
         // --- メニュー用デザイン（黒背景・白文字）へ変更 ---
 
