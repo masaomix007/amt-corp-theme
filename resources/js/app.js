@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const anchors = document.querySelectorAll('a[href^="#"]');
   
   // ヘッダーの高さ（調整してください）
-  const headerOffset = 100; 
+  const headerOffset = 80; 
   // スクロール速度（ミリ秒）
   const duration = 800;
 
