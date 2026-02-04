@@ -22,114 +22,122 @@ window.addEventListener('load', function () {
     }
 })
 
+/* ▼▼▼ ここから追加（物理スティッキーヘッダー対応版） ▼▼▼ */
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.getElementById('site-header');
-  const menuToggle = document.getElementById('menu-toggle');
+  // 要素の取得
+  const headerHero = document.getElementById('header-hero');     // Home: 透明ヘッダー (fixed)
+  const headerSticky = document.getElementById('sticky-header'); // Home: ニュース上ヘッダー (sticky)
   const mobileMenu = document.getElementById('mobile-menu-overlay');
   
-  // ロゴのラッパー要素（確実なセレクタに変更）
-  const logoWrapper = header.querySelector('.flex-shrink-0 a'); 
+  // メニューボタン (Hero用, Sticky用, 下層用すべて取得)
+  const menuToggles = document.querySelectorAll('#menu-toggle, .menu-toggle-btn');
 
-  // ハンバーガーの3本線
-  const bar1 = menuToggle.querySelector('.menu-bar-1');
-  const bar2 = menuToggle.querySelector('.menu-bar-2');
-  const bar3 = menuToggle.querySelector('.menu-bar-3');
+  // ------------------------------------------------
+  // A. トップページ用：Heroヘッダー表示切替ロジック
+  // ------------------------------------------------
+  // 両方のヘッダーが存在する場合のみ実行（トップページ判定）
+  if (headerHero && headerSticky) {
+    window.addEventListener('scroll', () => {
+      // メニューが開いている時は処理しない（表示崩れ防止）
+      if (mobileMenu && mobileMenu.classList.contains('translate-x-0')) return;
 
-  // スクロール検知関数
-  function handleScroll() {
-    const isOpen = mobileMenu.classList.contains('translate-x-0');
-    
-    // メニューが開いている時は、スクロール判定を無視して「透明背景＆白文字」を維持
-    if (isOpen) {
-      return;
-    }
+      // Stickyヘッダーの位置を取得
+      const rect = headerSticky.getBoundingClientRect();
 
-    // 通常時のスクロール処理
-    if (window.scrollY > 50) {
-      header.classList.add('is-scrolled', 'bg-white', 'shadow-md', 'group');
-      header.classList.remove('bg-transparent', 'text-white');
-    } else {
-      header.classList.remove('is-scrolled', 'bg-white', 'shadow-md', 'group');
-      header.classList.add('bg-transparent', 'text-white');
-    }
+      // rect.top が 0 以下 ＝ Stickyヘッダーが画面上部に到達して張り付いた状態
+      if (rect.top <= 0) {
+        // Heroヘッダーを消す (透明にしてクリック不可に)
+        headerHero.classList.add('opacity-0', 'pointer-events-none');
+      } else {
+        // まだ張り付いていなければ Heroヘッダーを表示
+        headerHero.classList.remove('opacity-0', 'pointer-events-none');
+      }
+    });
   }
 
-  // スクロールイベント
-  window.addEventListener('scroll', handleScroll);
+  // ------------------------------------------------
+  // B. ハンバーガーメニュー開閉ロジック (共通)
+  // ------------------------------------------------
+  if (menuToggles.length > 0 && mobileMenu) {
+    
+    // 全てのハンバーガーボタンにクリックイベントを設定
+    menuToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleMenu();
+      });
+    });
 
-  // ハンバーガーメニュー開閉
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
+    function toggleMenu() {
       const isOpen = mobileMenu.classList.contains('translate-x-0');
 
       if (isOpen) {
-        // -----------------------
-        // 閉じる処理
-        // -----------------------
+        // ▼▼▼ 閉じる処理 ▼▼▼
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
-        document.body.style.overflow = ''; 
+        document.body.style.overflow = ''; // スクロールロック解除
 
-        // アニメーション: 3本線に戻す
-        if (bar1.classList.contains('origin-center')) {
-             bar1.classList.remove('rotate-45', 'translate-y-[11px]', 'origin-center');
-             bar1.classList.add('origin-left');
-             
-             bar2.classList.remove('opacity-0');
-             
-             bar3.classList.remove('-rotate-45', '-translate-y-[11px]', 'origin-center');
-             bar3.classList.add('origin-left');
-        }
+        // 全てのアイコンを「3本線」に戻す
+        menuToggles.forEach(btn => animateHamburger(btn, false));
 
-        // ★修正点：ロゴを初期状態（透明）に戻す
-        // メニューを開く時に削除したクラス(opacity-0など)を付与し直し、追加したクラス(opacity-100)を削除します。
-        // ※スクロール時(.is-scrolled)はCSS側で表示されるため、この処理が入っても問題ありません。
-        if (logoWrapper) {
-          logoWrapper.classList.remove('opacity-100', 'pointer-events-auto');
-          logoWrapper.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        // ヘッダーの色をスクロール位置に合わせて即座に戻す
-        if (window.scrollY > 50) {
-          header.classList.add('is-scrolled', 'bg-white', 'shadow-md', 'group');
-          header.classList.remove('bg-transparent', 'text-white');
-        } else {
-          // トップ位置なら透明に戻る（ロゴも上でopacity-0にしたので消える）
-          header.classList.remove('is-scrolled', 'bg-white', 'shadow-md', 'group');
-          header.classList.add('bg-transparent', 'text-white');
+        // Homeの場合: 閉じた瞬間のスクロール位置に応じてHeroヘッダーの状態を復帰させる
+        if (headerHero && headerSticky) {
+             const rect = headerSticky.getBoundingClientRect();
+             // Stickyヘッダーがまだ張り付いていない位置なら、Heroを表示に戻す
+             if (rect.top > 0) {
+                 headerHero.classList.remove('opacity-0', 'pointer-events-none');
+             }
         }
 
       } else {
-        // -----------------------
-        // 開く処理
-        // -----------------------
+        // ▼▼▼ 開く処理 ▼▼▼
         mobileMenu.classList.remove('translate-x-full');
         mobileMenu.classList.add('translate-x-0');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // 背景固定
 
-        // アニメーション: バツにする
+        // 全てのアイコンを「バツ印」にする
+        menuToggles.forEach(btn => animateHamburger(btn, true));
+
+        // Homeの場合: メニューが開いている間は、Heroヘッダーを強制表示
+        // (これをしないと、メニュー背景の裏でヘッダーが消えてしまうことがあるため)
+        if (headerHero) {
+            headerHero.classList.remove('opacity-0', 'pointer-events-none');
+        }
+      }
+    }
+
+    // ハンバーガーアイコンのアニメーション制御関数
+    function animateHamburger(btn, toClose) {
+      const bar1 = btn.querySelector('.menu-bar-1');
+      const bar2 = btn.querySelector('.menu-bar-2');
+      const bar3 = btn.querySelector('.menu-bar-3');
+      
+      // 要素が足りない場合はエラー回避
+      if (!bar1 || !bar2 || !bar3) return;
+
+      if (toClose) {
+        // バツ印に変形
         bar1.classList.remove('origin-left');
-        bar1.classList.add('rotate-45', 'translate-y-[11px]', 'origin-center'); 
+        bar1.classList.add('rotate-45', 'translate-y-[11px]', 'origin-center');
         
         bar2.classList.add('opacity-0');
         
         bar3.classList.remove('origin-left');
         bar3.classList.add('-rotate-45', '-translate-y-[11px]', 'origin-center');
-
-        // ロゴ: 強制表示
-        // 元の隠すクラス(opacity-0)を消して、表示クラス(opacity-100)をつける
-        if (logoWrapper) {
-          logoWrapper.classList.remove('opacity-0', 'pointer-events-none');
-          logoWrapper.classList.add('opacity-100', 'pointer-events-auto');
-        }
-
-        // ヘッダー: 透明背景・白文字に強制
-        header.classList.remove('bg-white', 'shadow-md', 'is-scrolled');
-        header.classList.add('bg-transparent', 'text-white');
+      } else {
+        // 3本線に戻す
+        bar1.classList.remove('rotate-45', 'translate-y-[11px]', 'origin-center');
+        bar1.classList.add('origin-left');
+        
+        bar2.classList.remove('opacity-0');
+        
+        bar3.classList.remove('-rotate-45', '-translate-y-[11px]', 'origin-center');
+        bar3.classList.add('origin-left');
       }
-    });
+    }
   }
 });
+/* ▲▲▲ 追加ここまで ▲▲▲ */
 
 /* ============================================
    1. Q&A アコーディオン機能

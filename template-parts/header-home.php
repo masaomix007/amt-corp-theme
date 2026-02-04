@@ -25,7 +25,7 @@
           <img 
             src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/logo.svg"
             alt="AMT" 
-            class="h-10 w-auto invert grayscale contrast-10"
+            class="h-10 w-auto invert grayscale contrast-100"
           > 
         </a>
       </div>
