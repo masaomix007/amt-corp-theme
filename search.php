@@ -14,7 +14,11 @@
         <?php
         // カテゴリーデータの取得（サイドバー用：home.phpから流用）
         $exclude_slugs = ['blog', 'news', 'uncategorized'];
-        $cat_args = array('orderby' => 'name', 'order' => 'ASC', 'hide_empty' => 0);
+        $cat_args = array(
+                    'orderby' => 'name', 
+                    'order' => 'ASC', 
+                    'hide_empty' => 1 // ★ここを 1 に変更
+                );
         $all_cats = get_categories($cat_args);
         $display_cats = [];
         foreach ($all_cats as $cat) {
@@ -27,7 +31,7 @@
         <div class="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-12 items-start">
 
             <div class="w-full">
-                <div class="space-y-6 md:space-y-10 px-14 lg:px-4">
+                <div class="space-y-6 md:space-y-10 px-6     lg:px-4">
                     
                     <h2 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">
                         検索キーワード：<?php echo get_search_query(); ?>
@@ -191,7 +195,7 @@
                     </form>
                 </div>
 
-                <div class="hidden md:block">
+                <div>
                     <h3 class="text-xl font-bold mb-6 font-noto tracking-widest">カテゴリー</h3>
                     <?php if ($display_cats) : ?>
                     <div class="grid grid-cols-2 gap-2">

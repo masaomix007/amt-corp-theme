@@ -23,8 +23,13 @@
         <div class="contact-form-wrapper">
             <?php 
             // 本番のショートコードIDを確認して書き換えてください
-            echo do_shortcode('[contact-form-7 id="458c154" title="コンタクトフォーム 1"]'); 
+            echo do_shortcode('[contact-form-7 id="458c154" title="コンタクトフォーム 1"]');
             ?>
+            <div class="mt-8 text-[10px] leading-relaxed text-gray-400 font-noto text-center md:text-left">
+                このサイトは reCAPTCHA によって保護されており、Googleの
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline hover:text-gray-600">プライバシーポリシー</a>と
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline hover:text-gray-600">利用規約</a>が適用されます。
+            </div>
         </div>
     </div>
 

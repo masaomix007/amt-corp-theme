@@ -7,7 +7,7 @@
         <p class="font-noto text-xl tracking-[0.2em] text-gray-600">ブログ</p>
     </div>
 
-    <div class="container mx-auto max-w-6xl px-16 lg:px-4 pt-12 md:pt-16 text-center">
+    <div class="container mx-auto max-w-6xl px-6 lg:px-4 pt-12 md:pt-16 text-center">
         <p class="text-sm md:text-base leading-7 text-gray-700 font-noto">
             エー・エム・ティーが運営するお役立ち情報です。<br>
             ホームページ制作や印刷物、デザイン、マーケティングなどの情報を発信しています。
@@ -27,7 +27,7 @@
         $cat_args = array(
             'orderby' => 'name',
             'order'   => 'ASC',
-            'hide_empty' => 0 
+            'hide_empty' => 1
         );
         $all_cats = get_categories($cat_args);
         $display_cats = [];
@@ -42,15 +42,13 @@
         <div class="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-12 items-start">
 
             <div class="w-full">
-                
-                <div class="md:hidden mb-12 px-12 lg:4">
+                <div class="md:hidden mb-12 px-4 lg:4">
                     <h2 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">カテゴリー</h2>
                     <?php if ($display_cats) : ?>
                     <div class="flex flex-wrap gap-2">
-                        <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="block w-[48%] text-center border border-gray-400 bg-gray-700 text-white px-6 py-4 text-xs font-bold tracking-widest !no-underline">すべて</a>
-                        
+                        <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="flex items-center justify-center w-[48%] border border-gray-400 bg-gray-700 text-white px-6 py-4 text-xs font-bold tracking-widest !no-underline">すべて</a>
                         <?php foreach($display_cats as $cat): ?>
-                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="block w-[48%] text-center border border-gray-400 bg-white text-gray-700 px-6 py-4 text-xs font-bold tracking-widest !no-underline">
+                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="flex items-center justify-center w-[48%] border border-gray-400 bg-white text-gray-700 px-6 py-4 text-xs font-bold tracking-widest !no-underline">
                                 <?php echo esc_html($cat->name); ?>
                             </a>
                         <?php endforeach; ?>
@@ -58,8 +56,7 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="space-y-6 md:space-y-10 px-12 lg:4">
-                    
+                <div class="space-y-6 md:space-y-10 px-4 lg:4">
                     <h2 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">最新記事</h2>
 
                     <?php
@@ -77,7 +74,7 @@
                         'paged' => $paged,
                         'category__not_in' => array($news_cat_id) // NEWSを除外
                     );
-                    
+
                     $blog_query = new WP_Query($args);
 
                     global $wp_query;
@@ -249,7 +246,7 @@
                     </form>
                 </div>
 
-                <div class="hidden md:block">
+                <div>
                     <h3 class="text-xl font-bold mb-6 font-noto tracking-widest">カテゴリー</h3>
                     <?php if ($display_cats) : ?>
                     <div class="grid grid-cols-2 gap-2">
@@ -276,7 +273,7 @@
       </div>
 
       <div class="w-full bg-gray-100 pb-20">
-        <div class="mx-auto max-w-6xl px-16 lg:px-4 py-20">
+        <div class="mx-auto max-w-6xl px-6 lg:px-4 py-20">
           <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
 
             <div class="mx-auto w-full max-w-xl text-center">

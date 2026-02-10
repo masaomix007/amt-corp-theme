@@ -67,19 +67,23 @@ get_header();
         </div>
 
         <div class="w-full flex flex-col md:block bg-gray-100 md:bg-[linear-gradient(90deg,#f3f4f6_50%,#ffffff_50%)]">
-            <div class="container mx-auto max-w-5xl">
+            <div class="md:container mx-auto max-w-5xl">
                 <div class="grid grid-cols-1 md:grid-cols-2">
 
-                    <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-12 lg:px-6 md:pr-12 lg:pr-16">
-                        <div class="text-lg  leading-7 md:leading-8 text-gray-700 font-noto">
-                            <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">40年以上の経験と豊富な実績</h4>
-                            <p class="mb-6">経験豊富なデザイナーから感度の高い若手まで、多様な視点で年齢・性別・ジャンルにとらわれずデザイン制作に取り組みます。</p>
-
-                            <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">コミュニケーションを大切にした制作体制</h4>
-                            <p class="mb-6">より良いデザインを実現するには、イメージや方向性の共有が不可欠です。私たちは、スピード感を持ったコミュニケーションと柔軟なフットワークを重視しています。</p>
-
-                            <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">信頼のネットワークで多様なニーズに対応</h4>
-                            <p>掲載内容以外のご要望でも、デザインに関わる事なら柔軟に対応いたします。豊富な実績と幅広い取引先とのつながりを活かし、最適なご提案をお届けします。</p>
+                    <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-6 md:pr-12 lg:pr-16">
+                        <div class="text-lg leading-7 md:leading-8 text-gray-700 font-noto">
+                            <div class="mb-12 md:mb-16">
+                                <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">40年以上の経験と豊富な実績</h4>
+                                <p>経験豊富なデザイナーから感度の高い若手まで、多様な視点で年齢・性別・ジャンルにとらわれずデザイン制作に取り組みます。</p>
+                            </div>
+                            <div class="mb-12 md:mb-16">
+                                <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">コミュニケーションを大切にした制作体制</h4>
+                                <p>より良いデザインを実現するには、イメージや方向性の共有が不可欠です。私たちは、スピード感を持ったコミュニケーションと柔軟なフットワークを重視しています。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">信頼のネットワークで多様なニーズに対応</h4>
+                                <p>掲載内容以外のご要望でも、デザインに関わる事なら柔軟に対応いたします。豊富な実績と幅広い取引先とのつながりを活かし、最適なご提案をお届けします。</p>
+                            </div>
                         </div>
                     </div>
 
@@ -89,19 +93,19 @@ get_header();
                         <div class="space-y-10 font-noto">
                             <div>
                                 <p class="font-outfit font-bold text-2xl tracking-[0.2em] mb-3 text-gray-800">A<span class="text-gray-400">RT</span></p>
-                                <p class="text-sm leading-7 text-gray-600">芸術的であることに加え、<br>効果的に情報を伝える技を携え、<br>デザインという手段で社会に貢献する。</p>
+                                <p class="text-lg leading-7 text-gray-600">芸術的であることに加え、<br>効果的に情報を伝える技を携え、<br>デザインという手段で社会に貢献する。</p>
                             </div>
                             <div>
                                 <p class="font-outfit font-bold text-2xl tracking-[0.2em] mb-3 text-gray-800">M<span class="text-gray-400">IND</span></p>
-                                <p class="text-sm leading-7 text-gray-600">顧客のために心を込めた<br>モノ作りに徹し、<br>記憶に残る仕事をする。</p>
+                                <p class="text-lg leading-7 text-gray-600">顧客のために心を込めた<br>モノ作りに徹し、<br>記憶に残る仕事をする。</p>
                             </div>
                             <div>
                                 <p class="font-outfit font-bold text-2xl tracking-[0.2em] mb-3 text-gray-800">T<span class="text-gray-400">RUST</span></p>
-                                <p class="text-sm leading-7 text-gray-600">信頼を裏切らない真摯な<br>行いを心掛け、社会の中で<br>責任ある役割を果たす。</p>
+                                <p class="text-lg leading-7 text-gray-600">信頼を裏切らない真摯な<br>行いを心掛け、社会の中で<br>責任ある役割を果たす。</p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -113,8 +117,8 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">会社概要</p>
         </div>
         <div class="bg-white py-16 md:py-24">
-            <div class="container mx-auto max-w-5xl px-16 lg:px-6 grid md:grid-cols-2 gap-12 items-start">
-                
+            <div class="container mx-auto max-w-5xl px-6 lg:px-6 grid md:grid-cols-2 gap-12 items-start">
+
                 <div class="w-full order-2 md:order-1">
                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-office.webp" alt="Office" class="w-full h-auto object-cover grayscale">
                 </div>
@@ -144,13 +148,13 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">代表あいさつ</p>
         </div>
         <div class="bg-gray-100 py-16 md:py-24">
-            <div class="container mx-auto max-w-5xl px-16 lg:px-6">
+            <div class="container mx-auto max-w-5xl px-6 lg:px-6">
                 <h4 class="text-xl md:text-2xl font-bold mb-10 border-b-2 border-black pb-6 block w-full tracking-widest">
                     情報を、価値に変える。
                 </h4>
 
                 <div class="grid md:grid-cols-[1fr_300px] gap-12 items-start">
-                    <div class="text-sm leading-8 text-gray-700 font-noto space-y-6">
+                    <div class="text-base leading-8 text-gray-700 font-noto space-y-6">
                         <p>情報過多の時代。本当に届けたいメッセージが埋もれてしまう。<br>そんな課題を、私たちはデザインの力で解決します。静岡を拠点としながら、オンラインを活用して全国のお客様とお取引させていただいています。</p>
                         <p>紙・WEB・動画。それぞれのメディア特性を活かし、最適な組み合わせで、想いを「伝わるカタチ」にすることが私たちの使命です。</p>
                         <p>AI時代だからこそ、人の心に響くデザインを。データでは測れない共感と信頼を、私たちは大切にしています。技術と感性を融合させ、お客様一人ひとりと真摯に向き合いながら、最適なソリューションをご提案します。</p>
@@ -188,7 +192,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">交通アクセス</p>
         </div>
         <div class="bg-white py-16 md:py-24">
-             <div class="container mx-auto max-w-5xl px-16 lg:px-6">
+             <div class="container mx-auto max-w-5xl px-6 lg:px-6">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     
@@ -197,7 +201,7 @@ get_header();
                     </div>
 
                     <div class="w-full h-[300px] md:h-[400px] bg-gray-100 border border-gray-300 order-3 md:order-2">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.366978432321!2d138.3895690757538!3d34.94754797283287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a49f5087c9789%3A0xc39113612e457597!2z77yI5qCq77yJ44Ko44O844O744Ko44Og44O744OG44Kj44O8!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0; filter: grayscale(1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12763.034736499629!2d138.38675027285456!3d34.958745882526124!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a49cfe3fd7c77%3A0x110ca5013982658f!2z44Ko44O844O744Ko44Og44O744OG44Kj44O8!5e0!3m2!1sja!2sjp!4v1770370175734!5m2!1sja!2sjp" width="100%" height="100%" style="border:0; filter: grayscale(1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                     <div class="order-2 md:order-3 md:col-span-2 font-noto">

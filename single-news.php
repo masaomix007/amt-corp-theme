@@ -3,8 +3,8 @@
 <main class="w-full pt-20 bg-white">
 
     <div class="relative w-full bg-gray-200 py-10 md:py-14 text-center">
-        <h1 class="font-lato text-4xl font-bold tracking-[0.2em] mb-2">BLOG</h1>
-        <p class="font-noto text-xl tracking-[0.2em] text-gray-600">ブログ</p>
+        <h1 class="font-lato text-4xl font-bold tracking-[0.2em] mb-2">NEWS</h1>
+        <p class="font-noto text-xl tracking-[0.2em] text-gray-600">ニュース</p>
     </div>
 
     <div class="container mx-auto max-w-6xl px-4 py-12 md:py-16">
@@ -55,9 +55,6 @@
                     <div class="flex justify-between items-center py-10 border-t border-b border-gray-200 font-bold text-sm md:text-base">
                         <div class="w-1/3 text-left">
                             <?php previous_post_link('%link', '＜ 前の記事', false, '', 'category'); ?>
-                        </div>
-                        <div class="w-1/3 text-center">
-                            <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="text-gray-400 hover:text-gray-800">一覧に戻る</a>
                         </div>
                         <div class="w-1/3 text-right">
                             <?php next_post_link('%link', '次の記事 ＞', false, '', 'category'); ?>

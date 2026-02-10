@@ -19,14 +19,24 @@
         </p>
     </div>
 
-    <div class="container mx-auto max-w-6xl px-14 lg:px-4 py-12 md:py-16">
+    <div class="container mx-auto max-w-6xl px-6 lg:px-6 py-12 md:py-16">
         
         <?php
-        // カテゴリーデータの取得（サイドバー・SP用：home.phpから流用）
+        // -------------------------------------------------------------
+        // カテゴリーデータの取得（SP/PC共通で使うためここで定義）
+        // -------------------------------------------------------------
         $exclude_slugs = ['blog', 'news', 'uncategorized'];
-        $cat_args = array('orderby' => 'name', 'order' => 'ASC', 'hide_empty' => 0);
+        
+        // hide_empty=0 にしておくと、記事が0件のカテゴリも表示されます
+        // （もし記事があるカテゴリだけ出したい場合は hide_empty=1 にしてください）
+        $cat_args = array(
+            'orderby' => 'name',
+            'order'   => 'ASC',
+            'hide_empty' => 1
+        );
         $all_cats = get_categories($cat_args);
         $display_cats = [];
+
         foreach ($all_cats as $cat) {
             if (!in_array($cat->slug, $exclude_slugs)) {
                 $display_cats[] = $cat;
@@ -198,13 +208,16 @@
                     </form>
                 </div>
 
-                <div class="hidden md:block">
+                <div>
                     <h3 class="text-xl font-bold mb-6 font-noto tracking-widest">カテゴリー</h3>
                     <?php if ($display_cats) : ?>
                     <div class="grid grid-cols-2 gap-2">
-                        <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="block text-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline">すべて</a>
+                        <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="flex items-center justify-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline">すべて</a>
+                        
                         <?php foreach($display_cats as $cat): ?>
-                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="block text-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline"><?php echo esc_html($cat->name); ?></a>
+                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="flex items-center justify-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline">
+                                <?php echo esc_html($cat->name); ?>
+                            </a>
                         <?php endforeach; ?>
                     </div>
                     <?php endif; ?>
