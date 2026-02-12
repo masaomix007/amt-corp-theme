@@ -14,7 +14,7 @@ get_header();
         
         <div class="bg-black/60 absolute inset-0 flex flex-col items-center justify-center text-white">
             <div class="border-2 border-white px-20 py-2 backdrop-blur-[2px]">
-                <h1 class="font-lato text-3xl md:text-4xl font-bold tracking-[0.2em]">MOVIE</h1>
+                <h1 class="font-outfit text-3xl md:text-4xl font-bold tracking-[0.2em]">MOVIE</h1>
             </div>
             <p class="font-noto text-sm md:text-base tracking-[0.2em] mt-4">映像・動画制作</p>
         </div>
@@ -99,7 +99,7 @@ get_header();
 
     <section class="bg-gray-50 pb-16 md:pb-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center mb-16">
-            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">WORK FLOW</h3>
+            <h3 class="font-outfit text-4xl font-bold tracking-[0.2em] text-gray-700">WORK FLOW</h3>
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">制作の流れ</p>
         </div>
 
@@ -188,7 +188,7 @@ get_header();
 
     <section class="bg-white">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">SOLUTION</h3>
+            <h3 class="font-outfit text-4xl font-bold tracking-[0.2em] text-gray-700">SOLUTION</h3>
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">課題解決</p>
         </div>
 
@@ -268,7 +268,7 @@ get_header();
 
     <section class="bg-gray-200">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">Q & A</h3>
+            <h3 class="font-outfit text-4xl font-bold tracking-[0.2em] text-gray-700">Q & A</h3>
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">よくある質問</p>
         </div>
 

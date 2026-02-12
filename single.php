@@ -3,7 +3,7 @@
 <main class="w-full pt-20 bg-white">
 
     <div class="relative w-full bg-gray-200 py-10 md:py-14 text-center">
-        <h1 class="font-lato text-4xl font-bold tracking-[0.2em] mb-2">BLOG</h1>
+        <h1 class="font-outfit text-4xl font-bold tracking-[0.2em] mb-2">BLOG</h1>
         <p class="font-noto text-xl tracking-[0.2em] text-gray-600">ブログ</p>
     </div>
 

@@ -62,7 +62,7 @@ get_header();
 
     <section id="value" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">VALUE</h3>
+            <h3 class="font-outfit text-4xl font-bold tracking-[0.2em] text-gray-700">VALUE</h3>
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">選ばれる理由</p>
         </div>
 
@@ -113,7 +113,7 @@ get_header();
 
     <section id="outline" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">OUTLINE</h3>
+            <h3 class="font-outfit text-4xl font-bold tracking-[0.2em] text-gray-700">OUTLINE</h3>
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">会社概要</p>
         </div>
         <div class="bg-white py-16 md:py-24">
@@ -144,7 +144,7 @@ get_header();
 
     <section id="message" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">MESSAGE</h3>
+            <h3 class="font-outfit text-4xl font-bold tracking-[0.2em] text-gray-700">MESSAGE</h3>
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">代表あいさつ</p>
         </div>
         <div class="bg-gray-100 py-16 md:py-24">
@@ -188,7 +188,7 @@ get_header();
 
     <section id="access" class="scroll-mt-24">
         <div class="bg-gray-300 py-6 md:py-8 text-center">
-            <h3 class="font-lato text-4xl font-black tracking-[0.2em] text-gray-700">ACCESS</h3>
+            <h3 class="font-outfit text-4xl font-bold tracking-[0.2em] text-gray-700">ACCESS</h3>
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">交通アクセス</p>
         </div>
         <div class="bg-white py-16 md:py-24">

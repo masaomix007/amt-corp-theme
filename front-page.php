@@ -398,9 +398,12 @@ $news_query = new WP_Query([
                   <?php
                     // 6件目以降（インデックス5以上）は「スマホで非表示(hidden)、PCで表示(block)」にする
                     $visibility_class = ($blog_query->current_post >= 5) ? ' hidden md:block' : '';
+                    
+                    // ▼ 追加: SP表示での最後（5件目＝インデックス4）の場合、強制的に下線を消すクラスを付与
+                    $border_reset_class = ($blog_query->current_post === 4) ? ' border-b-0' : '';
                     ?>
 
-                    <article class="overflow-hidden <?php echo $visibility_class; ?> border-b border-gray-700 py-8 md:border-none md:py-0 last:border-b-0">
+                    <article class="overflow-hidden <?php echo $visibility_class . $border_reset_class; ?> border-b border-gray-700 py-8 md:border-none md:py-0 last:border-b-0">
 
                     <a href="<?php the_permalink(); ?>" class="block !no-underline">
                         <?php if (has_post_thumbnail()): ?>
