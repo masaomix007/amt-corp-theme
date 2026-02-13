@@ -56,7 +56,7 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="space-y-6 md:space-y-10 px-4 lg:4">
+                <div class="space-y-6 md:space-y-10 px-6 lg:px-4">
                     <h2 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">最新記事</h2>
 
                     <?php
@@ -84,7 +84,7 @@
 
                     <?php if ($blog_query->have_posts()) : ?>
                         <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-                            <article class="<?php echo $visibility_class . $border_class; ?> flex-col md:flex-row gap-4 md:gap-8 border-gray-300 pb-6 md:pb-10 last:border-b-0">
+                            <article class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-gray-300 pb-6 md:pb-10 last:border-b-0">
                                 <a href="<?php the_permalink(); ?>" class="block w-full md:w-[280px] flex-shrink-0 group overflow-hidden">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium_large', [

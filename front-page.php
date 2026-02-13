@@ -389,7 +389,7 @@ $news_query = new WP_Query([
     </div>
   </div>
     <div class="w-full">
-        <div class="mx-auto px-6 lg:px-10 py-20">
+        <div class="mx-auto px-10 lg:px-10 py-20">
 
           <div class="grid gap-8 md:grid-cols-4">
                 <?php if ($blog_query->have_posts()): ?>

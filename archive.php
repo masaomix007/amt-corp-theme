@@ -5,7 +5,10 @@
     <div class="relative w-full bg-gray-200 py-10 md:py-14 text-center">
         <h1 class="font-outfit text-4xl font-bold tracking-[0.2em] mb-2 uppercase">
             <?php
-            if (is_category()) {
+            // ▼ ページのタイプに合わせてタイトルを自動切り替え
+            if (is_search()) {
+                echo 'SEARCH';
+            } elseif (is_category()) {
                 echo 'CATEGORY';
             } elseif (is_tag()) {
                 echo 'TAG';
@@ -15,20 +18,24 @@
             ?>
         </h1>
         <p class="font-noto text-xl tracking-[0.2em] text-gray-600">
-            <?php single_term_title(); ?>
+            <?php
+            // ▼ サブタイトルの自動切り替え
+            if (is_search()) {
+                echo '「' . get_search_query() . '」の検索結果';
+            } else {
+                single_term_title();
+            }
+            ?>
         </p>
     </div>
 
-    <div class="container mx-auto max-w-6xl px-6 lg:px-6 py-12 md:py-16">
+    <div class="container mx-auto max-w-6xl px-4 lg:px-6 py-12 md:py-16">
         
         <?php
         // -------------------------------------------------------------
-        // カテゴリーデータの取得（SP/PC共通で使うためここで定義）
+        // カテゴリーデータの取得（サイドバー用）
         // -------------------------------------------------------------
         $exclude_slugs = ['blog', 'news', 'uncategorized'];
-        
-        // hide_empty=0 にしておくと、記事が0件のカテゴリも表示されます
-        // （もし記事があるカテゴリだけ出したい場合は hide_empty=1 にしてください）
         $cat_args = array(
             'orderby' => 'name',
             'order'   => 'ASC',
@@ -47,15 +54,25 @@
         <div class="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-12 items-start">
 
             <div class="w-full">
-                <div class="space-y-6 md:space-y-10">
+                <div class="space-y-6 md:space-y-10 px-6 lg:px-4">
                     
                     <h2 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest uppercase">
-                        「<?php single_term_title(); ?>」の一覧
+                        <?php
+                        // ▼ 見出しの自動切り替え
+                        if (is_search()) {
+                            echo '検索キーワード：' . get_search_query();
+                        } else {
+                            echo '「';
+                            single_term_title();
+                            echo '」の一覧';
+                        }
+                        ?>
                     </h2>
 
                     <?php if (have_posts()) : ?>
-                    <?php while (have_posts()) : the_post(); ?>
-                            <article class="<?php echo $visibility_class . $border_class; ?> flex-col md:flex-row gap-4 md:gap-8 border-gray-300 pb-6 md:pb-10 last:border-b-0">
+                        <?php while (have_posts()) : the_post(); ?>
+                            
+                            <article class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-gray-300 pb-6 md:pb-10 last:border-b-0">
                                 <a href="<?php the_permalink(); ?>" class="block w-full md:w-[280px] flex-shrink-0 group overflow-hidden">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium_large', [
@@ -107,7 +124,14 @@
                         </div>
 
                     <?php else : ?>
-                        <p class="text-center py-20 text-gray-500">記事が見つかりませんでした。</p>
+                        <div class="text-center py-20">
+                            <?php if (is_search()) : ?>
+                                <p class="text-gray-500 mb-8">「<?php echo get_search_query(); ?>」に一致する記事は見つかりませんでした。</p>
+                                <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="inline-block border border-gray-800 px-8 py-3 font-bold hover:bg-gray-800 hover:text-white transition-colors">ブログトップへ戻る</a>
+                            <?php else : ?>
+                                <p class="text-gray-500">記事が見つかりませんでした。</p>
+                            <?php endif; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -118,14 +142,9 @@
                     <h3 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">人気記事</h3>
                     <div class="space-y-6">
                         <?php
-                        // ★修正版6：列名を 'content' から 'id' に修正し、type=4 (合計) を取得
                         global $wpdb;
-
                         $table_views = $wpdb->prefix . 'post_views';
                         $table_posts = $wpdb->prefix . 'posts';
-
-                        // Post Views Counterのテーブル仕様（id = 投稿ID, type = 4 が全期間合計）に合わせて結合
-                        // count は予約語なので `` で囲む
                         $sql = "
                             SELECT p.ID, pvc.`count` as views
                             FROM {$table_views} pvc
@@ -136,13 +155,7 @@
                             ORDER BY views DESC
                             LIMIT 5
                         ";
-
-                        // クエリ実行
                         $top_viewed = $wpdb->get_results($sql);
-
-                        // デバッグ用：もしこれでもエラーが出る場合、以下のコメントを外してください
-                        // if(!empty($wpdb->last_error)) { echo '<p class="text-red-500 text-xs">' . esc_html($wpdb->last_error) . '</p>'; }
-
                         $post_ids = [];
                         if ($top_viewed) {
                             foreach ($top_viewed as $row) {
@@ -151,13 +164,11 @@
                                 }
                             }
                         }
-
-                        // 取得したIDで記事を表示
                         if (!empty($post_ids)) {
                             $popular_args = array(
                                 'post_type'      => 'post',
                                 'post__in'       => $post_ids,
-                                'orderby'        => 'post__in', // ランキング順を維持
+                                'orderby'        => 'post__in',
                                 'posts_per_page' => 3,
                                 'ignore_sticky_posts' => 1,
                             );
@@ -165,9 +176,7 @@
                         } else {
                             $popular_query = new WP_Query();
                         }
-
                         $rank = 1;
-
                         if ($popular_query->have_posts()) :
                             while ($popular_query->have_posts()) : $popular_query->the_post();
                                 $rank_color = '#c49c86'; 
@@ -212,10 +221,9 @@
                     <h3 class="text-xl font-bold mb-6 font-noto tracking-widest">カテゴリー</h3>
                     <?php if ($display_cats) : ?>
                     <div class="grid grid-cols-2 gap-2">
-                        <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="flex items-center justify-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline">すべて</a>
-                        
+                        <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="block text-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline">すべて</a>
                         <?php foreach($display_cats as $cat): ?>
-                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="flex items-center justify-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline">
+                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="block text-center border border-gray-400 bg-white hover:bg-gray-100 text-gray-700 px-2 py-2 text-xs font-bold transition-colors !no-underline">
                                 <?php echo esc_html($cat->name); ?>
                             </a>
                         <?php endforeach; ?>
