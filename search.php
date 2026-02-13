@@ -79,7 +79,11 @@
                                             'class' => 'w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300'
                                         ]); ?>
                                     <?php else : ?>
-                                        <div class="w-full aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm">No Image</div>
+                                        <img 
+                                            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/no-image.svg" 
+                                            alt="No Image" 
+                                            class="w-full aspect-video object-cover"
+                                        >
                                     <?php endif; ?>
                                 </a>
 

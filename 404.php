@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+<?php get_header(); ?>
 
-	<?php wp_head(); ?>
-</head>
-<body class="antialiased">
-	<div class="md:flex min-h-screen">
-		<div class="w-full md:w-1/2 flex items-center justify-center">
-			<div class="max-w-sm m-8">
-				<div class="text-5xl md:text-15xl text-dark border-light border-b">404</div>
-				<div class="w-16 h-1 bg-purple-light my-3 md:my-6"></div>
-				<p class="text-dark/90 text-2xl md:text-3xl font-light leading-relaxed mb-8"><?php _e( 'Sorry, the page you are looking for could not be found.', 'tailpress' ); ?></p>
-				<a href="<?php echo get_bloginfo( 'url' ); ?>" class="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-dark text-white hover:bg-dark/90 !no-underline">
-					<?php _e( 'Go Home', 'tailpress' ); ?>
-				</a>
-			</div>
-		</div>
-	</div>
+<main class="w-full pt-20 bg-white min-h-[60vh]">
 
-    <?php wp_footer(); ?>
-</body>
-</html>
+    <div class="relative w-full bg-gray-200 py-10 md:py-14 text-center">
+        <h1 class="font-outfit text-9xl font-bold tracking-[0.2em] mb-2">404</h1>
+        <p class="font-noto text-xl tracking-[0.2em] text-gray-600">NOT FOUND</p>
+    </div>
+
+    <div class="container mx-auto max-w-4xl px-6 lg:px-4 py-20 text-center">
+        
+        <h2 class="text-xl md:text-2xl font-bold mb-8 font-noto text-gray-700">
+            お探しのページは見つかりませんでした。
+        </h2>
+
+        <p class="text-sm md:text-base leading-8 text-gray-600 mb-12 font-noto">
+            お探しのページは一時的にアクセスできない状況にあるか、<br class="hidden md:inline">
+            移動または削除された可能性があります。
+        </p>
+
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex items-center justify-center gap-2 border-2 border-gray-700 px-10 py-3 text-base tracking-[0.1em] text-gray-800 hover:bg-gray-200 transition-colors !no-underline font-bold">
+            TOPページへ戻る
+        </a>
+
+    </div>
+
+</main>
+
+<?php get_footer(); ?>
