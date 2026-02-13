@@ -13,24 +13,24 @@
             
             <div class="w-full lg:w-2/3 flex flex-col lg:flex-row gap-0 lg:gap-20">
                 
-                <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+                <div class="w-full lg:w-1/2 lg:mb-0">
                     <p class="mb-4 text-lg lg:text-sm font-normal">業務内容</p>
                     <ul class="flex flex-col border-t border-b border-white">
                         <li>
-                            <a href="<?php echo esc_url(home_url('/works/website/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
-                                <span class="text-xs">&gt;</span>
+                            <a href="<?php echo esc_url(home_url('/works/website/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-400 hover:text-gray-400 transition-colors">
+                                <span class="text-xs">＞</span>
                                 <span class="text-sm">ホームページ制作・運用支援</span>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo esc_url(home_url('/works/graphic/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
-                                <span class="text-xs">&gt;</span>
+                            <a href="<?php echo esc_url(home_url('/works/graphic/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-400 hover:text-gray-400 transition-colors">
+                                <span class="text-xs">＞</span>
                                 <span class="text-sm">印刷・グラフィック制作</span>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo esc_url(home_url('/works/movie/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-800 hover:text-gray-400 transition-colors">
-                                <span class="text-xs">&gt;</span>
+                            <a href="<?php echo esc_url(home_url('/works/movie/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-gray-400 hover:text-gray-400 transition-colors">
+                                <span class="text-xs">＞</span>
                                 <span class="text-sm">映像・動画制作</span>
                             </a>
                         </li>
@@ -46,11 +46,11 @@
                 </div>
 
                 <div class="w-full lg:w-1/2 lg:pt-9">
-                     <ul class="flex flex-col border-t border-b border-white">
+                     <ul class="flex flex-col md:border-t md:border-b md:border-white">
                         <li>
                             <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="!no-underline flex items-center gap-3 py-4 border-b border-white hover:text-gray-400 transition-colors lg:border-t">
                                 <!--<span class="text-xs">&gt;</span>-->
-                                <span class="text-lg lg:text-sm font-outfit tracking-widest">BLOG</span>
+                                <span class="text-lg lg:text-sm font-outfit tracking-widest">B L O G</span>
                             </a>
                         </li>
                         <li>
@@ -85,7 +85,7 @@
 
         <div class="mb-10 text-center lg:text-left">
              <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block hover:opacity-80 transition-opacity">
-                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/logo-white.svg" alt="AMT" class="w-60 h-auto">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/logo-white.svg" alt="AMT" class="w-40 md:w-60 h-auto">
              </a>
         </div>
 
@@ -93,7 +93,7 @@
             
             <div class="w-full lg:w-1/2">
                 
-                <div class="lg:hidden flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-xs mb-8">
+                <div class="lg:hidden flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-base md:text-xs mb-8">
                      <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline hover:text-gray-300">お問い合わせ</a>
                      <span class="h-3 w-px bg-white"></span>
                      <a href="tel:0542864085" class="!no-underline hover:text-gray-300 font-outfit">054-286-4085</a>

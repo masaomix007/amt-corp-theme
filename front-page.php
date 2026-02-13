@@ -593,10 +593,10 @@ $news_query = new WP_Query([
 
       <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
 
-        <div class="mx-auto w-full max-w-xl text-center">
+        <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
           <a
             href="<?php echo esc_url(home_url('/contact/')); ?>"
-            class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
+            class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-200"
           >
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
@@ -611,10 +611,10 @@ $news_query = new WP_Query([
           </a>
         </div>
 
-        <div class="mx-auto w-full max-w-xl text-center">
+        <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
           <a
             href="tel:0542864085"
-            class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
+            class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-200"
             aria-label="電話をかける 054-286-4085"
           >
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
@@ -630,7 +630,7 @@ $news_query = new WP_Query([
           </a>
 
           <p class="mt-6 font-noto text-sm font-bold tracking-widest text-gray-800">
-            受付9：00〜18：00（土日祝除く）
+            受付9:00〜18:00（土日祝除く）
           </p>
         </div>
 

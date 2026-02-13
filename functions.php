@@ -57,35 +57,6 @@ add_action('after_setup_theme', function () {
   }
 });
 
-// ---------------------------------------------------------
-// Admin menu shortcuts: News / Blog filtered post lists
-// ---------------------------------------------------------
-add_action('admin_menu', function () {
-
-  // News（newsカテゴリのみ）
-  add_menu_page(
-    'News',
-    'ニュース',
-    'edit_posts',
-    'edit.php?post_type=post&category_name=news',
-    '',
-    'dashicons-megaphone',
-    5
-  );
-
-  // Blog（newsカテゴリ以外）
-  $news_cat_id = get_cat_ID('news');
-
-  add_menu_page(
-    'Blog',
-    'ブログ',
-    'edit_posts',
-    'edit.php?post_type=post&cat=-' . $news_cat_id,
-    '',
-    'dashicons-welcome-write-blog',
-    6
-  );
-});
 
 /**
  * 検索結果から特定のカテゴリー(news)を除外する
