@@ -12,7 +12,7 @@ get_header();
              <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/graphic-hero.webp" alt="Graphic Hero" class="w-full h-full object-cover">
         </div>
         
-        <div class="bg-black/60 absolute inset-0 flex flex-col items-center justify-center text-white">
+        <div class="bg-black/70 absolute inset-0 flex flex-col items-center justify-center text-white">
             <div class="border-2 border-white px-20 py-2 backdrop-blur-[2px]">
                 <h1 class="font-outfit text-3xl md:text-4xl font-bold tracking-[0.2em]">GRAPHIC</h1>
             </div>
@@ -21,7 +21,7 @@ get_header();
     </div>
 
     <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto max-w-5xl px-12 lg:px-6">
+        <div class="container mx-auto max-w-5xl px-8 lg:px-6">
             
             <div class="text-center mb-16">
                 <div class="w-30 mx-auto mb-4">
@@ -103,7 +103,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">制作の流れ</p>
         </div>
 
-        <div class="container mx-auto max-w-5xl px-12 lg:px-6">
+        <div class="container mx-auto max-w-5xl px-8 lg:px-6">
             
             <div class="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-x-20 mb-16">
 
