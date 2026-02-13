@@ -272,40 +272,55 @@
         </div>
       </div>
 
-      <div class="w-full bg-gray-100 pb-20">
-        <div class="mx-auto max-w-6xl px-6 lg:px-4 py-20">
-          <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
+        <div class="w-full bg-gray-100">
+            <div class="mx-auto max-w-6xl px-6 lg:px-4 py-20">
 
-            <div class="mx-auto w-full max-w-xl text-center">
-              <a
-                href="<?php echo esc_url(home_url('/contact/')); ?>"
-                class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
-              >
-                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
-                  <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-email.svg" alt="" class="block h-12 w-12 object-contain">
-                </span>
-                <span class="font-noto text-xl font-bold tracking-widest">お問い合わせ</span>
-              </a>
+            <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
+
+                <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
+                <a
+                    href="<?php echo esc_url(home_url('/contact/')); ?>"
+                    class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-200"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
+                    <img
+                        src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-email.svg"
+                        alt=""
+                        class="block h-12 w-12 object-contain"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    </span>
+                    <span class="font-noto text-xl font-bold tracking-widest">お問い合わせ</span>
+                </a>
+                </div>
+
+                <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
+                <a
+                    href="tel:0542864085"
+                    class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-200"
+                    aria-label="電話をかける 054-286-4085"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
+                    <img
+                        src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-tel.svg"
+                        alt=""
+                        class="block h-10 w-10 object-contain"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    </span>
+                    <span class="font-noto text-xl font-bold tracking-widest">054-286-4085</span>
+                </a>
+
+                <p class="mt-6 font-noto text-sm font-bold tracking-widest text-gray-800">
+                    受付9:00〜18:00（土日祝除く）
+                </p>
+                </div>
+
             </div>
-
-            <div class="mx-auto w-full max-w-xl text-center">
-              <a
-                href="tel:0542864085"
-                class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-8 text-gray-800 !no-underline hover:bg-gray-200"
-              >
-                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
-                  <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-tel.svg" alt="" class="block h-10 w-10 object-contain">
-                </span>
-                <span class="font-noto text-xl font-bold tracking-widest">054-286-4085</span>
-              </a>
-              <p class="mt-6 font-noto text-sm font-bold tracking-widest text-gray-800">
-                受付9：00〜18：00（土日祝除く）
-              </p>
             </div>
-
-          </div>
         </div>
-      </div>
     </section>
 
 </main>
