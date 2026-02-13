@@ -21,7 +21,7 @@ function tailpress(): TailPress\Framework\Theme
             'title-tag',
             'custom-logo',
             'post-thumbnails',
-            'align-wide',
+            'align-wide', 
             'wp-block-styles',
             'responsive-embeds',
             'html5' => [

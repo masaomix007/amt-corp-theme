@@ -55,17 +55,6 @@
 
                     <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
-                        <?php
-                        // メインクエリのカウンターを取得
-                        global $wp_query;
-                        
-                        // 6件目以降（インデックス5以上）は「スマホで非表示、PCで表示」
-                        $visibility_class = ($wp_query->current_post >= 5) ? ' hidden md:flex' : ' flex';
-
-                        // 5件目（インデックス4）はスマホ表示時の最後になるため下線を消す
-                        $border_class = ($wp_query->current_post === 4) ? ' border-b-0 md:border-b' : ' border-b';
-                        ?>
-
                             <article class="<?php echo $visibility_class . $border_class; ?> flex-col md:flex-row gap-4 md:gap-8 border-gray-300 pb-6 md:pb-10 last:border-b-0">
                                 <a href="<?php the_permalink(); ?>" class="block w-full md:w-[280px] flex-shrink-0 group overflow-hidden">
                                     <?php if (has_post_thumbnail()) : ?>

@@ -84,15 +84,6 @@
 
                     <?php if ($blog_query->have_posts()) : ?>
                         <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-                        <?php
-                        // 6件目以降（インデックス5以上）は「スマホで非表示、PCで表示」
-                        // ※元のクラスが flex なので、 hidden md:flex に切り替えます
-                        $visibility_class = ($blog_query->current_post >= 5) ? ' hidden md:flex' : ' flex';
-
-                        // 5件目（インデックス4）はスマホ表示時の最後になるため下線を消す(border-b-0)
-                        // ただしPCでは6件目以降も続くため、下線を復活させる(md:border-b)
-                        $border_class = ($blog_query->current_post === 4) ? ' border-b-0 md:border-b' : ' border-b';
-                        ?>
                             <article class="<?php echo $visibility_class . $border_class; ?> flex-col md:flex-row gap-4 md:gap-8 border-gray-300 pb-6 md:pb-10 last:border-b-0">
                                 <a href="<?php the_permalink(); ?>" class="block w-full md:w-[280px] flex-shrink-0 group overflow-hidden">
                                     <?php if (has_post_thumbnail()) : ?>
@@ -108,7 +99,7 @@
                                     <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">
                                         <time class="font-outfit text-sm text-gray-500 font-bold" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
                                     </div>
-
+                                    
                                     <h3 class="text-lg md:text-xl font-bold leading-8 mb-3 group-hover:text-gray-600">
                                         <a href="<?php the_permalink(); ?>" class="!no-underline text-gray-800"><?php the_title(); ?></a>
                                     </h3>
@@ -268,7 +259,7 @@
                     </div>
                     <?php endif; ?>
                 </div>
-
+                            
             </aside>
         </div>
     </div>
