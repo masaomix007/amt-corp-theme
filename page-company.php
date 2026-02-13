@@ -70,19 +70,19 @@ get_header();
             <div class="md:container mx-auto max-w-5xl">
                 <div class="grid grid-cols-1 md:grid-cols-2">
 
-                    <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-6 md:pr-12 lg:pr-16">
+                    <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-8 md:pr-12 lg:pr-16">
                         <div class="text-lg leading-7 md:leading-8 text-gray-700 font-noto">
                             <div class="mb-12 md:mb-16">
-                                <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">40年以上の経験と豊富な実績</h4>
-                                <p>経験豊富なデザイナーから感度の高い若手まで、多様な視点で年齢・性別・ジャンルにとらわれずデザイン制作に取り組みます。</p>
+                                <h4 class="w-full font-bold border-b-2 border-black pb-2 mb-6 inline-block">40年以上の経験と豊富な実績</h4>
+                                <p class="text-base leading-7">経験豊富なデザイナーから感度の高い若手まで、多様な視点で年齢・性別・ジャンルにとらわれずデザイン制作に取り組みます。</p>
                             </div>
                             <div class="mb-12 md:mb-16">
-                                <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">コミュニケーションを大切にした制作体制</h4>
-                                <p>より良いデザインを実現するには、イメージや方向性の共有が不可欠です。私たちは、スピード感を持ったコミュニケーションと柔軟なフットワークを重視しています。</p>
+                                <h4 class="w-full font-bold border-b-2 border-black pb-2 mb-6 inline-block">コミュニケーションを大切にした制作体制</h4>
+                                <p class="text-base leading-7">より良いデザインを実現するには、イメージや方向性の共有が不可欠です。私たちは、スピード感を持ったコミュニケーションと柔軟なフットワークを重視しています。</p>
                             </div>
                             <div>
-                                <h4 class="font-bold border-b-2 border-black pb-2 mb-6 inline-block">信頼のネットワークで多様なニーズに対応</h4>
-                                <p>掲載内容以外のご要望でも、デザインに関わる事なら柔軟に対応いたします。豊富な実績と幅広い取引先とのつながりを活かし、最適なご提案をお届けします。</p>
+                                <h4 class="w-full font-bold border-b-2 border-black pb-2 mb-6 inline-block">信頼のネットワークで多様なニーズに対応</h4>
+                                <p class="text-base leading-7">掲載内容以外のご要望でも、デザインに関わる事なら柔軟に対応いたします。豊富な実績と幅広い取引先とのつながりを活かし、最適なご提案をお届けします。</p>
                             </div>
                         </div>
                     </div>
@@ -117,24 +117,24 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">会社概要</p>
         </div>
         <div class="bg-white py-16 md:py-24">
-            <div class="container mx-auto max-w-5xl px-6 lg:px-6 grid md:grid-cols-2 gap-12 items-start">
+            <div class="container mx-auto max-w-5xl px-8 lg:px-6 grid md:grid-cols-2 gap-12 items-start">
 
                 <div class="w-full order-2 md:order-1">
                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-office.webp" alt="Office" class="w-full h-auto object-cover grayscale">
                 </div>
 
                 <div class="w-full order-1 md:order-2">
-                     <dl class="grid grid-cols-[100px_1fr] gap-x-6 gap-y-1 text-sm leading-7 text-gray-700 border-gray-200">
-                        <dt class="font-bold tracking-widest py-1">会社名</dt><dd class="py-1">株式会社AMT（エー・エム・ティー）</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">住　所</dt><dd class="py-1 border-gray-200">〒422-8046 静岡県静岡市駿河区中島153-2</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">代　表</dt><dd class="py-1 border-gray-200">皆川　智教</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">ＴＥＬ</dt><dd class="font-outfit py-1 border-gray-200 ">054-286-4085</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">ＦＡＸ</dt><dd class="font-outfit py-1 border-gray-200">054-286-7992</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">設　立</dt><dd class="py-1 border-gray-200">1985年12月2日</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">資本金</dt><dd class="py-1 border-gray-200">10,000,000円</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">従業員数</dt><dd class="py-1 border-gray-200">13名</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">取引銀行</dt><dd class="py-1 border-gray-200">静岡銀行／静岡焼津信用金庫</dd>
-                        <dt class="font-bold tracking-widest py-1 border-gray-200">業務内容</dt><dd class="py-1 border-gray-200">ホームページ制作／Web運営支援／広告・印刷物／グラフィックデザイン／パッケージデザイン／ロゴデザイン／販促ツール制作／ノベルティ制作／映像・動画制作</dd>
+                     <dl class="grid grid-cols-[5em_1fr] gap-x-6 gap-y-1 text-sm leading-7 text-gray-700 border-gray-200">
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">会社名</dt><dd class="py-1">株式会社AMT（エー・エム・ティー）</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">住所</dt><dd class="py-1 border-gray-200">〒422-8046 静岡県静岡市駿河区中島153-2</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">代表</dt><dd class="py-1 border-gray-200">皆川　智教</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">ＴＥＬ</dt><dd class="font-outfit py-1 border-gray-200 ">054-286-4085</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">ＦＡＸ</dt><dd class="font-outfit py-1 border-gray-200">054-286-7992</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">設立</dt><dd class="py-1 border-gray-200">1985年12月2日</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">資本金</dt><dd class="py-1 border-gray-200">10,000,000円</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">従業員数</dt><dd class="py-1 border-gray-200">13名</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">取引銀行</dt><dd class="py-1 border-gray-200">静岡銀行／静岡焼津信用金庫</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">業務内容</dt><dd class="py-1 border-gray-200">ホームページ制作／Web運営支援／広告・印刷物／グラフィックデザイン／パッケージデザイン／ロゴデザイン／販促ツール制作／ノベルティ制作／映像・動画制作</dd>
                     </dl>
                 </div>
 
