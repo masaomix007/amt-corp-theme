@@ -21,7 +21,7 @@ get_header();
     </div>
 
     <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto max-w-5xl px-6 lg:px-6">
+        <div class="container mx-auto max-w-5xl px-12 lg:px-6">
             
             <div class="text-center mb-16">
                 <div class="w-30 mx-auto mb-4">
@@ -35,62 +35,62 @@ get_header();
                 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">ポスター</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">イベント告知や商品PRなど、視覚的インパクトで注目を集めるデザインを制作します</p>
+                    <p class="text-base text-gray-800 leading-7">イベント告知や商品PRなど、視覚的インパクトで注目を集めるデザインを制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">チラシ・フライヤー</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">サービスや商品情報を分かりやすく伝え、集客や認知拡大につなげるデザインを作成します </p>
+                    <p class="text-base text-gray-800 leading-7">サービスや商品情報を分かりやすく伝え、集客や認知拡大につなげるデザインを作成します </p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">流通業チラシ</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">スーパーや小売向けの販促チラシを、売り場で目を引く構成とデザインで制作します</p>
+                    <p class="text-base text-gray-800 leading-7">スーパーや小売向けの販促チラシを、売り場で目を引く構成とデザインで制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">会社案内・カタログ</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">企業や商品の魅力を整理し、読み手に伝わる形で表現する印刷物を制作します</p>
+                    <p class="text-base text-gray-800 leading-7">企業や商品の魅力を整理し、読み手に伝わる形で表現する印刷物を制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">ロゴデザイン</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">企業やブランドの個性・理念を反映した、覚えやすく印象に残るロゴを制作します</p>
+                    <p class="text-base text-gray-800 leading-7">企業やブランドの個性・理念を反映した、覚えやすく印象に残るロゴを制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">販促用ツール</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">POPやノベルティなど、販売促進やブランディングに活用できる各種ツールを制作します</p>
+                    <p class="text-base text-gray-800 leading-7">POPやノベルティなど、販売促進やブランディングに活用できる各種ツールを制作します</p>
                 </div>
 
             </div>
@@ -103,7 +103,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">制作の流れ</p>
         </div>
 
-        <div class="container mx-auto max-w-5xl px-6 lg:px-6">
+        <div class="container mx-auto max-w-5xl px-12 lg:px-6">
             
             <div class="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-x-20 mb-16">
 
@@ -116,7 +116,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">お問い合わせ</h4>
-                             <p class="text-sm text-gray-600 leading-7">まずはお気軽にご要望やご相談内容をお聞かせください。目的や課題を伺い、お見積りまでは無料で対応いたします。</p>
+                             <p class="text-sm text-gray-800 leading-7">まずはお気軽にご要望やご相談内容をお聞かせください。目的や課題を伺い、お見積りまでは無料で対応いたします。</p>
                          </div>
                     </div>
 
@@ -126,7 +126,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">ヒアリング</h4>
-                             <p class="text-sm text-gray-600 leading-7">課題や目的を共有し、ターゲットや配布シーン、媒体の仕様などを伺い、伝えたい内容と方向性を明確にします。</p>
+                             <p class="text-sm text-gray-800 leading-7">課題や目的を共有し、ターゲットや配布シーン、媒体の仕様などを伺い、伝えたい内容と方向性を明確にします。</p>
                          </div>
                     </div>
 
@@ -136,7 +136,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">企画・構成</h4>
-                             <p class="text-sm text-gray-600 leading-7">ヒアリング結果をもとに紙面構成とコンセプトを設計し、目的に沿ったレイアウトやビジュアルの方向性を検討します。</p>
+                             <p class="text-sm text-gray-800 leading-7">ヒアリング結果をもとに紙面構成とコンセプトを設計し、目的に沿ったレイアウトやビジュアルの方向性を検討します。</p>
                          </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">デザイン提案</h4>
-                             <p class="text-sm text-gray-600 leading-7">構成案に基づき、レイアウト・コピー・ビジュアルなどを制作します。媒体の特性を活かした効果的なデザインに仕上げます。</p>
+                             <p class="text-sm text-gray-800 leading-7">構成案に基づき、レイアウト・コピー・ビジュアルなどを制作します。媒体の特性を活かした効果的なデザインに仕上げます。</p>
                          </div>
                     </div>
 
@@ -162,7 +162,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">確認・修正  </h4>
-                             <p class="text-sm text-gray-600 leading-7">デザイン案をご確認いただき、内容やデザインの修正を行います。ご要望に応じて調整し、仕上がりを整えていきます。</p>
+                             <p class="text-sm text-gray-800 leading-7">デザイン案をご確認いただき、内容やデザインの修正を行います。ご要望に応じて調整し、仕上がりを整えていきます。</p>
                          </div>
                     </div>
 
@@ -172,7 +172,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">納品・運用</h4>
-                             <p class="text-sm text-gray-600 leading-7">色校正や検品を経て、責任をもって印刷・加工し、ご指定の場所に納品いたします。データ納品にも対応可能です。</p>
+                             <p class="text-sm text-gray-800 leading-7">色校正や検品を経て、責任をもって印刷・加工し、ご指定の場所に納品いたします。データ納品にも対応可能です。</p>
                          </div>
                     </div>
                 </div>
@@ -286,7 +286,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             ツールの種類（パンフレット、ポスター、カタログなど）やボリュームによって幅があります。デザインの内容、ボリューム、納期などがわかりましたら概算を提示することもできます。お気軽にお問い合わせください。
                         </p>
                     </div>
@@ -302,7 +302,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             お客様に納得していただけるよう、可能な限り言語化してお伝えしております。印刷物であれば使用・展示されるシーンを考慮し、市場調査をした上でデザイン案を組み立てていきます。お客様のご要望に耳を傾け、その過程を共有しながら進行いたします。
                         </p>
                     </div>
@@ -318,7 +318,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             企業、個人事業主（士業など含む）や個人のお客様などさまざまなお客様がいらっしゃいます。ロゴの作成から、印刷物、ホームページ、動画までデザインに関するものに幅広く対応いたします。
                         </p>
                     </div>
@@ -334,7 +334,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             はい、対応いたします。撮影はスタッフが行うか、ジャンルによっては専門のフォトグラファーを手配いたします。イラストはテイストを教えていただければ、それにあわせて描き起こします。
                         </p>
                     </div>
@@ -350,7 +350,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             最初から1案でデザインが決定するということはまずありません。数案をご提案させていただき、その中から良い要素を集めて最終のデザインを制作していきます。これらは全て通常費用に含まれています。（カタログのデータ流し込みや定型の決まったチラシなどはこの限りではありません）
                         </p>
                     </div>
@@ -366,7 +366,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             はい、大丈夫です。印刷会社と提携し、品質を管理し印刷物で納品いたします。紙・印刷方法などもご予算、ご要望に応じて最適な形をご提案します。
                         </p>
                     </div>
@@ -382,7 +382,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             はい、承ります。小売店様や個人様の制作も行っており、ご予算に応じたプランをご提案いたします。お気軽にお問い合わせください。
                         </p>
                     </div>
@@ -398,7 +398,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             はい、可能です。Zoomなどを使用したオンラインでの打ち合わせを基本として進行させていただきます。
                         </p>
                     </div>

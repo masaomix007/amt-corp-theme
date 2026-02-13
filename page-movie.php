@@ -21,7 +21,7 @@ get_header();
     </div>
 
     <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto max-w-5xl px-6 lg:px-6">
+        <div class="container mx-auto max-w-5xl px-12 lg:px-6">
             
             <div class="text-center mb-16">
                 <div class="w-30 mx-auto mb-4">
@@ -35,62 +35,62 @@ get_header();
                 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">企業プロモーション</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">会社やブランドの特徴や雰囲気を伝え、認知やイメージ向上に役立つ動画を制作します</p>
+                    <p class="text-base text-gray-800 leading-7">会社やブランドの特徴や雰囲気を伝え、認知やイメージ向上に役立つ動画を制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">商品・サービス紹介</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">新商品やサービスの特徴を分かりやすく伝える動画を制作します</p>
+                    <p class="text-base text-gray-800 leading-7">新商品やサービスの特徴を分かりやすく伝える動画を制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">マニュアル・操作説明</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">製品やサービスの使い方を分かりやすく解説する動画を制作します</p>
+                    <p class="text-base text-gray-800 leading-7">製品やサービスの使い方を分かりやすく解説する動画を制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">イベント・記念日</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">式典やイベントの様子を記録・編集し、思い出や情報を効果的に残す動画を制作します</p>
+                    <p class="text-base text-gray-800 leading-7">式典やイベントの様子を記録・編集し、思い出や情報を効果的に残す動画を制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">教育・研修動画</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">社内研修や学習コンテンツを、理解しやすく整理して提供できる動画を制作します</p>
+                    <p class="text-base text-gray-800 leading-7">社内研修や学習コンテンツを、理解しやすく整理して提供できる動画を制作します</p>
                 </div>
 
                 <div>
                     <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                        <div class="w-12 flex-shrink-0">
+                        <div class="w-10 flex-shrink-0">
                             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-service-item.svg" alt="" class="w-full h-auto">
                         </div>
                         <h3 class="font-bold text-lg md:text-xl text-gray-800">SNS・WEB広告動画</h3>
                     </div>
-                    <p class="text-base text-gray-600 leading-7">SNSやWEB広告で効果的に伝わるよう、構成や演出を工夫した動画を制作します</p>
+                    <p class="text-base text-gray-800 leading-7">SNSやWEB広告で効果的に伝わるよう、構成や演出を工夫した動画を制作します</p>
                 </div>
 
             </div>
@@ -103,7 +103,7 @@ get_header();
             <p class="font-noto text-xl font-semibold tracking-[0.2em] text-gray-600 mt-1">制作の流れ</p>
         </div>
 
-        <div class="container mx-auto max-w-5xl px-6 lg:px-6">
+        <div class="container mx-auto max-w-5xl px-12 lg:px-6">
             
             <div class="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-x-20 mb-16">
 
@@ -116,7 +116,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">お問い合わせ</h4>
-                             <p class="text-sm text-gray-600 leading-7">まずはお気軽にご要望やご相談内容をお聞かせください。目的や課題を伺い、お見積りまでは無料で対応いたします。</p>
+                             <p class="text-sm text-gray-800 leading-7">まずはお気軽にご要望やご相談内容をお聞かせください。目的や課題を伺い、お見積りまでは無料で対応いたします。</p>
                          </div>
                     </div>
 
@@ -126,7 +126,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">ヒアリング</h4>
-                             <p class="text-sm text-gray-600 leading-7">現状の課題を共有・理解するために、貴社の強みや特長、ターゲット設定、競合他社、ブランドの方向性などを丁寧に伺います。</p>
+                             <p class="text-sm text-gray-800 leading-7">現状の課題を共有・理解するために、貴社の強みや特長、ターゲット設定、競合他社、ブランドの方向性などを丁寧に伺います。</p>
                          </div>
                     </div>
 
@@ -136,7 +136,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">企画・構成</h4>
-                             <p class="text-sm text-gray-600 leading-7">ヒアリング内容をもとに構成案やシナリオを作成し、伝えたいメッセージを整理して効果的なストーリーを設計します。</p>
+                             <p class="text-sm text-gray-800 leading-7">ヒアリング内容をもとに構成案やシナリオを作成し、伝えたいメッセージを整理して効果的なストーリーを設計します。</p>
                          </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">制作・編集</h4>
-                             <p class="text-sm text-gray-600 leading-7">内容に応じて撮影や編集、アニメーション制作を行い、映像・音声・テロップを組み合わせて伝わる映像に仕上げます。</p>
+                             <p class="text-sm text-gray-800 leading-7">内容に応じて撮影や編集、アニメーション制作を行い、映像・音声・テロップを組み合わせて伝わる映像に仕上げます。</p>
                          </div>
                     </div>
 
@@ -162,7 +162,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">確認・修正</h4>
-                             <p class="text-sm text-gray-600 leading-7">初稿を共有し、内容をご確認いただきます。ご要望に応じて調整・修正を行い、完成版へと仕上げていきます。</p>
+                             <p class="text-sm text-gray-800 leading-7">初稿を共有し、内容をご確認いただきます。ご要望に応じて調整・修正を行い、完成版へと仕上げていきます。</p>
                          </div>
                     </div>
 
@@ -172,7 +172,7 @@ get_header();
                          </div>
                          <div class="pt-2">
                              <h4 class="font-bold text-lg mb-3">納品・運用</h4>
-                             <p class="text-sm text-gray-600 leading-7">最終データを目的に合わせた形式で納品いたします。公開や運用方法についても、用途に応じてご案内いたします。</p>
+                             <p class="text-sm text-gray-800 leading-7">最終データを目的に合わせた形式で納品いたします。公開や運用方法についても、用途に応じてご案内いたします。</p>
                          </div>
                     </div>
                 </div>
@@ -286,7 +286,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             内容や時間、演出の種類、素材や撮影の有無によって費用は変わります。詳細をお伺いした上でお見積りいたしますので、まずはお気軽にご相談ください。
                         </p>
                     </div>
@@ -302,7 +302,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             素材がなくても動画の制作は可能です。ただし、新規でロゴを作成したり撮影を行う場合は、別途費用が発生することがあります。必要に応じて最適な方法をご提案いたしますので、ご相談ください。
                         </p>
                     </div>
@@ -318,7 +318,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             広告やSNS用のサムネイルも制作可能です。内容やデザインに応じて作成いたしますが、別途費用がかかります。
                         </p>
                     </div>
@@ -334,7 +334,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             はい、ナレーションや字幕作成にも対応可能です。内容や用途、ターゲットに合わせて、分かりやすく伝わる最適な動画をご提案いたします。
                         </p>
                     </div>
@@ -350,7 +350,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             外国語のナレーションや字幕作成にも対応可能です。外国語は参考資料等を基に作成しますが、正確性の確認はお客様にもご協力いただく場合があります。用途やターゲットに合わせて最適な形をご提案いたします。
                         </p>
                     </div>
@@ -366,7 +366,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             MP4など一般的な動画形式で納品いたします。用途に応じて、SNS・Web・社内利用など最適な形式をご提案します。
                         </p>
                     </div>
@@ -382,7 +382,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             はい、承ります。小売店様や個人様の制作も行っており、ご予算に応じたプランをご提案いたします。お気軽にお問い合わせください。
                         </p>
                     </div>
@@ -398,7 +398,7 @@ get_header();
                     </div>
                     <div class="flex items-start gap-3 px-8">
                         <span class="font-outfit text-xl font-bold text-gray-800 leading-none mt-[2px]">A.</span>
-                        <p class="text-sm text-gray-700 leading-7">
+                        <p class="text-sm text-gray-800 leading-7">
                             はい、可能です。Zoomなどを使用したオンラインでの打ち合わせを基本として進行させていただきます。
                         </p>
                     </div>
