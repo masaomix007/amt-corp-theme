@@ -157,37 +157,107 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // 監視対象の画像を取得
-    const targets = document.querySelectorAll('.js-scroll-anim');
+    // --------------------------------------------------
+    // SVGアニメーション用コード
+    // --------------------------------------------------
 
-    // 監視の設定（画面の10%くらいが見えたら発火）
+    const targets = document.querySelectorAll('.js-scroll-anim');
+    
+    // 監視対象がなければ何もしない
+    if (targets.length === 0) return;
+
     const options = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+        // スマホの慣性スクロール対策：画面の下端から少し内側(-10%)に入ってから発火させる
+        rootMargin: '0px 0px -10% 0px', 
+        threshold: 0
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            // 画面内に入ったら
             if (entry.isIntersecting) {
                 const img = entry.target;
                 const realSrc = img.getAttribute('data-src');
 
                 if (realSrc) {
-                    // data-src の値を src にセット（ここでSVGが読み込まれ、アニメが開始する）
-                    img.setAttribute('src', realSrc);
-                    // 処理が終わったら監視を解除（一度だけでOKなので）
+                    // ▼【重要】キャッシュバスターを追加
+                    // URLの後ろに現在時刻(?t=123456...)をつけることで、
+                    // ブラウザに「新しい画像」だと思わせて強制的に再読み込み＆アニメーション開始させる
+                    const cacheBuster = '?t=' + new Date().getTime();
+                    img.setAttribute('src', realSrc + cacheBuster);
+                    
+                    // 監視を解除
                     observer.unobserve(img);
                 }
             }
         });
     }, options);
 
-    // 各画像を監視スタート
     targets.forEach(target => {
         observer.observe(target);
     });
+});
+</script>
+<script>
+/**
+ * フェードアップアニメーション用スクリプト
+ * --------------------------------------------------
+ * 機能1: .js-fade-up クラスがついた要素を個別にフェードイン
+ * 機能2: .js-fade-stagger クラスがついた親要素が見えたら、子要素(.stagger-item)を一斉にフェードイン
+ * --------------------------------------------------
+ */
+document.addEventListener("DOMContentLoaded", function() {
+
+    // 共通の設定：画面の下から10%くらい食い込んだら発火
+    const fadeOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0
+    };
+
+    // 1. 個別のフェードアップ (.js-fade-up)
+    const fadeTargets = document.querySelectorAll('.js-fade-up');
+
+    if (fadeTargets.length > 0) {
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // クラスを入れ替えて表示開始
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, fadeOptions);
+
+        fadeTargets.forEach((target) => {
+            fadeObserver.observe(target);
+        });
+    }
+
+    // 2. 親要素監視による連続フェードアップ (.js-fade-stagger)
+    const staggerParents = document.querySelectorAll('.js-fade-stagger');
+
+    if (staggerParents.length > 0) {
+        const staggerObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // 親が見えたら、子要素(.stagger-item)すべてを表示状態にする
+                    // ※時間差はCSSの delay-*** クラスで制御される
+                    const children = entry.target.querySelectorAll('.stagger-item');
+                    children.forEach(child => {
+                        child.classList.remove('opacity-0', 'translate-y-8');
+                        child.classList.add('opacity-100', 'translate-y-0');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, fadeOptions);
+
+        staggerParents.forEach((parent) => {
+            staggerObserver.observe(parent);
+        });
+    }
 });
 </script>
 

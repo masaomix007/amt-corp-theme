@@ -110,12 +110,12 @@ get_header();
 
         <div class="container mx-auto max-w-5xl px-8 lg:px-6">
             
-            <div class="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-x-20 mb-16">
+            <div class="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-x-20 mb-16 js-fade-stagger">
 
                 <div class="relative flex flex-col gap-12 pb-12 md:pb-0">
                     <div class="absolute left-[52px] top-0 bottom-0 w-[8px] bg-[#333333]"></div>
 
-                    <div class="relative z-10 flex gap-6 md:gap-8">
+                    <div class="relative z-10 flex gap-6 md:gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out stagger-item">
                          <div class="flex-shrink-0 bg-white border-2 border-[#333333] w-28 py-3 flex items-center justify-center h-fit">
                              <span class="text-sm font-outfit font-bold whitespace-nowrap tracking-wider">STEP 01</span>
                          </div>
@@ -125,7 +125,7 @@ get_header();
                          </div>
                     </div>
 
-                    <div class="relative z-10 flex gap-6 md:gap-8">
+                    <div class="relative z-10 flex gap-6 md:gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 stagger-item">
                          <div class="flex-shrink-0 bg-white border-2 border-[#333333] w-28 py-3 flex items-center justify-center h-fit">
                              <span class="text-sm font-outfit font-bold whitespace-nowrap tracking-wider">STEP 02</span>
                          </div>
@@ -135,7 +135,7 @@ get_header();
                          </div>
                     </div>
 
-                    <div class="relative z-10 flex gap-6 md:gap-8">
+                    <div class="relative z-10 flex gap-6 md:gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400 stagger-item">
                          <div class="flex-shrink-0 bg-white border-2 border-[#333333] w-28 py-3 flex items-center justify-center h-fit">
                              <span class="text-sm font-outfit font-bold whitespace-nowrap tracking-wider">STEP 03</span>
                          </div>
@@ -147,7 +147,7 @@ get_header();
                 </div>
 
                 <div class="relative flex flex-col gap-12 pt-0">
-                    <div class="relative z-10 flex gap-6 md:gap-8">
+                    <div class="relative z-10 flex gap-6 md:gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600 stagger-item">
                          <div class="absolute left-[52px] top-0 h-[calc(100%+3rem)] w-[8px] bg-[#333333] -z-10"></div>
 
                          <div class="flex-shrink-0 bg-white border-2 border-[#333333] w-28 py-3 flex items-center justify-center h-fit">
@@ -159,7 +159,7 @@ get_header();
                          </div>
                     </div>
 
-                    <div class="relative z-10 flex gap-6 md:gap-8">
+                    <div class="relative z-10 flex gap-6 md:gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-800 stagger-item">
                          <div class="absolute left-[52px] top-0 h-[calc(100%+3rem)] w-[8px] bg-[#333333] -z-10"></div>
 
                          <div class="flex-shrink-0 bg-white border-2 border-[#333333] w-28 py-3 flex items-center justify-center h-fit">
@@ -171,7 +171,7 @@ get_header();
                          </div>
                     </div>
 
-                    <div class="relative z-10 flex gap-6 md:gap-8">
+                    <div class="relative z-10 flex gap-6 md:gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-1000 stagger-item">
                          <div class="flex-shrink-0 bg-white border-2 border-[#333333] w-28 py-3 flex items-center justify-center h-fit">
                              <span class="text-sm font-outfit font-bold whitespace-nowrap tracking-wider">STEP 06</span>
                          </div>
