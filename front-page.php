@@ -405,17 +405,34 @@ $news_query = new WP_Query([
 
                     <article class="overflow-hidden <?php echo $visibility_class . $border_reset_class; ?> border-b border-gray-700 py-8 md:border-none md:py-0 last:border-b-0">
 
-                    <a href="<?php the_permalink(); ?>" class="block !no-underline">
-                        <?php if (has_post_thumbnail()): ?>
-                        <?php the_post_thumbnail('large', [
-                            'class' => 'aspect-[16/9] w-full object-cover',
-                            'loading' => 'lazy',
-                            'decoding' => 'async',
-                        ]); ?>
-                        <?php else: ?>
-                        <div class="aspect-[16/9] w-full bg-gray-200"></div>
-                        <?php endif; ?>
-                    </a>
+<a href="<?php the_permalink(); ?>" class="relative block w-full group overflow-hidden !no-underline">
+    
+    <?php 
+    // ▼ NEWマーク：投稿から7日以内なら表示
+    if ( (date('U') - get_the_time('U')) < (7 * 24 * 60 * 60) ) : 
+    ?>
+    <div class="absolute top-[-2px] left-0 z-10 w-[20%]">
+        <svg class="w-full h-auto" viewBox="0 0 82 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="3" width="81.8182" height="33" fill="#FF0000"/>
+            <path d="M27.18 12.094V28H25.662C25.4273 28 25.2293 27.9633 25.068 27.89C24.914 27.8093 24.7637 27.6773 24.617 27.494L16.312 16.89C16.356 17.374 16.378 17.8213 16.378 18.232V28H13.771V12.094H15.322C15.4467 12.094 15.553 12.1013 15.641 12.116C15.7363 12.1233 15.817 12.1453 15.883 12.182C15.9563 12.2113 16.026 12.259 16.092 12.325C16.158 12.3837 16.2313 12.4643 16.312 12.567L24.65 23.215C24.628 22.9583 24.6097 22.7053 24.595 22.456C24.5803 22.2067 24.573 21.9757 24.573 21.763V12.094H27.18ZM35.8922 14.448V18.859H41.4582V21.136H35.8922V25.635H42.9542V28H32.9222V12.094H42.9542V14.448H35.8922ZM68.9405 12.094L64.0015 28H61.3285L57.8525 17.132C57.7571 16.868 57.6691 16.5453 57.5885 16.164C57.5445 16.3473 57.5005 16.5197 57.4565 16.681C57.4125 16.8423 57.3648 16.9927 57.3135 17.132L53.8045 28H51.1205L46.1925 12.094H48.6675C48.9241 12.094 49.1368 12.1563 49.3055 12.281C49.4815 12.3983 49.5988 12.5597 49.6575 12.765L52.3635 22.28C52.4221 22.5147 52.4771 22.7713 52.5285 23.05C52.5871 23.3213 52.6458 23.6073 52.7045 23.908C52.7631 23.6 52.8255 23.3103 52.8915 23.039C52.9648 22.7677 53.0418 22.5147 53.1225 22.28L56.2465 12.765C56.3051 12.5963 56.4188 12.4423 56.5875 12.303C56.7635 12.1637 56.9761 12.094 57.2255 12.094H58.0945C58.3511 12.094 58.5601 12.1563 58.7215 12.281C58.8828 12.4057 59.0038 12.567 59.0845 12.765L62.1975 22.28C62.3515 22.7347 62.4908 23.259 62.6155 23.853C62.7108 23.2737 62.8171 22.7493 62.9345 22.28L65.6405 12.765C65.6845 12.5817 65.7945 12.424 65.9705 12.292C66.1538 12.16 66.3701 12.094 66.6195 12.094H68.9405Z" fill="white"/>
+        </svg>
+    </div>
+    <?php endif; ?>
+
+    <?php if (has_post_thumbnail()): ?>
+        <?php the_post_thumbnail('large', [
+            'class' => 'aspect-[16/9] w-full object-cover group-hover:scale-105 transition-transform duration-300',
+            'loading' => 'lazy',
+            'decoding' => 'async',
+        ]); ?>
+    <?php else: ?>
+        <img 
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/no-image.svg" 
+            alt="No Image" 
+            class="aspect-[16/9] w-full object-cover bg-gray-200"
+        >
+    <?php endif; ?>
+</a>
 
                     <div class="pt-3">
                         <time class="block text-xl font-zen font-bold tracking-widest text-gray-900" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
@@ -444,12 +461,12 @@ $news_query = new WP_Query([
                         <?php if (!empty($badge_cats)): ?>
                         <div class="mt-2 flex flex-wrap gap-2">
                             <?php foreach ($badge_cats as $cat): ?>
-                            <span
-                                class="inline-flex items-center border border-gray-700 px-3 py-1 text-xs font-noto font-bold tracking-widest text-gray-800"
-                                aria-label="<?php echo esc_attr($cat->name); ?>"
+                            <a
+                                href="<?php echo esc_url(get_category_link($cat->term_id)); ?>"
+                                class="inline-flex items-center border border-gray-700 px-3 py-1 text-xs font-noto font-bold tracking-widest text-gray-800 !no-underline hover:bg-gray-100 transition-colors"
                             >
                                 <?php echo esc_html($cat->name); ?>
-                            </span>
+                            </a>
                             <?php endforeach; ?>
                         </div>
                         <?php endif; ?>
