@@ -84,7 +84,7 @@
         </div>
 
         <div class="mb-10 text-center lg:text-left">
-             <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block hover:opacity-80 transition-opacity">
+             <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block hover:opacity-30 transition-opacity">
                 <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/logo-white.svg" alt="AMT" class="w-40 md:w-60 h-auto">
              </a>
         </div>

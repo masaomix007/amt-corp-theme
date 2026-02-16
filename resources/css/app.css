@@ -58,8 +58,8 @@
 ============================================ */
 @layer components {
   .btn-view-more {
-    /* 提示されたデザインを反映 (text-m は text-base に変更) */
-    @apply inline-flex items-center justify-center gap-2 border-2 border-gray-700 pl-10 px-6 py-2 text-base tracking-[0.25em] text-gray-800 hover:bg-gray-200 transition-colors !no-underline cursor-pointer;
+    /* ホバー時に背景を濃く(gray-700)、文字を白(white)にして反転させる */
+    @apply inline-flex items-center justify-center gap-2 border-2 border-gray-700 pl-10 px-6 py-2 text-base tracking-[0.25em] text-gray-800 hover:bg-gray-700 hover:text-white transition-colors !no-underline cursor-pointer;
   }
 }
 

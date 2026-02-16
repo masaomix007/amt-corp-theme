@@ -613,13 +613,13 @@ $news_query = new WP_Query([
         <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
           <a
             href="<?php echo esc_url(home_url('/contact/')); ?>"
-            class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-200"
+            class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-700 hover:text-white"
           >
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
                 src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-email.svg"
                 alt=""
-                class="block h-12 w-12 object-contain"
+                class="block h-12 w-12 object-contain group-hover:brightness-0 group-hover:invert"
                 loading="lazy"
                 decoding="async"
               >
@@ -631,14 +631,14 @@ $news_query = new WP_Query([
         <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
           <a
             href="tel:0542864085"
-            class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-200"
+            class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-700 hover:text-white"
             aria-label="電話をかける 054-286-4085"
           >
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
               <img
                 src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-tel.svg"
                 alt=""
-                class="block h-10 w-10 object-contain"
+                class="block h-10 w-10 object-contain group-hover:brightness-0 group-hover:invert"
                 loading="lazy"
                 decoding="async"
               >

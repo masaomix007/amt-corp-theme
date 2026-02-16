@@ -243,9 +243,67 @@
                 </div>
 
             </aside>
-            
+
         </div>
     </div>
+        <section id="contact" class="w-full bg-gray-300">
+        <div class="bg-gray-300 py-10 md:py-14">
+            <div class="mx-auto max-w-6xl px-4 text-center">
+                <h2 class="font-outfit text-4xl font-bold tracking-[0.25em] text-gray-700">CONTACT</h2>
+                <p class="mt-2 text-xl font-semibold tracking-[0.25em] text-gray-600">お問い合わせ</p>
+            </div>
+        </div>
+
+        <div class="w-full bg-gray-100">
+            <div class="mx-auto max-w-6xl px-6 lg:px-4 py-20">
+
+            <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
+
+                <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
+                <a
+                    href="<?php echo esc_url(home_url('/contact/')); ?>"
+                    class="group mx-auto inline-flex w-full max-w-xl items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-700 hover:text-white"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
+                    <img
+                        src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-email.svg"
+                        alt=""
+                        class="block h-12 w-12 object-contain group-hover:brightness-0 group-hover:invert"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    </span>
+                    <span class="font-noto text-xl font-bold tracking-widest">お問い合わせ</span>
+                </a>
+                </div>
+
+                <div class="mx-auto w-full max-w-xs md:max-w-xl text-center">
+                <a
+                    href="tel:0542864085"
+                    class="group inline-flex w-full items-center justify-center gap-5 rounded-full border-2 border-gray-700 bg-transparent px-10 py-4 md:py-8 text-gray-800 !no-underline hover:bg-gray-700 hover:text-white"
+                    aria-label="電話をかける 054-286-4085"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full p-2.5">
+                    <img
+                        src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-tel.svg"
+                        alt=""
+                        class="block h-10 w-10 object-contain group-hover:brightness-0 group-hover:invert"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    </span>
+                    <span class="font-noto text-xl font-bold tracking-widest">054-286-4085</span>
+                </a>
+
+                <p class="mt-6 font-noto text-sm font-bold tracking-widest text-gray-800">
+                    受付9:00〜18:00（土日祝除く）
+                </p>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>
