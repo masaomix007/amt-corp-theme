@@ -204,7 +204,7 @@ get_header();
             <div class="flex flex-col-reverse md:flex-row items-center gap-12">
                 
                 <div class="w-full md:w-1/2 flex justify-center js-reveal-mask">
-                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/graphic-solution.svg   " alt="Solution" class="w-3/4 md:w-3/4 h-auto object-contain">
+                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/graphic-solution.svg   " alt="Solution" class="mx-auto w-3/4 md:w-3/4 h-auto object-contain">
                 </div>
 
                 <div class="w-full md:w-1/2">
