@@ -76,16 +76,16 @@ get_header();
                 <div class="grid grid-cols-1 md:grid-cols-2">
 
                     <div class="bg-gray-100 md:bg-transparent py-16 md:py-24 px-8 md:pr-12 lg:pr-16">
-                        <div class="text-lg leading-7 md:leading-8 text-gray-700 font-noto">
-                            <div class="mb-12 md:mb-16">
+                        <div class="text-lg leading-7 md:leading-8 text-gray-700 font-noto js-fade-stagger">
+                            <div class="mb-12 md:mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600 stagger-item">
                                 <h4 class="w-full font-bold border-b-2 border-black pb-2 mb-6 inline-block">40年以上の経験と豊富な実績</h4>
                                 <p class="text-base leading-7">経験豊富なデザイナーから感度の高い若手まで、多様な視点で年齢・性別・ジャンルにとらわれずデザイン制作に取り組みます。</p>
                             </div>
-                            <div class="mb-12 md:mb-16">
+                            <div class="mb-12 md:mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600 stagger-item">
                                 <h4 class="w-full font-bold border-b-2 border-black pb-2 mb-6 inline-block">コミュニケーションを大切にした制作体制</h4>
                                 <p class="text-base leading-7">より良いデザインを実現するには、イメージや方向性の共有が不可欠です。私たちは、スピード感を持ったコミュニケーションと柔軟なフットワークを重視しています。</p>
                             </div>
-                            <div>
+                            <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600 stagger-item">
                                 <h4 class="w-full font-bold border-b-2 border-black pb-2 mb-6 inline-block">信頼のネットワークで多様なニーズに対応</h4>
                                 <p class="text-base leading-7">掲載内容以外のご要望でも、デザインに関わる事なら柔軟に対応いたします。豊富な実績と幅広い取引先とのつながりを活かし、最適なご提案をお届けします。</p>
                             </div>
@@ -93,18 +93,18 @@ get_header();
                     </div>
 
                     <div class="bg-white md:bg-transparent py-16 md:py-24 px-6 md:pl-12 lg:pl-16 text-center">
-                        <h4 class="inline-block border-2 border-black px-20 py-3 mb-12 font-bold tracking-widest text-lg">企 業 理 念</h4>
+                        <h4 class="inline-block border-2 border-black px-20 py-3 mb-12 font-bold tracking-widest text-lg ">企 業 理 念</h4>
 
-                        <div class="space-y-10 font-noto">
-                            <div>
+                        <div class="space-y-10 font-noto js-fade-stagger">
+                            <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600 stagger-item">
                                 <p class="font-outfit font-bold text-2xl tracking-[0.2em] mb-3 text-gray-800">A<span class="text-gray-400">RT</span></p>
                                 <p class="text-lg leading-7 text-gray-600">芸術的であることに加え、<br>効果的に情報を伝える技を携え、<br>デザインという手段で社会に貢献する。</p>
                             </div>
-                            <div>
+                            <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600 stagger-item">
                                 <p class="font-outfit font-bold text-2xl tracking-[0.2em] mb-3 text-gray-800">M<span class="text-gray-400">IND</span></p>
                                 <p class="text-lg leading-7 text-gray-600">顧客のために心を込めた<br>モノ作りに徹し、<br>記憶に残る仕事をする。</p>
                             </div>
-                            <div>
+                            <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600 stagger-item">
                                 <p class="font-outfit font-bold text-2xl tracking-[0.2em] mb-3 text-gray-800">T<span class="text-gray-400">RUST</span></p>
                                 <p class="text-lg leading-7 text-gray-600">信頼を裏切らない真摯な<br>行いを心掛け、社会の中で<br>責任ある役割を果たす。</p>
                             </div>

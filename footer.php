@@ -260,6 +260,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>
+<script>
+/**
+ * マスクアニメーション用スクリプト
+ * .js-reveal-mask クラスがついた要素が画面に入ると .is-visible を付与する
+ */
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const revealTargets = document.querySelectorAll('.js-reveal-mask');
+
+    if (revealTargets.length > 0) {
+        const revealOptions = {
+            root: null,
+            // 画面の下から15%くらい入ったら発火（少し早めに動かす）
+            rootMargin: '0px 0px -15% 0px',
+            threshold: 0
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // クラスを付与してCSSアニメーションを開始
+                    entry.target.classList.add('is-visible');
+                    // 監視解除（一度だけでOK）
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        revealTargets.forEach((target) => {
+            revealObserver.observe(target);
+        });
+    }
+});
+</script>
 
 </body>
 </html>

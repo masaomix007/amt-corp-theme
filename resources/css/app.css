@@ -278,3 +278,47 @@
     text-decoration: none !important;
   }
 }
+
+/* -------------------------------------------
+   マスクアニメーション (js-reveal-mask)
+   Clip-path版：色の帯を使わず、画像が左から右へ出現
+------------------------------------------- */
+.js-reveal-mask {
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+/* 画像の初期状態 */
+.js-reveal-mask img {
+    /* チラつき防止のため最初は透明にしておく */
+    opacity: 0;
+    
+    /* マスクの設定：
+       inset(上 右 下 左)
+       右側を100%内側にインセット ＝ 画像が右から完全に隠れた状態（左端0pxしか見えない）
+    */
+    clip-path: inset(0 100% 0 0);
+    
+    /* アニメーション設定：
+       clip-pathの変化に1.5秒かける。
+       cubic-bezier(0.25, 1, 0.5, 1) は「スッ...ピタッ」と止まるような高級感ある動き
+    */
+    transition: clip-path 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease-out;
+    
+    will-change: clip-path;
+}
+
+/* 黒い帯（疑似要素）は不要なので削除（念のため無効化） */
+.js-reveal-mask::after {
+    display: none;
+}
+
+/* ▼ アニメーション発火時 (.is-visible 付与後) */
+.js-reveal-mask.is-visible img {
+    /* 不透明度を1に戻す */
+    opacity: 1;
+    
+    /* マスクを解除（すべて0%にする＝全表示） */
+    clip-path: inset(0 0 0 0);
+}
