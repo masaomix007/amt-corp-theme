@@ -213,11 +213,11 @@ $news_query = new WP_Query([
         <div class="relative rounded-2xl bg-white border-2 border-gray-700 px-8 pb-8 pt-20 text-center">
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-web.svg"
-            alt=""
-            class="mx-auto h-28 w-28 md:h-32 md:w-32 object-contain"
-            loading="lazy"
-            decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                data-src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-web.svg"
+                alt=""
+                class="js-scroll-anim mx-auto h-28 w-28 md:h-32 md:w-32 object-contain"
+                decoding="async"
             >
         </div>
 
@@ -244,10 +244,10 @@ $news_query = new WP_Query([
 
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-graphic.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-graphic.svg"
             alt=""
-            class="mx-auto h-28 w-28 md:h-32 md:w-32 object-contain"
-            loading="lazy"
+            class="js-scroll-anim mx-auto h-28 w-28 md:h-32 md:w-32 object-contain"
             decoding="async"
             >
         </div>
@@ -277,11 +277,11 @@ $news_query = new WP_Query([
 
         <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
             <img
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-movie.svg"
-            alt=""
-            class="mx-auto h-28 w-28 md:h-32 md:w-32 object-contain"
-            loading="lazy"
-            decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                data-src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-movie.svg"
+                alt=""
+                class="js-scroll-anim mx-auto h-28 w-28 md:h-32 md:w-32 object-contain"
+                decoding="async"
             >
         </div>
 
@@ -510,10 +510,10 @@ $news_query = new WP_Query([
 
             <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-6">
               <img
-                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-company.svg"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                data-src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-company.svg"
                 alt=""
-                class="h-32 w-32 object-contain"
-                loading="lazy"
+                class="js-scroll-anim h-32 w-32 object-contain"
                 decoding="async"
               >
             </div>

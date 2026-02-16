@@ -25,7 +25,12 @@ get_header();
             
             <div class="text-center mb-16">
                 <div class="w-30 mx-auto mb-4">
-                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-graphic.svg" alt="" class="w-full h-auto object-contain">
+                    <img 
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/icon-graphic.svg" 
+                        alt="" 
+                        class="js-scroll-anim w-full h-auto object-contain"
+                    >
                 </div>
                 <h2 class="font-outfit text-3xl font-bold tracking-[0.2em] text-gray-800 mb-1">SERVICE</h2>
                 <p class="font-noto text-base tracking-widest text-gray-800">提供サービス</p>

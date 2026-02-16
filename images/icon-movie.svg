@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 88.74 64.7">
-  <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 136)  -->
-  <path d="M36.38,46.18c-.16,0-.31-.04-.45-.12-.28-.16-.45-.46-.45-.78v-25.85c0-.32.17-.62.45-.78.28-.16.62-.16.9,0l22.64,12.93c.28.16.45.46.45.78s-.17.62-.45.78l-22.64,12.93c-.14.08-.29.12-.45.12ZM37.28,20.98v22.75l19.93-11.38-19.93-11.38Z" fill="#3e3a39"/>
-  <path d="M76.48,64.7H12.27c-6.76,0-12.27-5.5-12.27-12.27V12.27C0,5.5,5.5,0,12.27,0h64.21c6.76,0,12.27,5.5,12.27,12.27v40.17c0,6.76-5.5,12.27-12.27,12.27ZM12.27,1.8C6.5,1.8,1.8,6.5,1.8,12.27v40.17c0,5.77,4.7,10.47,10.47,10.47h64.21c5.77,0,10.47-4.7,10.47-10.47V12.27c0-5.77-4.7-10.47-10.47-10.47H12.27Z" fill="#3e3a39"/>
+<svg id="layer_video" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 88.74 64.7">
+  <defs>
+    <style>
+      /* Animation Definition */
+      @keyframes drawAndFillVideo {
+        0% {
+          stroke-dashoffset: 1000;
+          fill-opacity: 0;
+        }
+        60% {
+          stroke-dashoffset: 0;
+          fill-opacity: 0;
+        }
+        100% {
+          stroke-dashoffset: 0;
+          fill-opacity: 1;
+          stroke-opacity: 0;
+        }
+      }
+
+      /* Common styles */
+      .video-anim {
+        fill: #3e3a39;
+        stroke: #3e3a39;
+        stroke-width: 0.5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        fill-opacity: 0;
+        
+        /* Duration set to 2.0s */
+        animation: drawAndFillVideo 2.0s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+      }
+      
+      /* No delays */
+    </style>
+  </defs>
+
+  <path class="video-anim" d="M76.48,64.7H12.27c-6.76,0-12.27-5.5-12.27-12.27V12.27C0,5.5,5.5,0,12.27,0h64.21c6.76,0,12.27,5.5,12.27,12.27v40.17c0,6.76-5.5,12.27-12.27,12.27ZM12.27,1.8C6.5,1.8,1.8,6.5,1.8,12.27v40.17c0,5.77,4.7,10.47,10.47,10.47h64.21c5.77,0,10.47-4.7,10.47-10.47V12.27c0-5.77-4.7-10.47-10.47-10.47H12.27Z" />
+
+  <path class="video-anim" d="M36.38,46.18c-.16,0-.31-.04-.45-.12-.28-.16-.45-.46-.45-.78v-25.85c0-.32.17-.62.45-.78.28-.16.62-.16.9,0l22.64,12.93c.28.16.45.46.45.78s-.17.62-.45.78l-22.64,12.93c-.14.08-.29.12-.45.12ZM37.28,20.98v22.75l19.93-11.38-19.93-11.38Z" />
+
 </svg>

@@ -154,5 +154,42 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 監視対象の画像を取得
+    const targets = document.querySelectorAll('.js-scroll-anim');
+
+    // 監視の設定（画面の10%くらいが見えたら発火）
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // 画面内に入ったら
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const realSrc = img.getAttribute('data-src');
+
+                if (realSrc) {
+                    // data-src の値を src にセット（ここでSVGが読み込まれ、アニメが開始する）
+                    img.setAttribute('src', realSrc);
+                    // 処理が終わったら監視を解除（一度だけでOKなので）
+                    observer.unobserve(img);
+                }
+            }
+        });
+    }, options);
+
+    // 各画像を監視スタート
+    targets.forEach(target => {
+        observer.observe(target);
+    });
+});
+</script>
+
 </body>
 </html>

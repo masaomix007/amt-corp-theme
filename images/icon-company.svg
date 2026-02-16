@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 101.57 76.46">
-  <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 136)  -->
-  <path d="M72.18,58.67H30.05c-.5,0-.9.4-.9.9v9.95c0,.5.4.9.9.9s.9-.4.9-.9v-9.05h40.33v9.05c0,.5.4.9.9.9s.9-.4.9-.9v-9.95c0-.5-.4-.9-.9-.9Z" fill="#3e3a39"/>
-  <path d="M30.06,33h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9ZM30.96,24.5h6.7v6.7h-6.7v-6.7Z" fill="#3e3a39"/>
-  <path d="M46.88,33h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9ZM47.78,24.5h6.7v6.7h-6.7v-6.7Z" fill="#3e3a39"/>
-  <path d="M38.61,39.72h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM37.71,48.21h-6.7v-6.7h6.7v6.7Z" fill="#3e3a39"/>
-  <path d="M55.49,39.72h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM54.59,48.21h-6.7v-6.7h6.7v6.7Z" fill="#3e3a39"/>
-  <path d="M72.19,22.7h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM71.29,31.2h-6.7v-6.7h6.7v6.7Z" fill="#3e3a39"/>
-  <path d="M72.19,39.72h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM71.29,48.21h-6.7v-6.7h6.7v6.7Z" fill="#3e3a39"/>
-  <path d="M100.67,74.66h-10.2V12.77c0-.5-.4-.9-.9-.9H30.34V.9c0-.5-.4-.9-.9-.9H12.07c-.5,0-.9.4-.9.9v73.76H.9c-.5,0-.9.4-.9.9s.4.9.9.9h99.77c.5,0,.9-.4.9-.9s-.4-.9-.9-.9ZM12.97,1.8h15.57v10.97c0,.5.4.9.9.9h59.23v60.99H12.97V1.8Z" fill="#3e3a39"/>
+<svg id="layer_building" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 101.57 76.46">
+  <defs>
+    <style>
+      /* Animation Definition */
+      @keyframes drawAndFillBuilding {
+        0% {
+          stroke-dashoffset: 1000;
+          fill-opacity: 0;
+        }
+        60% {
+          stroke-dashoffset: 0;
+          fill-opacity: 0;
+        }
+        100% {
+          stroke-dashoffset: 0;
+          fill-opacity: 1;
+          stroke-opacity: 0;
+        }
+      }
+
+      /* Common styles */
+      .building-anim {
+        fill: #3e3a39;
+        stroke: #3e3a39;
+        stroke-width: 0.5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        fill-opacity: 0;
+        
+        /* Duration set to 2.0s */
+        animation: drawAndFillBuilding 2.0s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+      }
+      
+      /* No delays */
+    </style>
+  </defs>
+
+  <path class="building-anim" d="M72.18,58.67H30.05c-.5,0-.9.4-.9.9v9.95c0,.5.4.9.9.9s.9-.4.9-.9v-9.05h40.33v9.05c0,.5.4.9.9.9s.9-.4.9-.9v-9.95c0-.5-.4-.9-.9-.9Z" />
+
+  <path class="building-anim" d="M30.06,33h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9ZM30.96,24.5h6.7v6.7h-6.7v-6.7Z" />
+  <path class="building-anim" d="M46.88,33h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9ZM47.78,24.5h6.7v6.7h-6.7v-6.7Z" />
+  <path class="building-anim" d="M38.61,39.72h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM37.71,48.21h-6.7v-6.7h6.7v6.7Z" />
+  <path class="building-anim" d="M55.49,39.72h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM54.59,48.21h-6.7v-6.7h6.7v6.7Z" />
+  <path class="building-anim" d="M72.19,22.7h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM71.29,31.2h-6.7v-6.7h6.7v6.7Z" />
+  <path class="building-anim" d="M72.19,39.72h-8.5c-.5,0-.9.4-.9.9v8.5c0,.5.4.9.9.9h8.5c.5,0,.9-.4.9-.9v-8.5c0-.5-.4-.9-.9-.9ZM71.29,48.21h-6.7v-6.7h6.7v6.7Z" />
+
+  <path class="building-anim" d="M100.67,74.66h-10.2V12.77c0-.5-.4-.9-.9-.9H30.34V.9c0-.5-.4-.9-.9-.9H12.07c-.5,0-.9.4-.9.9v73.76H.9c-.5,0-.9.4-.9.9s.4.9.9.9h99.77c.5,0,.9-.4.9-.9s-.4-.9-.9-.9ZM12.97,1.8h15.57v10.97c0,.5.4.9.9.9h59.23v60.99H12.97V1.8Z" />
 </svg>
