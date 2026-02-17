@@ -322,3 +322,119 @@
     /* マスクを解除（すべて0%にする＝全表示） */
     clip-path: inset(0 0 0 0);
 }
+
+/* ============================================
+   ブログ本文内のリストスタイル復活・装飾
+   (目次プラグイン RTOC を除外)
+   ============================================ */
+
+/* 1. 箇条書きリスト (ul) - RTOC以外に適用 */
+.post-content ul:not([class*="rtoc"]):not(.rtoc-list) {
+    list-style: none !important;
+    padding-left: 1.5em !important;
+    margin-bottom: 2rem !important;
+}
+
+/* RTOC内のliには装飾（::before）を付けない指定 */
+.post-content ul:not([class*="rtoc"]) li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.8em;
+    line-height: 1.7;
+}
+
+/* 箇条書きの「・」装飾 - RTOC内には表示しない */
+.post-content ul:not([class*="rtoc"]) li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    background-color: #333333;
+    border-radius: 1px;
+}
+
+/* 2. 番号付きリスト (ol) - RTOC以外に適用 */
+.post-content ol:not([class*="rtoc"]):not(.rtoc-list) {
+    counter-reset: my-counter;
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 2rem !important;
+}
+
+.post-content ol:not([class*="rtoc"]) li {
+    position: relative;
+    padding-left: 2.5em;
+    margin-bottom: 1em;
+    line-height: 1.7;
+    counter-increment: my-counter;
+}
+
+/* 数字部分の装飾 - RTOC内には表示しない */
+.post-content ol:not([class*="rtoc"]) li::before {
+    content: counter(my-counter);
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: #333333;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* RTOC自体のリストが消えすぎないための初期化（念のため） */
+.rtoc-wrapper ul, .rtoc-wrapper ol {
+    list-style: inherit !important;
+}
+
+/* ============================================
+   ブログ本文内のテーブル装飾（二重線・太線解消版）
+   ============================================ */
+
+/* 1. 親要素の設定（スクロール対応） */
+.post-content .wp-block-table {
+    overflow-x: auto;
+    margin-bottom: 2.5rem;
+    border: none !important; /* 親要素の余計な枠線を消去 */
+}
+
+/* 2. テーブル本体 */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse !important; /* 隙間を完全になくす */
+    border: 1px solid #ddd !important;   /* 外枠を1pxに固定 */
+    margin: 1rem 0;
+}
+
+/* 3. 見出しセル（th） */
+.post-content th {
+    background-color: rgba(51, 51, 51, 0.05) !important;
+    font-weight: bold;
+    text-align: left;
+    padding: 1.2rem 1rem;
+    /* !importantを付けて太い線を強制的に1pxへ */
+    border: 1px solid #ddd !important; 
+    font-size: 0.95em;
+}
+
+/* 4. 通常セル（td） */
+.post-content td {
+    padding: 1.2rem 1rem;
+    border: 1px solid #eee !important; /* 中の線はさらに薄く */
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* 5. 最後に、Tailwind Typography(prose)特有の下線を消去 */
+.post-content thead,
+.post-content tr {
+    border-bottom: none !important;
+}
