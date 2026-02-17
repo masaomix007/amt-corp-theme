@@ -438,3 +438,27 @@
 .post-content tr {
     border-bottom: none !important;
 }
+
+/* ============================================
+   ブログ本文内のインラインコード（<code>）装飾
+   ============================================ */
+
+.post-content code {
+    /* 背景と文字色の設定 */
+    background-color: #f3f4f6; /* 薄いグレー */
+    color: #eb5757;           /* 技術ブログでよく使われる赤・ピンク系 */
+    
+    /* 余白と角丸 */
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    
+    /* フォント設定（等幅フォントにするとそれっぽくなります） */
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    font-size: 0.9em;
+    
+    /* 前後の文章とのバランス */
+    margin: 0 0.2em;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
+}
