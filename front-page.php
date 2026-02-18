@@ -409,7 +409,7 @@ $news_query = new WP_Query([
     
     <?php 
     // ▼ NEWマーク：投稿から7日以内なら表示
-    if ( (date('U') - get_the_time('U')) < (7 * 24 * 60 * 60) ) : 
+    if ( (date('U') - get_the_time('U')) < (9 * 24 * 60 * 60) ) : 
     ?>
     <div class="absolute top-[-2px] left-0 z-10 w-[20%]">
         <svg class="w-full h-auto" viewBox="0 0 82 38" fill="none" xmlns="http://www.w3.org/2000/svg">
