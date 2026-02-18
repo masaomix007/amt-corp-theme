@@ -462,3 +462,86 @@
     line-height: 1;
     vertical-align: baseline;
 }
+
+
+/* ============================================
+   ブログ本文内のマーカー（Gutenberg完全上書き版）
+   ============================================ */
+
+/* 背景色が指定されている要素をすべて対象にする */
+.post-content [style*="background-color"],
+.post-content [class*="-background-color"],
+.post-content mark {
+    /* 1. 背景色の情報を消さず、その「上」に 60% の白を重ねる */
+    /* これにより、結果的に下 40% だけが元の色で残ります */
+    background-image: linear-gradient(
+        to bottom, 
+        #ffffff 60%, 
+        rgba(255, 255, 255, 0) 0%
+    ) !important;
+    
+    /* 2. 背景画像を元の背景色の「手前」に強制配置する設定 */
+    background-origin: border-box !important;
+    background-clip: padding-box !important;
+
+    /* 3. 文字の色を「本文の黒」に固定 */
+    /* これを書かないと、エディタの設定次第で文字まで白抜きになります */
+    color: #333 !important; 
+    -webkit-text-fill-color: #333 !important;
+    
+    /* 4. 体裁調整 */
+    font-weight: bold;
+    padding: 0 0.1em;
+    display: inline;
+}
+
+
+/* ============================================
+   補足・注意書き（Admonition）
+   ============================================ */
+
+/* 共通スタイル */
+.post-content .admonition {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    border-left: 5px solid #333; /* AMT様の基本アクセントカラー */
+    position: relative;
+}
+
+/* 1. 補足 (Info) */
+.post-content .admonition-info {
+    background-color: #f8f9fa; /* ごく薄いグレー */
+    border-left-color: #333;
+}
+.post-content .admonition-info::before {
+    content: 'INFO';
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 0.90rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* 2. 注意 (Alert) */
+.post-content .admonition-alert {
+    background-color: #fff5f5; /* ごく薄い赤 */
+    border-left-color: #eb5757; /* 警告色 */
+}
+.post-content .admonition-alert::before {
+    content: 'ALERT';
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 0.90rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    color: #eb5757;
+}
+
+/* 枠内の文章の余白調整 */
+.post-content .admonition p:last-child {
+    margin-bottom: 0;
+}
