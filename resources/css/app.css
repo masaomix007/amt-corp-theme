@@ -500,8 +500,7 @@
    補足・注意書き（Admonition）
    ============================================ */
 
-/* 共通スタイル */
-.post-content .admonition {
+c.post-content .admonition {
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 4px;
@@ -544,4 +543,21 @@
 /* 枠内の文章の余白調整 */
 .post-content .admonition p:last-child {
     margin-bottom: 0;
+}
+
+/* ============================================
+   ショートカット表記をキーボードキー風（kbd）に
+   ============================================ */
+
+kbd{
+  display:inline-block;
+  padding:.15em .45em;
+  margin:0 .08em;
+  border:1px solid rgba(0,0,0,.2);
+  border-bottom-width:2px;
+  border-radius:.35em;
+  background:#f7f7f7;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  font-size:.95em;
+  line-height:1.2;
 }
