@@ -518,7 +518,7 @@
     display: block;
     font-family: 'Outfit', sans-serif;
     font-weight: bold;
-    font-size: 0.90rem;
+    font-size: 0.90rem; 
     letter-spacing: 0.1em;
     margin-bottom: 0.5rem;
     color: #333;
@@ -560,4 +560,81 @@ kbd{
   font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
   font-size:.95em;
   line-height:1.2;
+}
+
+/* ============================================
+   ブログ本文内のリンク装飾 (Aタグ)
+   (目次プラグイン RTOC を除外)
+   ============================================ */
+
+/* 1. 基本設定：色と下線 */
+.post-content a:not([class*="rtoc"]):not(.rtoc-item a) {
+    color: #4da6b0; /* 画像に近い青緑色 */
+    text-decoration: underline;
+    text-underline-offset: 3px; /* 下線と文字の間隔を少し空ける */
+    transition: all 0.2s ease-in-out;
+}
+
+/* 2. マウスオーバー：下線を消す */
+.post-content a:not([class*="rtoc"]):not(.rtoc-item a):hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* 3. 外部リンク (_blank) のアイコン追加 */
+.post-content a[target="_blank"]:not([class*="rtoc"]):not(.rtoc-item a)::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+    background-color: currentColor;
+    /* CSSのみで描画する外部サイトアイコン（マスク使用） */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+/* 4. [例外] 前後の記事リンクやカテゴリーリンクなどは、single.php側で!no-underlineが指定されているため、
+   既存のTailwind設定が優先されますが、念のため干渉を最小限にします。 */
+
+   /* ============================================
+   HCB：スクロールバー強制出現 ＆ レイアウト崩れ防止
+   ============================================ */
+
+/* 1. 記事全体のコンテナが横に伸びるのを「絶対」に防ぐ */
+.container, 
+article.w-full {
+    min-width: 0 !important;
+    overflow-wrap: break-word;
+}
+
+/* 2. HCBの枠を記事幅に閉じ込め、はみ出しをスクロールに変換 */
+.post-content .hcb_wrap {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important; /* ← これが最重要です */
+    overflow-y: hidden !important;
+}
+
+/* 3. コードの中身が折り返さないように固定（スクロールさせるため） */
+.post-content .hcb_wrap pre {
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+}
+
+/* 4. スクロールバー自体のデザイン（見えにくい場合があるため） */
+.post-content .hcb_wrap::-webkit-scrollbar {
+    height: 8px;
+}
+.post-content .hcb_wrap::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
 }
