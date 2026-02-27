@@ -126,11 +126,11 @@ get_header();
 
                 <div class="w-full order-2 md:order-1">
                     <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/company-office.webp" alt="Office" class="w-full h-auto object-cover grayscale">
-                </div>
+                </div>  
 
                 <div class="w-full order-1 md:order-2">
                      <dl class="grid grid-cols-[5em_1fr] gap-x-6 gap-y-1 text-sm leading-7 text-gray-700 border-gray-200">
-                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">会社名</dt><dd class="py-1">株式会社AMT（エー・エム・ティー）</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">会社名</dt><dd class="py-1">株式会社 エー・エム・ティー</dd>
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">住所</dt><dd class="py-1 border-gray-200">〒422-8046 静岡県静岡市駿河区中島153-2</dd>
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">代表</dt><dd class="py-1 border-gray-200">皆川　智教</dd>
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">ＴＥＬ</dt><dd class="font-outfit py-1 border-gray-200 ">054-286-4085</dd>

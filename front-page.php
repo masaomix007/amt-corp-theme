@@ -504,7 +504,7 @@ $news_query = new WP_Query([
       </div>
 
       <div class="mt-10 w-full bg-white">
-        <div class="mx-auto max-w-6xl lg:px-4 px-6 py-14  ">
+        <div class="mx-auto max-w-6xl lg:px-4 px-6 py-14">
 
           <div class="relative rounded-2xl bg-white border-2 border-gray-500 px-8 pb-10 pt-20">
 
@@ -524,7 +524,7 @@ $news_query = new WP_Query([
               私たちについて
             </p>
 
-<div class="block md:hidden pb-4">
+            <div class="block md:hidden pb-4">
               <hr class="mx-auto mt-6 w-60 border-t border-gray-700">
               
               <p class="mt-8 text-center text-lg leading-9 text-gray-700">
@@ -562,35 +562,35 @@ $news_query = new WP_Query([
               </div>
 
               <div class="text-gray-700">
-                <dl class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-x-8 gap-y-5 text-sm leading-7">
-                  <dt class="font-bold tracking-widest">会社名</dt>
-                  <dd>株式会社AMT（エー・エム・ティー）</dd>
+                <dl class="grid grid-cols-[5em_1fr] gap-x-8 gap-y-5 text-sm leading-7">
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">会社名</dt>
+                  <dd>株式会社  エー・エム・ティー</dd>
 
-                  <dt class="font-bold tracking-widest">住　所</dt>
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">住　所</dt>
                   <dd>〒422-8046 静岡県静岡市駿河区中島153-2</dd>
 
-                  <dt class="font-bold tracking-widest">ＴＥＬ</dt>
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">ＴＥＬ</dt>
                   <dd>054-286-4085</dd>
 
-                  <dt class="font-bold tracking-widest">ＦＡＸ</dt>
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">ＦＡＸ</dt>
                   <dd>054-286-7992</dd>
 
-                  <dt class="font-bold tracking-widest">設　立</dt>
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">設　立</dt>
                   <dd>1985年12月2日</dd>
 
-                  <dt class="font-bold tracking-widest">資本金</dt>
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">資本金</dt>
                   <dd>10,000,000円</dd>
 
-                  <dt class="font-bold tracking-widest">従業員数</dt>
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">従業員数</dt>
                   <dd>13名</dd>
 
-                  <dt class="font-bold tracking-widest">業務内容</dt>
+                  <dt class="font-bold py-1 text-justify [text-align-last:justify]">業務内容</dt>
                   <dd>
                     ホームページ制作／Web運営支援／広告・印刷物／グラフィックデザイン／パッケージデザイン／ロゴデザイン／販促ツール制作／ノベルティ制作／映像・動画制作
                   </dd>
                 </dl>
               </div>
-            </div>  
+            </div>
           </div>
 
         </div>
