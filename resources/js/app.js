@@ -337,3 +337,65 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animation);
   }
 });
+
+/**
+ * Contact Form 7 挙動制御（確定版）
+ */
+// 1. 送信ボタンをクリックした時の処理（送信中への表示切り替え）
+document.addEventListener( 'wpcf7submit', function( event ) {
+    const submitBtn = document.getElementById('amt-submit');
+    if (submitBtn) {
+        submitBtn.value = "送信中...";
+        submitBtn.style.opacity = "0.5";
+        submitBtn.style.pointerEvents = "none";
+    }
+}, false );
+
+// 2. メール送信が成功した時の処理
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    const submitBtn = document.getElementById('amt-submit');
+    const thanksArea = document.getElementById('amt-thanks-container');
+    const formRows = document.querySelectorAll('.contact-row, .wpcf7-acceptance');
+    const responseOutput = document.querySelector('.wpcf7-response-output');
+
+    // ボタンそのものではなく、それを包む親要素(span.wpcf7-submit)を探して消す
+    if (submitBtn) {
+        const wrapper = submitBtn.closest('.wpcf7-submit');
+        if (wrapper) {
+            wrapper.setAttribute('style', 'display: none !important');
+            wrapper.remove(); 
+        } else {
+            submitBtn.remove();
+        }
+    }
+
+    // 入力欄の非表示
+    formRows.forEach(row => {
+        row.setAttribute('style', 'display: none !important');
+    });
+
+    // 値のコピー処理（ここは変更なし）
+    const inputs = event.detail.inputs;
+    inputs.forEach(input => {
+        const targetElement = document.getElementById('res-' + input.name);
+        if (targetElement) { targetElement.textContent = input.value; }
+    });
+
+    if (thanksArea) {
+        thanksArea.style.display = 'block';
+        if (responseOutput) responseOutput.style.display = 'none';
+        setTimeout(() => {
+            thanksArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+    }
+}, false );
+
+// 3. バリデーションエラー等で送信失敗した時の復帰処理
+document.addEventListener( 'wpcf7invalid', function( event ) {
+    const submitBtn = document.getElementById('amt-submit');
+    if (submitBtn) {
+        submitBtn.value = "送　信";
+        submitBtn.style.opacity = "1";
+        submitBtn.style.pointerEvents = "auto";
+    }
+}, false );
