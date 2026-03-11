@@ -70,23 +70,59 @@
                     <h3 class="text-xl font-bold border-b-2 border-black pb-2 mb-6 tracking-widest">人気記事</h3>
                     <div class="space-y-6">
                         <?php
-                        $news_cat = get_category_by_slug('news');
-                        $news_cat_id = $news_cat ? $news_cat->term_id : 0;
+                        // ★修正版6：列名を 'content' から 'id' に修正し、type=4 (合計) を取得
+                        global $wpdb;
 
-                        $popular_args = array(
-                            'post_type' => 'post',
-                            'posts_per_page' => 3,
-                            'orderby' => 'date', 
-                            'order' => 'DESC',
-                            'ignore_sticky_posts' => 1,
-                            'category__not_in' => array($news_cat_id)
-                        );
-                        $popular_query = new WP_Query($popular_args);
+                        $table_views = $wpdb->prefix . 'post_views';
+                        $table_posts = $wpdb->prefix . 'posts';
+
+                        // Post Views Counterのテーブル仕様（id = 投稿ID, type = 4 が全期間合計）に合わせて結合
+                        // count は予約語なので `` で囲む
+                        $sql = "
+                            SELECT p.ID, pvc.`count` as views
+                            FROM {$table_views} pvc
+                            INNER JOIN {$table_posts} p ON pvc.id = p.ID
+                            WHERE p.post_type = 'post' 
+                            AND p.post_status = 'publish'
+                            AND pvc.type = 4
+                            ORDER BY views DESC
+                            LIMIT 5
+                        ";
+
+                        // クエリ実行
+                        $top_viewed = $wpdb->get_results($sql);
+
+                        // デバッグ用：もしこれでもエラーが出る場合、以下のコメントを外してください
+                        // if(!empty($wpdb->last_error)) { echo '<p class="text-red-500 text-xs">' . esc_html($wpdb->last_error) . '</p>'; }
+
+                        $post_ids = [];
+                        if ($top_viewed) {
+                            foreach ($top_viewed as $row) {
+                                if (is_numeric($row->ID) && $row->ID > 0) {
+                                    $post_ids[] = intval($row->ID);
+                                }
+                            }
+                        }
+
+                        // 取得したIDで記事を表示
+                        if (!empty($post_ids)) {
+                            $popular_args = array(
+                                'post_type'      => 'post',
+                                'post__in'       => $post_ids,
+                                'orderby'        => 'post__in', // ランキング順を維持
+                                'posts_per_page' => 3,
+                                'ignore_sticky_posts' => 1,
+                            );
+                            $popular_query = new WP_Query($popular_args);
+                        } else {
+                            $popular_query = new WP_Query();
+                        }
+
                         $rank = 1;
-                        
+
                         if ($popular_query->have_posts()) :
                             while ($popular_query->have_posts()) : $popular_query->the_post();
-                                $rank_color = '#c49c86';
+                                $rank_color = '#c49c86'; 
                                 if ($rank === 1) $rank_color = '#dcb67d';
                                 elseif ($rank === 2) $rank_color = '#a5a5a5';
                         ?>
@@ -104,7 +140,14 @@
                                     </p>
                                 </div>
                             </a>
-                        <?php $rank++; endwhile; wp_reset_postdata(); endif; ?>
+                        <?php
+                            $rank++;
+                            endwhile;
+                            wp_reset_postdata();
+                        else :
+                        ?>
+                            <p class="text-sm text-gray-500">集計中...</p>
+                        <?php endif; ?>
                     </div>
                 </div>
 
