@@ -638,3 +638,17 @@ article.w-full {
     background: #ccc;
     border-radius: 4px;
 }
+
+/* Contextual Related Posts */
+.sidebar-related .crp_related h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 2px solid #111;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+/* BLOG 見出し装飾 */
+article h4 {
+  @apply font-bold mt-10 mb-4;
+}

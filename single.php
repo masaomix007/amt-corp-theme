@@ -165,6 +165,13 @@
                     </form>
                 </div>
 
+                <div class="sidebar-related">
+                        <?php
+                        if ( function_exists( 'echo_crp' ) ) {
+                            echo_crp();
+                        }
+                        ?>
+                </div>
                 <div>
                     <h3 class="text-xl font-bold mb-6 font-noto tracking-widest">タグ</h3>
                     <?php
