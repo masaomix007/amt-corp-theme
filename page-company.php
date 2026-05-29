@@ -137,7 +137,7 @@ get_header();
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">ＦＡＸ</dt><dd class="font-outfit py-1 border-gray-200">054-286-7992</dd>
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">設立</dt><dd class="py-1 border-gray-200">1985年12月2日</dd>
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">資本金</dt><dd class="py-1 border-gray-200">10,000,000円</dd>
-                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">従業員数</dt><dd class="py-1 border-gray-200">13名</dd>
+                        <dt class="font-bold py-1 text-justify [text-align-last:justify]">従業員数</dt><dd class="py-1 border-gray-200">10名</dd>
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">取引銀行</dt><dd class="py-1 border-gray-200">静岡銀行／静岡焼津信用金庫</dd>
                         <dt class="font-bold py-1 text-justify [text-align-last:justify]">業務内容</dt><dd class="py-1 border-gray-200">ホームページ制作／Web運営支援／広告・印刷物／グラフィックデザイン／パッケージデザイン／ロゴデザイン／販促ツール制作／ノベルティ制作／映像・動画制作</dd>
                     </dl>
