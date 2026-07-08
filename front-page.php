@@ -427,7 +427,7 @@ $news_query = new WP_Query([
         ]); ?>
     <?php else: ?>
         <img 
-            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/no-image.svg" 
+            src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/no-image.webp" 
             alt="No Image" 
             class="aspect-[16/9] w-full object-cover bg-gray-200"
         >

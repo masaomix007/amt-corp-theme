@@ -103,7 +103,7 @@
                                             'class' => 'w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300'
                                         ]); ?>
                                     <?php else : ?>
-                                        <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/no-image.svg" alt="No Image" class="w-full aspect-video object-cover bg-gray-200">
+                                        <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/images/no-image.webp" alt="No Image" class="w-full aspect-video object-cover bg-gray-200">
                                     <?php endif; ?>
                                 </a>
 
