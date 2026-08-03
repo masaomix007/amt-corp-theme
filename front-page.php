@@ -582,7 +582,7 @@ $news_query = new WP_Query([
                   <dd>10,000,000円</dd>
 
                   <dt class="font-bold py-1 text-justify [text-align-last:justify]">従業員数</dt>
-                  <dd>13名</dd>
+                  <dd>10名</dd>
 
                   <dt class="font-bold py-1 text-justify [text-align-last:justify]">業務内容</dt>
                   <dd>
