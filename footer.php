@@ -6,6 +6,8 @@
  */
 ?>
 
+<?php get_template_part('template-parts/floating-contact-cta'); ?>
+
 <footer class="bg-black text-white w-full pt-16 pb-8 font-noto">
     <div class="mx-auto max-w-6xl px-6 lg:px-10">
         

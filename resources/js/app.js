@@ -37,12 +37,98 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const mobileMenu   = document.getElementById('mobile-menu-overlay');
   const menuToggles  = document.querySelectorAll('#menu-toggle, .menu-toggle-btn');
+  const floatingCtas = document.querySelectorAll('[data-floating-contact-cta-pc], [data-floating-contact-cta-sp]');
+  const mobileFloatingCta = document.querySelector('[data-floating-contact-cta-sp]');
+  const contactSection = document.getElementById('contact');
+  const footer = document.querySelector('footer');
+  const floatingCtaState = {
+    menuOpen: false,
+    contactVisible: false,
+    footerVisible: false,
+  };
 
   // スティッキーヘッダーがあればトップページとみなす
   const isHomePage = !!stickyHeader;
 
   // トップページの場合、mainHeader は「透明なHeroヘッダー」として扱う
   const headerHero = isHomePage ? mainHeader : null;
+
+  function updateMobileContactCtaHeight() {
+    if (!isHomePage || !mobileFloatingCta) return;
+
+    const height = mobileFloatingCta.getBoundingClientRect().height;
+    if (height > 0) {
+      document.documentElement.style.setProperty('--mobile-contact-cta-height', `${Math.ceil(height)}px`);
+    }
+  }
+
+  if (isHomePage && mobileFloatingCta) {
+    updateMobileContactCtaHeight();
+    window.addEventListener('resize', updateMobileContactCtaHeight);
+    window.addEventListener('orientationchange', updateMobileContactCtaHeight);
+
+    if ('ResizeObserver' in window) {
+      const mobileCtaResizeObserver = new ResizeObserver(updateMobileContactCtaHeight);
+      mobileCtaResizeObserver.observe(mobileFloatingCta);
+    }
+  }
+
+  function updateFloatingContactCta() {
+    if (floatingCtas.length === 0) return;
+
+    const shouldHide = floatingCtaState.menuOpen || floatingCtaState.contactVisible || floatingCtaState.footerVisible;
+
+    floatingCtas.forEach((cta) => {
+      const hideTranslate = cta.dataset.hideTranslate;
+
+      cta.classList.toggle('opacity-0', shouldHide);
+      cta.classList.toggle('invisible', shouldHide);
+      cta.classList.toggle('pointer-events-none', shouldHide);
+
+      if (hideTranslate) {
+        cta.classList.toggle(hideTranslate, shouldHide);
+      }
+
+      cta.setAttribute('aria-hidden', shouldHide ? 'true' : 'false');
+      cta.tabIndex = shouldHide ? -1 : 0;
+    });
+  }
+
+  if (floatingCtas.length > 0 && 'IntersectionObserver' in window) {
+    const observedFloatingTargets = [];
+
+    if (contactSection && contactSection.offsetHeight > 1) {
+      observedFloatingTargets.push(contactSection);
+    }
+
+    if (footer) {
+      observedFloatingTargets.push(footer);
+    }
+
+    if (observedFloatingTargets.length > 0) {
+      const floatingObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === contactSection) {
+            floatingCtaState.contactVisible = entry.isIntersecting;
+          }
+
+          if (entry.target === footer) {
+            floatingCtaState.footerVisible = entry.isIntersecting;
+          }
+        });
+
+        updateFloatingContactCta();
+      }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.01,
+      });
+
+      observedFloatingTargets.forEach((target) => floatingObserver.observe(target));
+    }
+
+    updateFloatingContactCta();
+  }
 
   // ------------------------------------------------
   // 2. トップページ用：スクロール切り替えロジック
@@ -88,6 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
         document.body.style.overflow = ''; 
+        floatingCtaState.menuOpen = false;
+        updateFloatingContactCta();
 
         // アイコンを3本線に戻す
         menuToggles.forEach(btn => animateHamburger(btn, false));
@@ -167,6 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('translate-x-full');
         mobileMenu.classList.add('translate-x-0');
         document.body.style.overflow = 'hidden';
+        floatingCtaState.menuOpen = true;
+        updateFloatingContactCta();
 
         // アイコンをバツ印にする
         menuToggles.forEach(btn => animateHamburger(btn, true));
