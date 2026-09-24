@@ -115,7 +115,7 @@
 
         <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="<?php echo $nav_sticky_class; ?>">BLOG<?php echo $underline_sticky; ?></a>
         <a href="<?php echo esc_url(home_url('/company/')); ?>" class="<?php echo $nav_sticky_class; ?>">COMPANY<?php echo $underline_sticky; ?></a>
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-black bg-black px-8 py-3 font-noto text-sm font-bold tracking-wider text-white shadow-sm transition-colors duration-300 hover:bg-white hover:text-black focus-visible:bg-white focus-visible:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
+        <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline amt-cta-slide amt-cta-slide--dark inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-black bg-black px-8 py-3 font-noto text-sm font-bold tracking-wider shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-6 w-6 shrink-0">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
             </svg>

@@ -61,6 +61,79 @@
     /* ホバー時に背景を濃く(gray-700)、文字を白(white)にして反転させる */
     @apply inline-flex items-center justify-center gap-2 border-2 border-gray-700 pl-10 px-6 py-2 text-base tracking-[0.25em] text-gray-800 hover:bg-gray-700 hover:text-white transition-colors !no-underline cursor-pointer;
   }
+
+  .amt-cta-slide {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    transition: color 0.5s ease;
+  }
+
+  .amt-cta-slide.amt-cta-slide--light {
+    color: #1f2937;
+  }
+
+  .amt-cta-slide.amt-cta-slide--dark {
+    color: #ffffff;
+  }
+
+  .amt-cta-slide::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    content: "";
+    border-radius: inherit;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+  }
+
+  .amt-cta-slide > * {
+    position: relative;
+    z-index: 1;
+    color: inherit;
+  }
+
+  .amt-cta-slide--light::before {
+    background-color: #000000;
+  }
+
+  .amt-cta-slide--dark::before {
+    background-color: #ffffff;
+  }
+
+  .amt-cta-slide.amt-cta-slide--light:focus-visible {
+    color: #ffffff;
+  }
+
+  .amt-cta-slide.amt-cta-slide--dark:focus-visible {
+    color: #000000;
+  }
+
+  .amt-cta-slide:focus-visible::before {
+    transform: scaleX(1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .amt-cta-slide:hover::before {
+      transform: scaleX(1);
+    }
+
+    .amt-cta-slide.amt-cta-slide--light:hover {
+      color: #ffffff;
+    }
+
+    .amt-cta-slide.amt-cta-slide--dark:hover {
+      color: #000000;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .amt-cta-slide,
+    .amt-cta-slide::before {
+      transition-duration: 0.01ms;
+    }
+  }
 }
 
 /* ============================================

@@ -88,7 +88,7 @@
             COMPANY
             <?php echo $underline_span; ?>
         </a>
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-white px-8 py-3 font-noto text-sm font-bold tracking-wider text-gray-800 shadow-sm transition-colors duration-300 hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+        <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline amt-cta-slide amt-cta-slide--light inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-white px-8 py-3 font-noto text-sm font-bold tracking-wider shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-6 w-6 shrink-0">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
             </svg>
@@ -161,7 +161,7 @@
                 </svg>
               </a>
             </div>
-            <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline flex min-h-16 w-full max-w-full items-center justify-center gap-3 min-[360px]:gap-4 min-[414px]:gap-5 rounded-full bg-white px-3 min-[360px]:px-6 min-[414px]:px-8 py-4 text-center font-noto text-[clamp(0.875rem,4vw,1.125rem)] font-bold tracking-wider text-gray-900 shadow-sm transition-colors hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+            <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="!no-underline amt-cta-slide amt-cta-slide--light flex min-h-16 w-full max-w-full items-center justify-center gap-3 min-[360px]:gap-4 min-[414px]:gap-5 rounded-full bg-white px-3 min-[360px]:px-6 min-[414px]:px-8 py-4 text-center font-noto text-[clamp(0.875rem,4vw,1.125rem)] font-bold tracking-wider shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-8 w-8 shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
                 <span class="whitespace-nowrap">ご相談・お見積り</span>
             </a>
