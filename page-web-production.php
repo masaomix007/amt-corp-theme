@@ -318,9 +318,16 @@ get_header();
             <p class="lp-intro">新規作成・リニューアル、新事業・新施設サイトなど、企画や掲載内容が固まっていない段階からご相談いただけます。現在の状況をお伺いしながら、必要な進め方を一緒に整理します。</p>
             <div class="mt-10 rounded-3xl bg-black px-6 py-10 text-center text-white md:mt-14 md:px-12 md:py-14">
                 <p class="text-sm leading-7 md:text-base">＼　webサイト制作について　／</p>
-                <div class="mx-auto mt-6 grid max-w-3xl gap-4 md:grid-cols-2 md:gap-8">
-                    <a href="<?php echo esc_url($contact_url); ?>" class="lp-contact-button !no-underline amt-cta-slide amt-cta-slide--dark inline-flex min-h-16 items-center justify-center rounded-full border-2 border-white px-6 py-4 text-base font-bold"><span>相談する</span></a>
-                    <a href="<?php echo esc_url($contact_url); ?>" class="lp-contact-button !no-underline amt-cta-slide amt-cta-slide--dark inline-flex min-h-16 items-center justify-center rounded-full border-2 border-white px-6 py-4 text-base font-bold"><span>見積り依頼する</span></a>
+                <div class="mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-4 md:gap-8">
+                    <a href="<?php echo esc_url($contact_url); ?>" class="lp-contact-button !no-underline amt-cta-slide amt-cta-slide--dark inline-flex min-h-16 w-full md:w-[calc(50%_-_1rem)] items-center justify-center rounded-full border-2 border-white px-6 py-4 text-base font-bold">
+                        <span>相談する</span>
+                    </a>
+
+                    <?php /*
+                    <a href="<?php echo esc_url($contact_url); ?>" class="lp-contact-button !no-underline amt-cta-slide amt-cta-slide--dark inline-flex min-h-16 w-full md:w-[calc(50%_-_1rem)] items-center justify-center rounded-full border-2 border-white px-6 py-4 text-base font-bold">
+                        <span>見積り依頼する</span>
+                    </a>
+                    */ ?>
                 </div>
             </div>
         </div>
