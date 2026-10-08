@@ -28,9 +28,13 @@ $services = [
 
 $cases = [
     ['number' => '01', 'label' => 'コーポレートサイト刷新'],
-    ['number' => '02', 'label' => '新事業・新施設サイト'],
-    ['number' => '03', 'label' => '学校法人サイト刷新'],
+    ['number' => '02', 'label' => '学校法人サイト刷新'],
+    // ['number' => '03', 'label' => '新事業・新施設サイト'],
 ];
+
+$case_count = count($cases);
+$has_case_tabs = $case_count > 1;
+$first_case_key = array_key_first($cases);
 
 $flows = [
     ['title' => 'お問い合わせ・ご相談', 'description' => 'webサイトの新規制作・リニューアル、新事業・新施設サイトなど、検討中の内容をお聞かせください。'],
@@ -213,33 +217,46 @@ get_header();
         </div>
     </section>
 
+    <?php if ($case_count > 0): ?>
     <section aria-labelledby="lp-case-title" class="lp-section lp-gray">
         <div class="lp-container">
             <p class="lp-eyebrow">CASE / PROJECT</p>
             <h2 id="lp-case-title" class="lp-heading">課題を整理し、形にしたプロジェクト</h2>
             <p class="lp-intro">どのような課題があり、何を整理し、どのような考え方でサイトへ落とし込んだのか。AMTが企画・構成段階から携わったプロジェクトを、事例を通してご紹介します。</p>
-            <div role="tablist" aria-label="制作事例" data-case-tabs class="mt-12 grid grid-cols-3 md:mt-20">
+            <?php if ($has_case_tabs): ?>
+            <div role="tablist" aria-label="制作事例" data-case-tabs class="lp-case-tabs mt-12 md:mt-20">
                 <?php foreach ($cases as $index => $case): ?>
-                    <button type="button" role="tab" id="lp-case-tab-<?php echo esc_attr($case['number']); ?>" aria-controls="lp-case-panel-<?php echo esc_attr($case['number']); ?>" aria-selected="<?php echo $index === 0 ? 'true' : 'false'; ?>" tabindex="<?php echo $index === 0 ? '0' : '-1'; ?>" class="lp-case-tab">
+                    <button type="button" role="tab" id="lp-case-tab-<?php echo esc_attr($case['number']); ?>" aria-controls="lp-case-panel-<?php echo esc_attr($case['number']); ?>" aria-selected="<?php echo $index === $first_case_key ? 'true' : 'false'; ?>" tabindex="<?php echo $index === $first_case_key ? '0' : '-1'; ?>" class="lp-case-tab">
                         <span>CASE <?php echo esc_html($case['number']); ?></span>
                         <span class="mt-3 block text-[11px] font-bold leading-5 md:text-sm"><?php echo esc_html($case['label']); ?></span>
                     </button>
                 <?php endforeach; ?>
             </div>
+            <?php else: ?>
+            <div class="mt-12 md:mt-20">
+                <?php foreach ($cases as $case): ?>
+                    <div id="lp-case-label-<?php echo esc_attr($case['number']); ?>" class="lp-case-label">
+                        <span>CASE <?php echo esc_html($case['number']); ?></span>
+                        <span class="mt-3 block text-[11px] font-bold leading-5 md:text-sm"><?php echo esc_html($case['label']); ?></span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
             <div class="mt-14 grid md:mt-20">
                 <?php foreach ($cases as $index => $case): ?>
-                    <div role="tabpanel" id="lp-case-panel-<?php echo esc_attr($case['number']); ?>" aria-labelledby="lp-case-tab-<?php echo esc_attr($case['number']); ?>" tabindex="0" class="lp-case-panel min-w-0 [grid-area:1/1]" <?php echo $index === 0 ? '' : 'hidden'; ?>>
+                    <?php $is_primary_case = $case['number'] === '01'; ?>
+                    <section id="lp-case-panel-<?php echo esc_attr($case['number']); ?>" aria-labelledby="lp-case-<?php echo $has_case_tabs ? 'tab' : 'label'; ?>-<?php echo esc_attr($case['number']); ?>" class="lp-case-panel min-w-0 [grid-area:1/1]" <?php if ($has_case_tabs): ?>role="tabpanel" tabindex="0" <?php echo $index === $first_case_key ? '' : 'hidden'; ?><?php endif; ?>>
                         <div class="border-b-2 border-[#393f3b] pb-8 text-center">
-                            <h3 class="text-2xl font-bold tracking-wider md:text-3xl"><?php echo $index === 0 ? '兼高会計事務所' : 'CASE ' . esc_html($case['number']) . '（準備中）'; ?></h3>
-                            <p class="mt-5 text-sm leading-7 tracking-wider md:text-lg"><?php echo $index === 0 ? '50年以上の歴史を、これからの「信頼」へつなげるサイトへ。' : '事例情報は準備中です。'; ?></p>
+                            <h3 class="text-2xl font-bold tracking-wider md:text-3xl"><?php echo $is_primary_case ? '兼高会計事務所' : '学校法人 静岡精華学園'; ?></h3>
+                            <p class="mt-5 text-sm leading-7 tracking-wider md:text-lg"><?php echo $is_primary_case ? '50年以上の歴史を、これからの「信頼」へつなげるサイトへ。' : '複数の学校を束ねる 「本部サイト」としての役割を再設計。'; ?></p>
                         </div>
                         <div class="lp-case-images mt-10 md:mt-14">
                             <figure class="min-w-0">
                                 <div class="lp-case-before-visual">
-                                    <?php if ($index === 0): ?>
-                                        <img src="<?php echo esc_url($lp_asset_url . 'case_01.png'); ?>" alt="兼高会計事務所のリニューアル前のWebサイト" width="458" height="418" loading="lazy" decoding="async" class="lp-case-image lp-case-before">
+                                    <?php if ($is_primary_case): ?>
+                                        <img src="<?php echo esc_url($lp_asset_url . 'case_01.webp'); ?>" alt="兼高会計事務所のリニューアル前のWebサイト" width="458" height="418" loading="lazy" decoding="async" class="lp-case-image lp-case-before">
                                     <?php else: ?>
-                                        <div role="img" aria-label="リニューアル前の画像は準備中" class="lp-case-image lp-case-before"><span class="px-2 text-center text-xs">画像準備中</span></div>
+                                        <img src="<?php echo esc_url($lp_asset_url . 'case_03.webp'); ?>" alt="兼高会計事務所のリニューアル前のWebサイト" width="458" height="418" loading="lazy" decoding="async" class="lp-case-image lp-case-before">
                                     <?php endif; ?>
                                     <span aria-hidden="true" class="lp-case-arrows">
                                         <img src="<?php echo esc_url($lp_asset_url . 'case_arrow_01.svg'); ?>" alt="" width="22" height="44" loading="lazy" decoding="async">
@@ -249,15 +266,15 @@ get_header();
                                 <figcaption class="mt-3 min-h-10 text-xs leading-5">● リニューアル前</figcaption>
                             </figure>
                             <figure class="min-w-0">
-                                <?php if ($index === 0): ?>
-                                    <img src="<?php echo esc_url($lp_asset_url . 'case_02.png'); ?>" alt="街のイラストで地元密着を表現した兼高会計事務所のリニューアル後のWebサイト" width="1412" height="802" loading="lazy" decoding="async" class="lp-case-image lp-case-after">
+                                <?php if ($is_primary_case): ?>
+                                    <img src="<?php echo esc_url($lp_asset_url . 'case_02.webp'); ?>" alt="街のイラストで地元密着を表現した兼高会計事務所のリニューアル後のWebサイト" width="1412" height="802" loading="lazy" decoding="async" class="lp-case-image lp-case-after">
                                 <?php else: ?>
-                                    <div role="img" aria-label="リニューアル後の画像は準備中" class="lp-case-image lp-case-after"><span class="px-2 text-center text-xs">画像準備中</span></div>
+                                    <img src="<?php echo esc_url($lp_asset_url . 'case_04.webp'); ?>" alt="街のイラストで地元密着を表現した兼高会計事務所のリニューアル後のWebサイト" width="1412" height="802" loading="lazy" decoding="async" class="lp-case-image lp-case-after">
                                 <?php endif; ?>
                                 <figcaption class="mt-3 min-h-10 text-xs leading-5">● リニューアル後　刷新サイト</figcaption>
                             </figure>
                         </div>
-                        <?php if ($index === 0): ?>
+                        <?php if ($is_primary_case): ?>
                             <dl class="mt-10 grid gap-1 text-sm leading-7 md:mt-14 md:grid-cols-[220px_1fr]">
                                 <dt class="flex items-center bg-[#d0d3d0] px-6 py-4 font-bold tracking-wider">課題・背景</dt>
                                 <dd class="bg-white px-6 py-4">50年以上の歴史を持つ事務所の転換点にあわせたWebサイトリニューアル。<br>旧サイトは、スマートフォンへの対応やデザイン、業務内容の伝え方などに見直しの余地がありました。</dd>
@@ -269,13 +286,23 @@ get_header();
                                 <dd class="bg-white px-6 py-4">コンセプト設計 ／ Webデザイン ／ WordPress制作</dd>
                             </dl>
                         <?php else: ?>
-                            <p class="mt-10 bg-white p-6 text-sm leading-7 md:mt-14">この事例の画像・掲載内容は準備中です。</p>
+                            <dl class="mt-10 grid gap-1 text-sm leading-7 md:mt-14 md:grid-cols-[220px_1fr]">
+                                <dt class="flex items-center bg-[#d0d3d0] px-6 py-4 font-bold tracking-wider">課題・背景</dt>
+                                <dd class="bg-white px-6 py-4">複数の学校・園を束ねる学園グループの 本部サイトをリニューアル。 旧サイトはスマートフォンに対応しておらず、 学園の理念や教育体制、各学校に関する情報を Webサイト上でより充実させることが検討されていました。 また、ニュースや決算情報等の更新には HTMLを操作する必要があり、 運用面の見直しも必要とされていました。</dd>
+                                <dt class="flex items-center bg-[#d0d3d0] px-6 py-4 font-bold tracking-wider">整理・構築・制作</dt>
+                                <dd class="bg-white px-6 py-4">単なるデザイン刷新ではなく、 「学園グループの本部サイトとして 何を伝えるべきか」という視点から情報を整理。 理念・歴史などのコンテンツを追加し、 問い合わせ・寄付フォームの設置を提案しました。</dd>
+                                <dt class="flex items-center bg-[#d0d3d0] px-6 py-4 font-bold tracking-wider">実現した状態</dt>
+                                <dd class="bg-white px-6 py-4"><ul class="list-disc pl-5"><li>学園グループとの親和性を意識したデザインへ刷新</li><li>理念・歴史など学園として必要な情報を拡充</li><li>スマートフォンへ対応</li><li>WordPress導入によりニュースや情報更新を容易に</li></ul></dd>
+                                <dt class="flex items-center bg-[#d0d3d0] px-6 py-4 font-bold tracking-wider">対応範囲</dt>
+                                <dd class="bg-white px-6 py-4">企画・構成 ／ 情報設計 ／ Webデザイン ／ WordPress制作 ／ レスポンシブ対応 ／ 進行管理</dd>
+                            </dl>
                         <?php endif; ?>
-                    </div>
+                    </section>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <section aria-labelledby="lp-flow-title" class="lp-section bg-white">
         <div class="lp-container">
