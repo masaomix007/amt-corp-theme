@@ -18,6 +18,7 @@
    Custom styles
    ========================================================= */
 @import './custom.css' layer(utilities);
+@import './web-production.css' layer(components);
 
 /* =========================================================
    TailPress source scan

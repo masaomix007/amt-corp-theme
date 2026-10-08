@@ -1,3 +1,5 @@
+import { initWebProduction } from './web-production.js';
+
 // ▼▼▼ 以下は元のコードそのまま ▼▼▼
 
 window.addEventListener('load', function () {
@@ -41,6 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileFloatingCta = document.querySelector('[data-floating-contact-cta-sp]');
   const contactSection = document.getElementById('contact');
   const footer = document.querySelector('footer');
+  const webProductionPage = document.querySelector('[data-web-production]');
+
+  if (webProductionPage) {
+    initWebProduction(webProductionPage);
+  }
   const floatingCtaState = {
     menuOpen: false,
     contactVisible: false,
@@ -54,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerHero = isHomePage ? mainHeader : null;
 
   function updateMobileContactCtaHeight() {
-    if (!isHomePage || !mobileFloatingCta) return;
+    if ((!isHomePage && !webProductionPage) || !mobileFloatingCta) return;
 
     const height = mobileFloatingCta.getBoundingClientRect().height;
     if (height > 0) {
@@ -62,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (isHomePage && mobileFloatingCta) {
+  if ((isHomePage || webProductionPage) && mobileFloatingCta) {
     updateMobileContactCtaHeight();
     window.addEventListener('resize', updateMobileContactCtaHeight);
     window.addEventListener('orientationchange', updateMobileContactCtaHeight);

@@ -36,6 +36,14 @@ function tailpress(): TailPress\Framework\Theme
 
 tailpress();
 
+add_filter('body_class', function ($classes) {
+    if (is_page('web-production') || is_page_template('page-web-production.php')) {
+        $classes[] = 'amt-web-production-page';
+    }
+
+    return $classes;
+});
+
 add_action('wp_enqueue_scripts', function () {
   // Noto Sans JP (Regular=400)
   wp_enqueue_style(
