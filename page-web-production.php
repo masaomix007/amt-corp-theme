@@ -132,8 +132,8 @@ get_header();
     <section aria-labelledby="lp-concept-title" class="lp-section lp-gray">
         <div class="lp-container">
             <p class="lp-eyebrow">CONCEPT / APPROACH</p>
-            <h2 id="lp-concept-title" class="lp-heading">サイトを作る前に、<br>「何を、誰に、どう伝えるか」を整理します。</h2>
-            <p class="lp-intro">webサイトは、デザインやページ制作に入る前に、<br class="hidden md:block">事業やサービスの目的、伝えたい相手、企業やブランドの価値を<br class="hidden md:block">整理することが重要です。AMTでは、企画や要件が固まっていない段階から、<br class="hidden md:block">一緒に整理するところから支援します。</p>
+            <h2 id="lp-concept-title" class="lp-heading">サイトを作る前に、<br class="hidden md:block">「何を、誰に、どう伝えるか」を整理します。</h2>
+            <p class="lp-intro">webサイトは、デザインやページ制作に入る前に、事業やサービスの目的、伝えたい相手、企業やブランドの価値を整理することが重要です。<br class="hidden md:block">AMTでは、企画や要件が固まっていない段階から、一緒に整理するところから支援します。</p>
             <ol class="lp-approach-grid mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 md:mt-20 lg:grid-cols-4">
                 <?php foreach ($approaches as $index => $approach): ?>
                     <li class="min-w-0">
@@ -272,7 +272,7 @@ get_header();
                                     <img src="<?php echo esc_url($lp_asset_url . 'case_04.webp'); ?>" alt="街のイラストで地元密着を表現した兼高会計事務所のリニューアル後のWebサイト" width="1412" height="802" loading="lazy" decoding="async" class="lp-case-image lp-case-after">
                                 <?php endif; ?>
                                 <figcaption class="mt-3 min-h-10 text-xs leading-5">● リニューアル後　刷新サイト</figcaption>
-                            </figure>
+                               </figure>
                         </div>
                         <?php if ($is_primary_case): ?>
                             <dl class="mt-10 grid gap-1 text-sm leading-7 md:mt-14 md:grid-cols-[220px_1fr]">
@@ -284,7 +284,7 @@ get_header();
                                 <dd class="bg-white px-6 py-4"><ul class="list-disc pl-5"><li>地元密着のコンセプトをイラストで表現</li><li>業務範囲を正確に伝える内容へ再構成</li><li>スマートフォンへ対応</li><li>WordPress導入により更新しやすいサイトへ</li></ul></dd>
                                 <dt class="flex items-center bg-[#d0d3d0] px-6 py-4 font-bold tracking-wider">対応範囲</dt>
                                 <dd class="bg-white px-6 py-4">コンセプト設計 ／ Webデザイン ／ WordPress制作</dd>
-                            </dl>
+                            </dl>   
                         <?php else: ?>
                             <dl class="mt-10 grid gap-1 text-sm leading-7 md:mt-14 md:grid-cols-[220px_1fr]">
                                 <dt class="flex items-center bg-[#d0d3d0] px-6 py-4 font-bold tracking-wider">課題・背景</dt>
